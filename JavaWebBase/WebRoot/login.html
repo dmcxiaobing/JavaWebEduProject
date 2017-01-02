@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+	<h1>测试请求参数</h1>
+	<a href="/JavaWebBase/LoginServlet?ceshi=mima">点击这里</a>
+	<br />
+	<form action="/JavaWebBase/LoginServlet" method="post">
+		用户名:<input type="text" name="username"><br /> 密码:<input
+			type="password" name="password"><br /> <input
+			type="checkbox" name="hobby" value="shuijiao">睡觉 <input
+			type="checkbox" name="hobby" value="java">写代码 <input
+			type="submit" value="提交">
+	</form>
+</body>
+</html>
