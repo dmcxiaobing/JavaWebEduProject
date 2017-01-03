@@ -1,0 +1,12 @@
+jsp基本语法：
+<%
+  	//这里就相当于java中方法内 可以定义变量和引用 则相当于成员变量
+  %>
+  
+<%=
+		//这里写java代码的输出 如:response.getWrite().print("我是jsp代码");  out.print("hello world");
+  %>
+  
+<%!
+	//这里一般声明成员变量和成员方法
+  %>

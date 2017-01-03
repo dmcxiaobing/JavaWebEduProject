@@ -18,17 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<!-- 
-<%
-  	//这里就相当于java中方法内
-  %>
-<%=	//这里写java代码的输出 如:response.getWrite().print("我是jsp代码");
-  %>
-<%!
-	//这里一般声明成员变量和成员方法
-  %>
- -->
-	
 </head>
 
 <body>
