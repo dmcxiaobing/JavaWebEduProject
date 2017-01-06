@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!--CatServletMethodServlet的配置 -->
+	<servlet>
+		<servlet-name>CatServletMethodServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CatServletMethodServlet</servlet-class>
+		<init-param>
+			<param-name>CatServletMethodServlet</param-name>
+			<param-value>http://localhost:8080/JavaWebBase/CatServletMethodServlet</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CatServletMethodServlet</servlet-name>
+		<url-pattern>/CatServletMethodServlet</url-pattern>
+	</servlet-mapping>
+
 	<servlet>
 		<description>This is the description of my J2EE component</description>
 		<display-name>This is the display name of my J2EE component</display-name>
