@@ -1,0 +1,73 @@
+if "%OS%" == "Windows_NT" setlocal //判断当前系统是否是window系统
+
+rem --------------------------------------------------------------------------- //rem 是注释（下同）
+
+rem Start script for the CATALINA Server
+
+rem
+
+rem $Id: startup.bat 302918 2004-05-27 18:25:11Z yoavs $
+
+rem ---------------------------------------------------------------------------
+
+rem Guess CATALINA_HOME if not defined
+
+set CURRENT_DIR=%cd% //设置当前目录
+
+if not "%CATALINA_HOME%" == "" gotogotHome //如果设置了CATALINA_HOME环境变量 ，就直接到下面的gotHome处
+
+set CATALINA_HOME=%CURRENT_DIR% //如果没有设置CATALINA_HOME，就设置CATALINA_HOME为当前目录（其实这里她假设你进入tomcat的安装目录）
+
+if exist "%CATALINA_HOME%\bin\catalina.bat" gotookHome//判断一下catalina.bat是否找到了，找到了就直接到下面的gotHome处
+
+cd .. //这里他是假设你开始已经进入到了tomcat的bin目录，所以就退到上一级目录
+
+set CATALINA_HOME=%cd%//现在再设置CATALINA_HOME为tomcat的安装目录
+
+cd %CURRENT_DIR% //这里是进入dos的当前目录
+
+:gotHome
+
+if exist "%CATALINA_HOME%\bin\catalina.bat" gotookHome //再次判断catalina.bat是否找到了，找到了就直接到下面的okHome处，没有的话，就只能提示你啦！
+
+echo The CATALINA_HOME environment variable is not defined correctly
+
+echo This environment variable is needed to run this program
+
+goto end
+
+:okHome
+
+set EXECUTABLE=%CATALINA_HOME%\bin\catalina.bat //设置要执行的文件
+
+rem Check that target executable exists
+
+if exist "%EXECUTABLE%" gotookExec //再次判断catalina.bat是否找到了，找到了就直接到下面的okExec处，没有的话，就提示。
+
+echo Cannot find %EXECUTABLE%
+
+echo This file is needed to run this program
+
+goto end
+
+:okExec
+
+rem Get remaining unshifted command line arguments and save them in the
+
+set CMD_LINE_ARGS= //这里是设置参数
+
+:setArgs
+
+if ""%1""=="""" gotodoneSetArgs //判断参数是否加入完成
+
+set CMD_LINE_ARGS=%CMD_LINE_ARGS% %1 //将参数组成一行，接在后面
+
+shift
+
+gotosetArgs
+
+:doneSetArgs
+
+call "%EXECUTABLE%" start %CMD_LINE_ARGS% //执行catalina.bat，最好将这行改为:echo "%EXECUTABLE%" start %CMD_LINE_ARGS% 以便阅读、理解本文件的作用
+
+:end
