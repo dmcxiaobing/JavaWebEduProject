@@ -1,0 +1,48 @@
+1. jsp是由浏览器解释执行?
+2. jsp是静态页面
+3. 每次请求，tomcat都会编译jsp成java
+4. 在<%! ... %>中定义的方法是否可以使用jsp内置对象
+5. <%int i = 100;%> <!-- <% i+=10%> --> <%=i%>，输出多少?
+6. jsp页面中的application是什么类型的？
+7. session是保存到服务器端还是客户端
+8. cookie是保存到服务器端还是客户端
+9. session的默认保存时间是可以修改的。
+10. session默认依赖cookie
+11. 浏览器可以保存任意多个cookie，没有上限
+12. 设置cookie的时长使用哪个方法
+13. session默认情况下依赖的cookie名称叫什么
+14. 一个浏览器是否可以同时保存多个名为JSESSIONID的cookie
+15. 浏览器开始访问网站时，服务器会立即创建session对象。
+16. session的invalidate()方法的作用是?
+17. 当客户端关闭浏览器时，服务器马上会得到通知，从而销毁session
+18. sessionid必须保存到cookie中发送给客户端，不然session就不能实现
+19. request.getSession(false)一定可以获取到session
+20. getSession()方法是HttpServletRequest类型的还是ServletRequest类型的！
+21. url重写可以弥补客户端禁用cookie而导致的session无法使用的问题
+22. 你知道哪些数据存放在session中比较合适
+23. cookie技术是JavaEE独有
+24. cookie存在被恶意利用的危险
+25. 服务器无限制的创建session，并且让session不被销毁是正确的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
