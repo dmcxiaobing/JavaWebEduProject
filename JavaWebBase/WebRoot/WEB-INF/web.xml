@@ -18,10 +18,15 @@
 	</servlet-mapping>
 	<!--GetDataServlet -->
 	<servlet>
+		<!-- 配置servlet的name,随便填写 -->
 		<servlet-name>GetDataServlet</servlet-name>
+		<!-- servlet指定的类 -->
 		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet02.GetDataServlet</servlet-class>
+		<!-- 配置启动服务器后立即加载此servlet -->
+		<load-on-startup>0</load-on-startup>
 	</servlet>
 	<servlet-mapping>
+		<!-- 配置访问得了名称与路径 -->
 		<servlet-name>GetDataServlet</servlet-name>
 		<url-pattern>/GetDataServlet</url-pattern>
 	</servlet-mapping>
@@ -62,25 +67,30 @@
 		<servlet-name>GenericServlet</servlet-name>
 		<url-pattern>/GenericServlet</url-pattern>
 	</servlet-mapping>
-<!-- 测试我们自己写的GenericServlet -->
- <servlet>
-    <servlet-name>CheckGenericServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckGenericServlet</servlet-class>
-	<init-param>
-		<param-name>woshiCheckGenericServlet</param-name>
-		<param-value>woshivalue</param-value>
-	</init-param>
-  </servlet>
-  <servlet>
-    <servlet-name>CheckSystemGenericServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckSystemGenericServlet</servlet-class>
-  </servlet>
+	<!-- 测试我们自己写的GenericServlet -->
+	<servlet>
+		<servlet-name>CheckGenericServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckGenericServlet</servlet-class>
+		<init-param>
+			<param-name>woshiCheckGenericServlet</param-name>
+			<param-value>woshivalue</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>CheckSystemGenericServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckSystemGenericServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LoginPostServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.LoginPostServlet</servlet-class>
+	</servlet>
 
-  <servlet-mapping>
-    <servlet-name>CheckGenericServlet</servlet-name>
-    <url-pattern>/CheckGenericServlet</url-pattern>
-  </servlet-mapping>
-  
+
+	<servlet-mapping>
+		<servlet-name>CheckGenericServlet</servlet-name>
+		<url-pattern>/CheckGenericServlet</url-pattern>
+	</servlet-mapping>
+
 	<servlet-mapping>
 		<servlet-name>BrowserInfoServlet</servlet-name>
 		<url-pattern>/BrowserInfoServlet</url-pattern>
@@ -93,10 +103,14 @@
 		<servlet-name>SuccessServlet</servlet-name>
 		<url-pattern>/SuccessServlet</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CheckSystemGenericServlet</servlet-name>
-    <url-pattern>/CheckSystemGenericServlet</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CheckSystemGenericServlet</servlet-name>
+		<url-pattern>/CheckSystemGenericServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginPostServlet</servlet-name>
+		<url-pattern>/LoginPostServlet</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
