@@ -84,6 +84,11 @@
 		<servlet-name>LoginPostServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.LoginPostServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>GetContextValueServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet02.GetContextValueServlet</servlet-class>
+  </servlet>
+
 
 
 	<servlet-mapping>
@@ -111,6 +116,16 @@
 		<servlet-name>LoginPostServlet</servlet-name>
 		<url-pattern>/LoginPostServlet</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetContextValueServlet</servlet-name>
+    <url-pattern>/GetContextValueServlet</url-pattern>
+  </servlet-mapping>
+
+
+<context-param>
+	<param-name>context-param</param-name>
+	<param-value>context-param_value</param-value>
+</context-param>
 
 
 </web-app>
