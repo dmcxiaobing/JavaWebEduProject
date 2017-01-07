@@ -92,6 +92,11 @@
     <servlet-name>GetPathServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet02.GetPathServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet03.StatisticsServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -128,6 +133,10 @@
   <servlet-mapping>
     <servlet-name>GetPathServlet</servlet-name>
     <url-pattern>/GetPathServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StatisticsServlet</servlet-name>
+    <url-pattern>/StatisticsServlet</url-pattern>
   </servlet-mapping>
 
 
