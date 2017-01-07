@@ -53,6 +53,34 @@
 		<servlet-name>SuccessServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.servlet.SuccessServlet</servlet-class>
 	</servlet>
+	<!-- GenericServlet -->
+	<servlet>
+		<servlet-name>GenericServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.GenericServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GenericServlet</servlet-name>
+		<url-pattern>/GenericServlet</url-pattern>
+	</servlet-mapping>
+<!-- 测试我们自己写的GenericServlet -->
+ <servlet>
+    <servlet-name>CheckGenericServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckGenericServlet</servlet-class>
+	<init-param>
+		<param-name>woshiCheckGenericServlet</param-name>
+		<param-value>woshivalue</param-value>
+	</init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckSystemGenericServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet01.CheckSystemGenericServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CheckGenericServlet</servlet-name>
+    <url-pattern>/CheckGenericServlet</url-pattern>
+  </servlet-mapping>
+  
 	<servlet-mapping>
 		<servlet-name>BrowserInfoServlet</servlet-name>
 		<url-pattern>/BrowserInfoServlet</url-pattern>
@@ -65,4 +93,10 @@
 		<servlet-name>SuccessServlet</servlet-name>
 		<url-pattern>/SuccessServlet</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckSystemGenericServlet</servlet-name>
+    <url-pattern>/CheckSystemGenericServlet</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
