@@ -10,6 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.io.IOUtils;
 /**
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing
@@ -20,8 +22,26 @@ import javax.servlet.http.HttpServletResponse;
 public class GetClassLoaderServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ClassLoader classLoader = this.getClass().getClassLoader();
-		InputStream input = classLoader.getResourceAsStream("/readme.txt");
+		/*
+		 * 1. 得到ClassLoader
+		 *   > 先得到Class，再得到ClassLoader
+		 * 2. 调用其getResourceAsStream()，得到一个InputStream
+		 */
+//		ClassLoader cl = this.getClass().getClassLoader();
+		// 相对/classes
+//		InputStream input = cl.getResourceAsStream("com/qq986945193/javaweb/servlet/day09/servlet04/readme.txt");
+		
+		Class c = this.getClass();
+		// 相对当前.class文件所在目录！
+//		InputStream input = c.getResourceAsStream("readme.txt");
+		
+		// 相对classes下！
+//		InputStream input = c.getResourceAsStream("/readme.txt");
+		
+		InputStream input = c.getResourceAsStream("/../../index.jsp");
+		
+		String s = IOUtils.toString(input);//读取输入流内容，转换成字符串返回
+		System.out.println(s);
 	}
 
 }

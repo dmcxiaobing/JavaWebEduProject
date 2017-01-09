@@ -96,6 +96,11 @@
     <servlet-name>StatisticsServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet03.StatisticsServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetClassLoaderServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet04.GetClassLoaderServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -137,6 +142,10 @@
   <servlet-mapping>
     <servlet-name>StatisticsServlet</servlet-name>
     <url-pattern>/StatisticsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetClassLoaderServlet</servlet-name>
+    <url-pattern>/GetClassLoaderServlet</url-pattern>
   </servlet-mapping>
 
 
