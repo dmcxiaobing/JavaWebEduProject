@@ -100,6 +100,31 @@
     <servlet-name>GetClassLoaderServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day09.servlet04.GetClassLoaderServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>NotFoundServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.NotFoundServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RedirectAServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.RedirectAServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RedirectBServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.RedirectBServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AutoTimeRefreshServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.AutoTimeRefreshServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BrowserNoCacheServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.BrowserNoCacheServlet</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -146,6 +171,26 @@
   <servlet-mapping>
     <servlet-name>GetClassLoaderServlet</servlet-name>
     <url-pattern>/GetClassLoaderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NotFoundServlet</servlet-name>
+    <url-pattern>/NotFoundServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RedirectAServlet</servlet-name>
+    <url-pattern>/RedirectAServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RedirectBServlet</servlet-name>
+    <url-pattern>/RedirectBServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AutoTimeRefreshServlet</servlet-name>
+    <url-pattern>/AutoTimeRefreshServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BrowserNoCacheServlet</servlet-name>
+    <url-pattern>/BrowserNoCacheServlet</url-pattern>
   </servlet-mapping>
 
 
