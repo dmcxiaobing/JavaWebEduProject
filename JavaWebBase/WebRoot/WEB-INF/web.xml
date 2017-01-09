@@ -120,6 +120,11 @@
     <servlet-name>BrowserNoCacheServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.BrowserNoCacheServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetByteServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.GetByteServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -191,6 +196,10 @@
   <servlet-mapping>
     <servlet-name>BrowserNoCacheServlet</servlet-name>
     <url-pattern>/BrowserNoCacheServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetByteServlet</servlet-name>
+    <url-pattern>/GetByteServlet</url-pattern>
   </servlet-mapping>
 
 
