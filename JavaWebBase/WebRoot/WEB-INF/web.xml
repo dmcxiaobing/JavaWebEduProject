@@ -132,6 +132,11 @@
     <servlet-name>GetRefererServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet02.GetRefererServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetUrlInfoServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet02.GetUrlInfoServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -218,6 +223,10 @@
   <servlet-mapping>
     <servlet-name>GetRefererServlet</servlet-name>
     <url-pattern>/GetRefererServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetUrlInfoServlet</servlet-name>
+    <url-pattern>/GetUrlInfoServlet</url-pattern>
   </servlet-mapping>
 
 
