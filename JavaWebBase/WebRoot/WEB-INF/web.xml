@@ -124,6 +124,16 @@
     <servlet-name>GetByteServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet01.GetByteServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>GetClientInfoServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet02.GetClientInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GetRefererServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet02.GetRefererServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -200,6 +210,14 @@
   <servlet-mapping>
     <servlet-name>GetByteServlet</servlet-name>
     <url-pattern>/GetByteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetClientInfoServlet</servlet-name>
+    <url-pattern>/GetClientInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetRefererServlet</servlet-name>
+    <url-pattern>/GetRefererServlet</url-pattern>
   </servlet-mapping>
 
 
