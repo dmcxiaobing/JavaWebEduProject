@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+	测试请求参数
+	<br />
+	<form action="/JavaWebBase/CheckParServlet" method = "post">
+	用户名:<input type="text" name = "username"></input><br/>
+	密    码:<input type = "password" name = "password"></input><br/>
+	<!-- value即服务端显示的内容 -->
+	爱    好:<input type = "checkbox" name = "hobby" value = "shuijiao">睡觉</input>
+		  <input type = "checkbox" name = "hobby" value = "playgame"/>打游戏
+		  <input type = "checkbox" name = "hobby" value = "writejava"/>写代码	
+		<br/>
+		<input type = "submit" value = "提交"/>
+	</form>
+	
+</body>
+</html>

@@ -136,6 +136,31 @@
     <servlet-name>GetUrlInfoServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet02.GetUrlInfoServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>OneForwordServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.OneForwordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TwoForwardServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.TwoForwardServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OneIncludeServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.OneIncludeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>TwoIncludeServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.TwoIncludeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckParServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.CheckParServlet</servlet-class>
+  </servlet>
+
+
+
+
+
 
 
 
@@ -227,6 +252,26 @@
   <servlet-mapping>
     <servlet-name>GetUrlInfoServlet</servlet-name>
     <url-pattern>/GetUrlInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OneForwordServlet</servlet-name>
+    <url-pattern>/OneForwordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TwoForwardServlet</servlet-name>
+    <url-pattern>/TwoForwardServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OneIncludeServlet</servlet-name>
+    <url-pattern>/OneIncludeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TwoIncludeServlet</servlet-name>
+    <url-pattern>/TwoIncludeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckParServlet</servlet-name>
+    <url-pattern>/CheckParServlet</url-pattern>
   </servlet-mapping>
 
 
