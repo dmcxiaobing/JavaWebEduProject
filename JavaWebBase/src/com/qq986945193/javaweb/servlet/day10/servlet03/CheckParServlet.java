@@ -23,7 +23,7 @@ public class CheckParServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			doPost(request, response);
+			System.out.println(request.getParameter("admin")+","+request.getParameter("root"));
 	}
 
 	@Override
