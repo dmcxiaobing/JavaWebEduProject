@@ -156,6 +156,16 @@
     <servlet-name>CheckParServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet03.CheckParServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CharacterServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.CharacterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SumFunctionServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.servlet01.SumFunctionServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -272,6 +282,14 @@
   <servlet-mapping>
     <servlet-name>CheckParServlet</servlet-name>
     <url-pattern>/CheckParServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CharacterServlet</servlet-name>
+    <url-pattern>/CharacterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SumFunctionServlet</servlet-name>
+    <url-pattern>/SumFunctionServlet</url-pattern>
   </servlet-mapping>
 
 
