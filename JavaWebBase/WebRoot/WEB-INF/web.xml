@@ -164,6 +164,21 @@
     <servlet-name>SumFunctionServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.servlet01.SumFunctionServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>EncodingFormServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.servlet04.EncodingFormServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CatSessionServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.servlet02.CatSessionServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginActionServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.LoginActionServlet</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -290,6 +305,18 @@
   <servlet-mapping>
     <servlet-name>SumFunctionServlet</servlet-name>
     <url-pattern>/SumFunctionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EncodingFormServlet</servlet-name>
+    <url-pattern>/EncodingFormServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CatSessionServlet</servlet-name>
+    <url-pattern>/CatSessionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginActionServlet</servlet-name>
+    <url-pattern>/LoginActionServlet</url-pattern>
   </servlet-mapping>
 
 

@@ -20,7 +20,9 @@ import javax.servlet.http.HttpServletResponse;
  * @OsChina空间: https://my.oschina.net/mcxiaobing
  */
 public class CheckParServlet extends HttpServlet {
-
+	/**
+	 * 通过超链接Get方式获得网络请求带来的参数
+	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			System.out.println(request.getParameter("admin")+","+request.getParameter("root"));

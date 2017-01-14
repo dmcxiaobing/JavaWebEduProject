@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>encoding.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+</head>
+
+<body>
+	模拟乱码进行提交的表单.
+	<br>
+	<!-- 设置value即默认显示的值 -->
+	<form action="/JavaWebBase/EncodingFormServlet" method="post">
+		用户名:<input type="text" name="username" value="张三" /><br /> <input
+			type="submit" value="提交" />
+	</form>
+	<a href="/JavaWebBase/EncodingFormServlet?username=李四">点击进行get测试</a>
+</body>
+</html>
