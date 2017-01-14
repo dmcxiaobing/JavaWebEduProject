@@ -48,6 +48,8 @@ public class LoginActionServlet extends HttpServlet {
 			bean.setResultMsg("success");
 			HashMap<String, LoginActionServletBean> map = new HashMap<String, LoginActionServletBean>();
 			map.put("result", bean);
+			// 这里使用json转换jar包，所依赖commons-beanutis Commons-collections
+			// commons-lang commondlogging ezmorph
 			String jsonValue = JSONSerializer.toJSON(map).toString();
 			writer.print(jsonValue);
 		}
