@@ -1,7 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<!-- 导入el函数库(标签库) -->
+<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"  %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -23,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body>
 	This is my JSP page.
 	<br>
+	<a href="${pageContext.request.contextPath}/index.jsp">点击进行跳转index.jsp</a>
 </body>
 
 
