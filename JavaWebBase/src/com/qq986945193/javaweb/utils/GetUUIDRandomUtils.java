@@ -17,7 +17,6 @@ public class GetUUIDRandomUtils {
 	/**
 	 * 获取一个32位的随机数 16位数字组成。并去掉“-”并且转换为大写
 	 * 
-	 * @return
 	 */
 	public static String getUUIDRandomNum() {
 		return UUID.randomUUID().toString().replace("-", "").toUpperCase();
