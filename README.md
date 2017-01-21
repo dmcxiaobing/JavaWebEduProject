@@ -6,4 +6,6 @@ javaweb学习资料。自己学习javaweb时随笔记录的。
 
 [欢迎点击关注我的微博](http://weibo.com/mcxiaobing)
 
+自己学习JavaWeb的知识点以及代码。
+
 不断更新中，欢迎star。
