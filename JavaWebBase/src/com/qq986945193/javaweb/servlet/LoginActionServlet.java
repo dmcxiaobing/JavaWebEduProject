@@ -1,7 +1,7 @@
 package com.qq986945193.javaweb.servlet;
 
 /**
- * 这是一个登陆的功能，返回json数据
+ * 这是一个登陆的功能，返回json数据  
  */
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONSerializer;
 
 import com.qq986945193.javaweb.domain.day12.LoginActionServletBean;
-
 /**
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing
