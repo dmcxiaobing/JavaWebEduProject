@@ -176,6 +176,10 @@
     <servlet-name>LoginActionServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.LoginActionServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>IntroduceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day10.IntroduceServlet</servlet-class>
+  </servlet>
 
 
 
@@ -317,6 +321,10 @@
   <servlet-mapping>
     <servlet-name>LoginActionServlet</servlet-name>
     <url-pattern>/LoginActionServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IntroduceServlet</servlet-name>
+    <url-pattern>/IntroduceServlet</url-pattern>
   </servlet-mapping>
 
 
