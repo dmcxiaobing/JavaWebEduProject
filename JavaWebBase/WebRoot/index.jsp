@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!-- 导入el函数库(标签库) -->
-<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -22,12 +22,15 @@
 
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
+<!-- 这里引入一个loading的js -->
+<script type="text/javascript" src="js/loading.js"></script>
 </head>
 
 <body>
 	This is my JSP page.
 	<br>
 	<a href="${pageContext.request.contextPath}/index.jsp">点击进行跳转index.jsp</a>
+	<img src="imgs/android_.jpg"/>
 </body>
 
 
