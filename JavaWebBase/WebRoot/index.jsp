@@ -27,6 +27,7 @@
 </head>
 
 <body>
+	
 	This is my JSP page.
 	<br>
 	<a href="${pageContext.request.contextPath}/index.jsp">点击进行跳转index.jsp</a>
