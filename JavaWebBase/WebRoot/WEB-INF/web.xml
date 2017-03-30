@@ -178,7 +178,7 @@
   </servlet>
   <servlet>
     <servlet-name>IntroduceServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day10.IntroduceServlet</servlet-class>
+    <servlet-class>com.qq986945193.javaweb.knowledge.IntroduceServlet</servlet-class>
   </servlet>
 
 

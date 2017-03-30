@@ -1,4 +1,4 @@
-package com.qq986945193.javaweb.servlet.day10;
+package com.qq986945193.javaweb.knowledge;
 
 /**
  * @Author ：程序员小冰
