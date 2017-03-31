@@ -332,6 +332,4 @@
 	<param-name>context-param</param-name>
 	<param-value>context-param_value</param-value>
 </context-param>
-
-
 </web-app>
