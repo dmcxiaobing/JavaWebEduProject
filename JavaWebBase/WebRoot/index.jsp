@@ -2,9 +2,9 @@
 <!-- 导入el函数库(标签库) -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
+	//request.getContextPath(); 得到项目的名称映射  如：/JavaWebBase
 	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
 
@@ -27,11 +27,14 @@
 </head>
 
 <body>
-	
+
 	This is my JSP page.
 	<br>
 	<a href="${pageContext.request.contextPath}/index.jsp">点击进行跳转index.jsp</a>
-	<img src="imgs/android_.jpg"/>
+	<br />
+	<a href="<%=request.getContextPath()%>/index.jsp">request.getContextPath()</a>
+	<img src="imgs/android_.jpg" />
+	<%=request.getServerName() %>
 </body>
 
 

@@ -21,6 +21,7 @@ import java.io.OutputStream;
 import java.util.zip.GZIPOutputStream;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +36,39 @@ public class IntroduceServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// openDownloadFile(req, resp);
-		setHeadergzip(req, resp);
+		// setHeadergzip(req, resp);
+		// setRequestDispather(req, resp);
+		introduceCookie(req, resp);
+
+	}
+
+	/**
+	 * Cookie的一些操作方法
+	 */
+	private void introduceCookie(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Cookie cookieOne = new Cookie("hello", "hellocookie");
+		response.addCookie(cookieOne);
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie : cookies) {
+			System.out.println(cookie.getName());
+			System.err.println(cookie.getValue());
+		}
+	}
+
+	/**
+	 * 请求转发或请求包含等方法
+	 */
+	private void setRequestDispather(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 请求转发
+		// request.getRequestDispatcher("/index.jsp").forward(request,
+		// response);
+		// 请求包含
+		request.setAttribute("name", "introduce");
+		response.setCharacterEncoding("utf-8");
+		request.getRequestDispatcher("/jsp/introduce.jsp").include(request, response);
+
 	}
 
 	/**
