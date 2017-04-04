@@ -5,6 +5,7 @@ package com.qq986945193.javaweb.utils;
  * @GitHub: https://github.com/QQ986945193
  */
 import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -36,8 +37,16 @@ public class Dom4jUtils {
 	// 回写xml的方法
 	public static void xmlWriters(String path, Document document) {
 		try {
-			OutputFormat format = OutputFormat.createPrettyPrint();
-			XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(path), format);
+//			OutputFormat format = OutputFormat.createPrettyPrint();
+			
+			//缩进使用\t，是否换行，TRUE是
+			OutputFormat format2 = new OutputFormat("\t",true);
+			//清空原有的换行和 缩进
+			format2.setTrimText(true);
+			//写入以及设置编码
+			XMLWriter xmlWriter = new XMLWriter(new OutputStreamWriter(new FileOutputStream(path),"utf-8"), format2);
+//			XMLWriter xmlWriter = new XMLWriter(new FileOutputStream(path), format);
+			//保存docment对象
 			xmlWriter.write(document);
 			xmlWriter.close();
 		} catch (Exception e) {
