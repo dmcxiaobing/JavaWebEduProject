@@ -6,11 +6,11 @@
 	<!-- 配置当发生某个错误码的时候，转发到指定页面 -->
 	<error-page>
 		<error-code>500</error-code>
-		<location>/jsp/error.jsp</location>
+		<location>/jsps/error.jsp</location>
 	</error-page>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/jsp/notfound.jsp</location>
+		<location>/jsps/notfound.jsp</location>
 	</error-page>
 	<!--CatServletMethodServlet的配置 -->
 	<servlet>
