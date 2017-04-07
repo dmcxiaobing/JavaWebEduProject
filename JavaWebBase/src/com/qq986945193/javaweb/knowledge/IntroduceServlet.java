@@ -31,6 +31,9 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
 public class IntroduceServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//设置编码，处理中文乱码的问题
+		req.setCharacterEncoding("utf-8");
+		
 		// openDownloadFile(req, resp);
 		// setHeadergzip(req, resp);
 		// setRequestDispather(req, resp);
