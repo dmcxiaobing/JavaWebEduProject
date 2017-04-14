@@ -1,5 +1,13 @@
 package com.qq986945193.javaweb.servlet.day11;
 
+/**
+ * 
+ * @Author ：程序员小冰
+ * @新浪微博 ：http://weibo.com/mcxiaobing
+ * @GitHub: https://github.com/QQ986945193
+ * @CSDN博客: http://blog.csdn.net/qq_21376985
+ * @OsChina空间: https://my.oschina.net/mcxiaobing
+ */
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -26,27 +34,27 @@ public class LoginServlet extends HttpServlet {
 		if (username == null || username.equals("")) {
 			// 如果输入的用户名为null,则提示一下
 			request.setAttribute("msg", "用户名不能为空");
-			// 转发到登陆界面  因为要传入错误信息，所以这里使用转发
-			 request.getRequestDispatcher("/day11cookieandsession/login.jsp").forward(request,
-			 response);				
-//			response.sendRedirect(getServletContext().getContextPath()+"/day11cookieandsession/login.jsp");
+			// 转发到登陆界面 因为要传入错误信息，所以这里使用转发
+			request.getRequestDispatcher("/day11cookieandsession/login.jsp").forward(request, response);
+			// response.sendRedirect(getServletContext().getContextPath()+"/day11cookieandsession/login.jsp");
 		} else {
 			if (username.equalsIgnoreCase("java")) {
 				// 这里假如如果用户名为java代表登陆成功。
 				// 这里直接利用cookie的构造方法，将用户名保存到cookie中，这样以后可以直接拿来用
 				Cookie cookie = new Cookie("username", username);
 				cookie.setMaxAge(24 * 60 * 60);// 设置存活时间为一天
-				//添加cookie
+				// 添加cookie
 				response.addCookie(cookie);
-				
+
 				// 设置一下session，这样如果用户没有登陆或者长时间没有变化，无法进入后台
 				HttpSession sHttpSession = request.getSession();
 				sHttpSession.setAttribute("username", username);
 				// 登陆成功后，转发到登陆成功的jsp
-//				request.getRequestDispatcher("/day11cookieandsession/success.jsp").forward(request, response);
+				// request.getRequestDispatcher("/day11cookieandsession/success.jsp").forward(request,
+				// response);
 				// response.getWriter().write("欢迎"+username+"登录系统");
-				//登陆成功后重定向success
-				response.sendRedirect(this.getServletContext().getContextPath()+"/day11cookieandsession/success.jsp");
+				// 登陆成功后重定向success
+				response.sendRedirect(this.getServletContext().getContextPath() + "/day11cookieandsession/success.jsp");
 			} else {
 				// 用户名错误，告知用户并转发至登录界面
 				request.setAttribute("msg", "用户名错误，正确用户名是java");
