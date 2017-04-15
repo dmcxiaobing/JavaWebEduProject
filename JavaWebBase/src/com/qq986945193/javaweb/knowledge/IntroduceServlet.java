@@ -25,15 +25,15 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 
 /**
- * Servlet的一些常用方法 简介
+ * Servlet的一些常用方法 简介 介绍
  *
  */
 public class IntroduceServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//设置编码，处理中文乱码的问题
+		// 设置编码，处理中文乱码的问题
 		req.setCharacterEncoding("utf-8");
-		
+
 		// openDownloadFile(req, resp);
 		// setHeadergzip(req, resp);
 		// setRequestDispather(req, resp);
@@ -134,5 +134,12 @@ public class IntroduceServlet extends HttpServlet {
 		}
 		oStream.close();
 		iStream.close();
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+		this.doGet(req, resp);
 	}
 }
