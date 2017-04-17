@@ -30,16 +30,30 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
  */
 public class IntroduceServlet extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// 设置编码，处理中文乱码的问题
-		req.setCharacterEncoding("utf-8");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		setCharsetEncode(request, response);
 
 		// openDownloadFile(req, resp);
 		// setHeadergzip(req, resp);
 		// setRequestDispather(req, resp);
 		// introduceCookie(req, resp);
-		introduceHttpSession(req, resp);
+		// introduceHttpSession(request, response);
 
+	}
+
+	/**
+	 * 设置编码
+	 */
+	private void setCharsetEncode(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 设置编码，处理中文乱码的问题
+//		response.setCharacterEncoding("utf-8");
+		//告诉浏览器是utf-8的编码
+//		response.setHeader("Content-type", "text/html;charset=utf-8");
+//		response.getOutputStream().write("你好程序员".getBytes("utf-8"));
+		response.setHeader("content-type", "text/html;charset=utf-8");
+		response.getOutputStream().write("你好程序员".getBytes("utf-8"));
 	}
 
 	/**
