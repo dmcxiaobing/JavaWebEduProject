@@ -49,10 +49,16 @@ public class IntroduceServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// 设置编码，处理中文乱码的问题
 //		response.setCharacterEncoding("utf-8");
+//		request.setCharacterEncoding("utf-8");
 		//告诉浏览器是utf-8的编码
 //		response.setHeader("Content-type", "text/html;charset=utf-8");
 //		response.getOutputStream().write("你好程序员".getBytes("utf-8"));
-		response.setHeader("content-type", "text/html;charset=utf-8");
+//		response.setHeader("content-type", "text/html;charset=utf-8");
+		/**
+		 * 一般设置这两个即可。
+		 */
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		response.getOutputStream().write("你好程序员".getBytes("utf-8"));
 	}
 
