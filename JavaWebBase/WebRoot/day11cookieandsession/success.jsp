@@ -30,7 +30,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		/* 	out.print("请先登录。登陆成功后才可观看。"); */
    			request.setAttribute("msg", "请先登录。登陆成功后才可观看。");
    			response.sendRedirect("login.jsp");
-   			return;
    		}else{
    		out.print("欢迎"+successMsg+"登陆系统");
    		}

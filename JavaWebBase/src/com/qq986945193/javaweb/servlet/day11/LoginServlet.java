@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
 		String username = request.getParameter("username");
 		if (username == null || username.equals("")) {
 			// 如果输入的用户名为null,则提示一下
@@ -58,6 +59,10 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				// 用户名错误，告知用户并转发至登录界面
 				request.setAttribute("msg", "用户名错误，正确用户名是java");
+				Cookie cookie = new Cookie("username", username);
+				cookie.setMaxAge(24 * 60 * 60);// 设置存活时间为一天
+				// 添加cookie
+				response.addCookie(cookie);
 				request.getRequestDispatcher("/day11cookieandsession/login.jsp").forward(request, response);
 			}
 		}
