@@ -29,7 +29,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		if(successMsg == null || successMsg.equals("")){
    		/* 	out.print("请先登录。登陆成功后才可观看。"); */
    			request.setAttribute("msg", "请先登录。登陆成功后才可观看。");
-   			response.sendRedirect("login.jsp");
+   			request.getRequestDispatcher("login.jsp").forward(request, response);
+   			//response.sendRedirect("login.jsp");
    		}else{
    		out.print("欢迎"+successMsg+"登陆系统");
    		}

@@ -193,6 +193,11 @@
 		<servlet-name>IntroduceServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.knowledge.IntroduceServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>day11VerifyCodeServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.VerifyCodeServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -343,6 +348,10 @@
 		<servlet-name>day11LoginServlet</servlet-name>
 		<url-pattern>/day11LoginServlet</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>day11VerifyCodeServlet</servlet-name>
+    <url-pattern>/day11VerifyCodeServlet</url-pattern>
+  </servlet-mapping>
 
 	<context-param>
 		<param-name>context-param</param-name>
