@@ -1,4 +1,4 @@
-package com.qq986945193.javaweb.domain.day12;
+package com.qq986945193.javaweb.domain;
 
 /**
  * BeanUtils的使用

@@ -197,6 +197,11 @@
     <servlet-name>day11VerifyCodeServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.VerifyCodeServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>MvcClickServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.MvcClickServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -351,6 +356,10 @@
   <servlet-mapping>
     <servlet-name>day11VerifyCodeServlet</servlet-name>
     <url-pattern>/day11VerifyCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MvcClickServlet</servlet-name>
+    <url-pattern>/MvcClickServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>

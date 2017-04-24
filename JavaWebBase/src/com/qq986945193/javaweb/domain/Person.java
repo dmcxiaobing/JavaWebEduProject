@@ -1,4 +1,4 @@
-package com.qq986945193.javaweb.domain.day12;
+package com.qq986945193.javaweb.domain;
 /**
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing

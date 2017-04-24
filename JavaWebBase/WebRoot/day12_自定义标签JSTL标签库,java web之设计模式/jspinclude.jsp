@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'jstl.jsp' starting page</title>
+    <title>My JSP 'jspinclude.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -24,19 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <%
-    	request.setAttribute("code", "<script>alert('helloworld');</script>");
-    %>
-    <%-- 从request域中取出值 --%>
-    ${code }
-    <br/>
-    <%
-    
-    	String name = request.getParameter("name1");
-    	String	name2 = request.getParameter("name2");
-    	out.print(name+","+name2);
-    
-    
-     %>
+  	<!-- 动态包含 -->
+	<jsp:include page="jstl.jsp"></jsp:include>
   </body>
 </html>

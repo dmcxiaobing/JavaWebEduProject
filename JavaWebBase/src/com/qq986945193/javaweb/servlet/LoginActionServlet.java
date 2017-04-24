@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONSerializer;
+import com.qq986945193.javaweb.domain.LoginActionServletBean;
 
-import com.qq986945193.javaweb.domain.day12.LoginActionServletBean;
+import net.sf.json.JSONSerializer;
 /**
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing
