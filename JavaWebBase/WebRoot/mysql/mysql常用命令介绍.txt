@@ -1,119 +1,122 @@
-1¡¢Á¬½ÓMysql
-¸ñÊ½£º mysql -hÖ÷»úµØÖ· -uÓÃ»§Ãû £­pÓÃ»§ÃÜÂë
+mysqlå¸¸ç”¨åŸºæœ¬å‘½ä»¤
 
-1¡¢Á¬½Óµ½±¾»úÉÏµÄMYSQL¡£
-Ê×ÏÈ´ò¿ªDOS´°¿Ú£¬È»ºó½øÈëÄ¿Â¼mysql\bin£¬ÔÙ¼üÈëÃüÁîmysql -u root -p£¬»Ø³µºóÌáÊ¾ÄãÊäÃÜÂë.×¢ÒâÓÃ»§ÃûÇ°¿ÉÒÔÓĞ¿Õ¸ñÒ²¿ÉÒÔÃ»ÓĞ¿Õ¸ñ£¬µ«ÊÇÃÜÂëÇ°±ØĞëÃ»ÓĞ¿Õ¸ñ£¬·ñÔòÈÃÄãÖØĞÂÊäÈëÃÜÂë¡£
+1ã€è¿æ¥Mysql
 
-Èç¹û¸Õ°²×°ºÃMYSQL£¬³¬¼¶ÓÃ»§rootÊÇÃ»ÓĞÃÜÂëµÄ£¬¹ÊÖ±½Ó»Ø³µ¼´¿É½øÈëµ½MYSQLÖĞÁË£¬MYSQLµÄÌáÊ¾·ûÊÇ£º mysql>
+æ ¼å¼ï¼š mysql -hä¸»æœºåœ°å€ -uç”¨æˆ·å ï¼pç”¨æˆ·å¯†ç 
 
-2¡¢Á¬½Óµ½Ô¶³ÌÖ÷»úÉÏµÄMYSQL¡£¼ÙÉèÔ¶³ÌÖ÷»úµÄIPÎª£º110.110.110.110£¬ÓÃ»§ÃûÎªroot,ÃÜÂëÎªabcd123¡£Ôò¼üÈëÒÔÏÂÃüÁî£º
-    mysql -h110.110.110.110 -u root -p 123;£¨×¢:uÓërootÖ®¼ä¿ÉÒÔ²»ÓÃ¼Ó¿Õ¸ñ£¬ÆäËüÒ²Ò»Ñù£©
+1ã€è¿æ¥åˆ°æœ¬æœºä¸Šçš„MYSQLã€‚
+é¦–å…ˆæ‰“å¼€DOSçª—å£ï¼Œç„¶åè¿›å…¥ç›®å½•mysql\binï¼Œå†é”®å…¥å‘½ä»¤mysql -u root -pï¼Œå›è½¦åæç¤ºä½ è¾“å¯†ç .æ³¨æ„ç”¨æˆ·åå‰å¯ä»¥æœ‰ç©ºæ ¼ä¹Ÿå¯ä»¥æ²¡æœ‰ç©ºæ ¼ï¼Œä½†æ˜¯å¯†ç å‰å¿…é¡»æ²¡æœ‰ç©ºæ ¼ï¼Œå¦åˆ™è®©ä½ é‡æ–°è¾“å…¥å¯†ç ã€‚
 
-3¡¢ÍË³öMYSQLÃüÁî£º exit £¨»Ø³µ£©
+å¦‚æœåˆšå®‰è£…å¥½MYSQLï¼Œè¶…çº§ç”¨æˆ·rootæ˜¯æ²¡æœ‰å¯†ç çš„ï¼Œæ•…ç›´æ¥å›è½¦å³å¯è¿›å…¥åˆ°MYSQLä¸­äº†ï¼ŒMYSQLçš„æç¤ºç¬¦æ˜¯ï¼š mysql>
+
+2ã€è¿æ¥åˆ°è¿œç¨‹ä¸»æœºä¸Šçš„MYSQLã€‚å‡è®¾è¿œç¨‹ä¸»æœºçš„IPä¸ºï¼š110.110.110.110ï¼Œç”¨æˆ·åä¸ºroot,å¯†ç ä¸ºabcd123ã€‚åˆ™é”®å…¥ä»¥ä¸‹å‘½ä»¤ï¼š
+    mysql -h110.110.110.110 -u root -p 123;ï¼ˆæ³¨:uä¸rootä¹‹é—´å¯ä»¥ä¸ç”¨åŠ ç©ºæ ¼ï¼Œå…¶å®ƒä¹Ÿä¸€æ ·ï¼‰
+
+3ã€é€€å‡ºMYSQLå‘½ä»¤ï¼š exit ï¼ˆå›è½¦ï¼‰
  
-2¡¢ĞŞ¸ÄÃÜÂë
-¸ñÊ½£ºmysqladmin -uÓÃ»§Ãû -p¾ÉÃÜÂë password ĞÂÃÜÂë
+2ã€ä¿®æ”¹å¯†ç 
+æ ¼å¼ï¼šmysqladmin -uç”¨æˆ·å -pæ—§å¯†ç  password æ–°å¯†ç 
 
-1¡¢¸øroot¼Ó¸öÃÜÂëab12¡£
-Ê×ÏÈÔÚDOSÏÂ½øÈëÄ¿Â¼mysql\bin£¬È»ºó¼üÈëÒÔÏÂÃüÁî
+1ã€ç»™rootåŠ ä¸ªå¯†ç ab12ã€‚
+é¦–å…ˆåœ¨DOSä¸‹è¿›å…¥ç›®å½•mysql\binï¼Œç„¶åé”®å…¥ä»¥ä¸‹å‘½ä»¤
     mysqladmin -u root -password ab12
-×¢£ºÒòÎª¿ªÊ¼Ê±rootÃ»ÓĞÃÜÂë£¬ËùÒÔ-p¾ÉÃÜÂëÒ»Ïî¾Í¿ÉÒÔÊ¡ÂÔÁË¡£
+æ³¨ï¼šå› ä¸ºå¼€å§‹æ—¶rootæ²¡æœ‰å¯†ç ï¼Œæ‰€ä»¥-pæ—§å¯†ç ä¸€é¡¹å°±å¯ä»¥çœç•¥äº†ã€‚
 
-2¡¢ÔÙ½«rootµÄÃÜÂë¸ÄÎªdjg345¡£
+2ã€å†å°†rootçš„å¯†ç æ”¹ä¸ºdjg345ã€‚
     mysqladmin -u root -p ab12 password djg345
-3¡¢Ôö¼ÓĞÂÓÃ»§
-×¢Òâ£ººÍÉÏÃæ²»Í¬£¬ÏÂÃæµÄÒòÎªÊÇMYSQL»·¾³ÖĞµÄÃüÁî£¬ËùÒÔºóÃæ¶¼´øÒ»¸ö·ÖºÅ×÷ÎªÃüÁî½áÊø·û
+3ã€å¢åŠ æ–°ç”¨æˆ·
+æ³¨æ„ï¼šå’Œä¸Šé¢ä¸åŒï¼Œä¸‹é¢çš„å› ä¸ºæ˜¯MYSQLç¯å¢ƒä¸­çš„å‘½ä»¤ï¼Œæ‰€ä»¥åé¢éƒ½å¸¦ä¸€ä¸ªåˆ†å·ä½œä¸ºå‘½ä»¤ç»“æŸç¬¦
 
-¸ñÊ½£ºgrant select on Êı¾İ¿â.* to ÓÃ»§Ãû@µÇÂ¼Ö÷»ú identified by ¡°ÃÜÂë¡±
+æ ¼å¼ï¼šgrant select on æ•°æ®åº“.* to ç”¨æˆ·å@ç™»å½•ä¸»æœº identified by â€œå¯†ç â€
 
-1¡¢Ôö¼ÓÒ»¸öÓÃ»§test1ÃÜÂëÎªabc£¬ÈÃËû¿ÉÒÔÔÚÈÎºÎÖ÷»úÉÏµÇÂ¼£¬²¢¶ÔËùÓĞÊı¾İ¿âÓĞ²éÑ¯¡¢²åÈë¡¢ĞŞ¸Ä¡¢É¾³ıµÄÈ¨ÏŞ¡£Ê×ÏÈÓÃrootÓÃ»§Á¬ÈëMYSQL£¬È»ºó¼üÈëÒÔÏÂÃüÁî£º
-    grant select,insert,update,delete on *.* to [email=test1@¡±%]test1@¡±%[/email]¡± Identified by ¡°abc¡±;
+1ã€å¢åŠ ä¸€ä¸ªç”¨æˆ·test1å¯†ç ä¸ºabcï¼Œè®©ä»–å¯ä»¥åœ¨ä»»ä½•ä¸»æœºä¸Šç™»å½•ï¼Œå¹¶å¯¹æ‰€æœ‰æ•°æ®åº“æœ‰æŸ¥è¯¢ã€æ’å…¥ã€ä¿®æ”¹ã€åˆ é™¤çš„æƒé™ã€‚é¦–å…ˆç”¨rootç”¨æˆ·è¿å…¥MYSQLï¼Œç„¶åé”®å…¥ä»¥ä¸‹å‘½ä»¤ï¼š
+    grant select,insert,update,delete on *.* to [email=test1@â€%]test1@â€%[/email]â€ Identified by â€œabcâ€;
 
-µ«Ôö¼ÓµÄÓÃ»§ÊÇÊ®·ÖÎ£ÏÕµÄ£¬ÄãÏëÈçÄ³¸öÈËÖªµÀtest1µÄÃÜÂë£¬ÄÇÃ´Ëû¾Í¿ÉÒÔÔÚinternetÉÏµÄÈÎºÎÒ»Ì¨µçÄÔÉÏµÇÂ¼ÄãµÄmysqlÊı¾İ¿â²¢¶ÔÄãµÄÊı¾İ¿ÉÒÔÎªËùÓûÎªÁË£¬½â¾ö°ì·¨¼û2¡£
+ä½†å¢åŠ çš„ç”¨æˆ·æ˜¯ååˆ†å±é™©çš„ï¼Œä½ æƒ³å¦‚æŸä¸ªäººçŸ¥é“test1çš„å¯†ç ï¼Œé‚£ä¹ˆä»–å°±å¯ä»¥åœ¨internetä¸Šçš„ä»»ä½•ä¸€å°ç”µè„‘ä¸Šç™»å½•ä½ çš„mysqlæ•°æ®åº“å¹¶å¯¹ä½ çš„æ•°æ®å¯ä»¥ä¸ºæ‰€æ¬²ä¸ºäº†ï¼Œè§£å†³åŠæ³•è§2ã€‚
 
-2¡¢Ôö¼ÓÒ»¸öÓÃ»§test2ÃÜÂëÎªabc,ÈÃËûÖ»¿ÉÒÔÔÚlocalhostÉÏµÇÂ¼£¬²¢¿ÉÒÔ¶ÔÊı¾İ¿âmydb½øĞĞ²éÑ¯¡¢²åÈë¡¢ĞŞ¸Ä¡¢É¾³ıµÄ²Ù×÷£¨localhostÖ¸±¾µØÖ÷»ú£¬¼´MYSQLÊı¾İ¿âËùÔÚµÄÄÇÌ¨Ö÷»ú£©£¬ÕâÑùÓÃ»§¼´Ê¹ÓÃÖªµÀtest2µÄÃÜÂë£¬ËûÒ²ÎŞ·¨´ÓinternetÉÏÖ±½Ó·ÃÎÊÊı¾İ¿â£¬Ö»ÄÜÍ¨¹ıMYSQLÖ÷»úÉÏµÄwebÒ³À´·ÃÎÊÁË¡£
-    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by ¡°abc¡±;
+2ã€å¢åŠ ä¸€ä¸ªç”¨æˆ·test2å¯†ç ä¸ºabc,è®©ä»–åªå¯ä»¥åœ¨localhostä¸Šç™»å½•ï¼Œå¹¶å¯ä»¥å¯¹æ•°æ®åº“mydbè¿›è¡ŒæŸ¥è¯¢ã€æ’å…¥ã€ä¿®æ”¹ã€åˆ é™¤çš„æ“ä½œï¼ˆlocalhostæŒ‡æœ¬åœ°ä¸»æœºï¼Œå³MYSQLæ•°æ®åº“æ‰€åœ¨çš„é‚£å°ä¸»æœºï¼‰ï¼Œè¿™æ ·ç”¨æˆ·å³ä½¿ç”¨çŸ¥é“test2çš„å¯†ç ï¼Œä»–ä¹Ÿæ— æ³•ä»internetä¸Šç›´æ¥è®¿é—®æ•°æ®åº“ï¼Œåªèƒ½é€šè¿‡MYSQLä¸»æœºä¸Šçš„webé¡µæ¥è®¿é—®äº†ã€‚
+    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by â€œabcâ€;
 
-Èç¹ûÄã²»Ïëtest2ÓĞÃÜÂë£¬¿ÉÒÔÔÙ´òÒ»¸öÃüÁî½«ÃÜÂëÏûµô¡£
-    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by ¡°¡±;
+å¦‚æœä½ ä¸æƒ³test2æœ‰å¯†ç ï¼Œå¯ä»¥å†æ‰“ä¸€ä¸ªå‘½ä»¤å°†å¯†ç æ¶ˆæ‰ã€‚
+    grant select,insert,update,delete on mydb.* to [email=test2@localhost]test2@localhost[/email] identified by â€œâ€;
  
-4.1 ´´½¨Êı¾İ¿â
-×¢Òâ£º´´½¨Êı¾İ¿âÖ®Ç°ÒªÏÈÁ¬½ÓMysql·şÎñÆ÷
+4.1 åˆ›å»ºæ•°æ®åº“
+æ³¨æ„ï¼šåˆ›å»ºæ•°æ®åº“ä¹‹å‰è¦å…ˆè¿æ¥MysqlæœåŠ¡å™¨
 
-ÃüÁî£ºcreate database <Êı¾İ¿âÃû>
+å‘½ä»¤ï¼šcreate database <æ•°æ®åº“å>
 
-Àı1£º½¨Á¢Ò»¸öÃûÎªxhkdbµÄÊı¾İ¿â
+ä¾‹1ï¼šå»ºç«‹ä¸€ä¸ªåä¸ºxhkdbçš„æ•°æ®åº“
    mysql> create database xhkdb;
 
-Àı2£º´´½¨Êı¾İ¿â²¢·ÖÅäÓÃ»§
+ä¾‹2ï¼šåˆ›å»ºæ•°æ®åº“å¹¶åˆ†é…ç”¨æˆ·
 
-¢ÙCREATE DATABASE Êı¾İ¿âÃû;
+â‘ CREATE DATABASE æ•°æ®åº“å;
 
-¢ÚGRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON Êı¾İ¿âÃû.* TO Êı¾İ¿âÃû@localhost IDENTIFIED BY 'ÃÜÂë';
+â‘¡GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,ALTER ON æ•°æ®åº“å.* TO æ•°æ®åº“å@localhost IDENTIFIED BY 'å¯†ç ';
 
-¢ÛSET PASSWORD FOR 'Êı¾İ¿âÃû'@'localhost' = OLD_PASSWORD('ÃÜÂë');
+â‘¢SET PASSWORD FOR 'æ•°æ®åº“å'@'localhost' = OLD_PASSWORD('å¯†ç ');
 
-ÒÀ´ÎÖ´ĞĞ3¸öÃüÁîÍê³ÉÊı¾İ¿â´´½¨¡£×¢Òâ£ºÖĞÎÄ ¡°ÃÜÂë¡±ºÍ¡°Êı¾İ¿â¡±ÊÇ»§×Ô¼ºĞèÒªÉèÖÃµÄ¡£
-4.2 ÏÔÊ¾Êı¾İ¿â
-ÃüÁî£ºshow databases £¨×¢Òâ£º×îºóÓĞ¸ös£©
+ä¾æ¬¡æ‰§è¡Œ3ä¸ªå‘½ä»¤å®Œæˆæ•°æ®åº“åˆ›å»ºã€‚æ³¨æ„ï¼šä¸­æ–‡ â€œå¯†ç â€å’Œâ€œæ•°æ®åº“â€æ˜¯æˆ·è‡ªå·±éœ€è¦è®¾ç½®çš„ã€‚
+4.2 æ˜¾ç¤ºæ•°æ®åº“
+å‘½ä»¤ï¼šshow databases ï¼ˆæ³¨æ„ï¼šæœ€åæœ‰ä¸ªsï¼‰
 mysql> show databases;
 
-×¢Òâ£ºÎªÁË²»ÔÙÏÔÊ¾µÄÊ±ºòÂÒÂë£¬ÒªĞŞ¸ÄÊı¾İ¿âÄ¬ÈÏ±àÂë¡£ÒÔÏÂÒÔGBK±àÂëÒ³ÃæÎªÀı½øĞĞËµÃ÷£º
+æ³¨æ„ï¼šä¸ºäº†ä¸å†æ˜¾ç¤ºçš„æ—¶å€™ä¹±ç ï¼Œè¦ä¿®æ”¹æ•°æ®åº“é»˜è®¤ç¼–ç ã€‚ä»¥ä¸‹ä»¥GBKç¼–ç é¡µé¢ä¸ºä¾‹è¿›è¡Œè¯´æ˜ï¼š
 
-1¡¢ĞŞ¸ÄMYSQLµÄÅäÖÃÎÄ¼ş£ºmy.iniÀïÃæĞŞ¸Ädefault-character-set=gbk
-2¡¢´úÂëÔËĞĞÊ±ĞŞ¸Ä£º
-   ¢ÙJava´úÂë£ºjdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=gbk
-   ¢ÚPHP´úÂë£ºheader("Content-Type:text/html;charset=gb2312");
-   ¢ÛCÓïÑÔ´úÂë£ºint mysql_set_character_set( MYSQL * mysql, char * csname)£»
-¸Ãº¯ÊıÓÃÓÚÎªµ±Ç°Á¬½ÓÉèÖÃÄ¬ÈÏµÄ×Ö·û¼¯¡£×Ö·û´®csnameÖ¸¶¨ÁË1¸öÓĞĞ§µÄ×Ö·û¼¯Ãû³Æ¡£Á¬½ÓĞ£¶Ô³ÉÎª×Ö·û¼¯µÄÄ¬ÈÏĞ£¶Ô¡£¸Ãº¯ÊıµÄ¹¤×÷·½Ê½ÓëSET NAMESÓï¾äÀàËÆ£¬µ«Ëü»¹ÄÜÉèÖÃmysql- > charsetµÄÖµ£¬´Ó¶øÓ°ÏìÁËÓÉmysql_real_escape_string() ÉèÖÃµÄ×Ö·û¼¯¡£
-4.3 É¾³ıÊı¾İ¿â
-ÃüÁî£ºdrop database <Êı¾İ¿âÃû>
-ÀıÈç£ºÉ¾³ıÃûÎª xhkdbµÄÊı¾İ¿â
+1ã€ä¿®æ”¹MYSQLçš„é…ç½®æ–‡ä»¶ï¼šmy.inié‡Œé¢ä¿®æ”¹default-character-set=gbk
+2ã€ä»£ç è¿è¡Œæ—¶ä¿®æ”¹ï¼š
+   â‘ Javaä»£ç ï¼šjdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=gbk
+   â‘¡PHPä»£ç ï¼šheader("Content-Type:text/html;charset=gb2312");
+   â‘¢Cè¯­è¨€ä»£ç ï¼šint mysql_set_character_set( MYSQL * mysql, char * csname)ï¼›
+è¯¥å‡½æ•°ç”¨äºä¸ºå½“å‰è¿æ¥è®¾ç½®é»˜è®¤çš„å­—ç¬¦é›†ã€‚å­—ç¬¦ä¸²csnameæŒ‡å®šäº†1ä¸ªæœ‰æ•ˆçš„å­—ç¬¦é›†åç§°ã€‚è¿æ¥æ ¡å¯¹æˆä¸ºå­—ç¬¦é›†çš„é»˜è®¤æ ¡å¯¹ã€‚è¯¥å‡½æ•°çš„å·¥ä½œæ–¹å¼ä¸SET NAMESè¯­å¥ç±»ä¼¼ï¼Œä½†å®ƒè¿˜èƒ½è®¾ç½®mysql- > charsetçš„å€¼ï¼Œä»è€Œå½±å“äº†ç”±mysql_real_escape_string() è®¾ç½®çš„å­—ç¬¦é›†ã€‚
+4.3 åˆ é™¤æ•°æ®åº“
+å‘½ä»¤ï¼šdrop database <æ•°æ®åº“å>
+ä¾‹å¦‚ï¼šåˆ é™¤åä¸º xhkdbçš„æ•°æ®åº“
 mysql> drop database xhkdb;
 
-Àı×Ó1£ºÉ¾³ıÒ»¸öÒÑ¾­È·¶¨´æÔÚµÄÊı¾İ¿â
+ä¾‹å­1ï¼šåˆ é™¤ä¸€ä¸ªå·²ç»ç¡®å®šå­˜åœ¨çš„æ•°æ®åº“
    mysql> drop database drop_database;
    Query OK, 0 rows affected (0.00 sec)
 
-Àı×Ó2£ºÉ¾³ıÒ»¸ö²»È·¶¨´æÔÚµÄÊı¾İ¿â
+ä¾‹å­2ï¼šåˆ é™¤ä¸€ä¸ªä¸ç¡®å®šå­˜åœ¨çš„æ•°æ®åº“
    mysql> drop database drop_database;
    ERROR 1008 (HY000): Can't drop database 'drop_database'; database doesn't exist
-      //·¢Éú´íÎó£¬²»ÄÜÉ¾³ı'drop_database'Êı¾İ¿â£¬¸ÃÊı¾İ¿â²»´æÔÚ¡£
+      //å‘ç”Ÿé”™è¯¯ï¼Œä¸èƒ½åˆ é™¤'drop_database'æ•°æ®åº“ï¼Œè¯¥æ•°æ®åº“ä¸å­˜åœ¨ã€‚
    mysql> drop database if exists drop_database;
-   Query OK, 0 rows affected, 1 warning (0.00 sec)//²úÉúÒ»¸ö¾¯¸æËµÃ÷´ËÊı¾İ¿â²»´æÔÚ
+   Query OK, 0 rows affected, 1 warning (0.00 sec)//äº§ç”Ÿä¸€ä¸ªè­¦å‘Šè¯´æ˜æ­¤æ•°æ®åº“ä¸å­˜åœ¨
    mysql> create database drop_database;
    Query OK, 1 row affected (0.00 sec)
-   mysql> drop database if exists drop_database;//if exists ÅĞ¶ÏÊı¾İ¿âÊÇ·ñ´æÔÚ£¬²»´æÔÚÒ²²»²úÉú´íÎó
+   mysql> drop database if exists drop_database;//if exists åˆ¤æ–­æ•°æ®åº“æ˜¯å¦å­˜åœ¨ï¼Œä¸å­˜åœ¨ä¹Ÿä¸äº§ç”Ÿé”™è¯¯
    Query OK, 0 rows affected (0.00 sec)
-4.4 Á¬½ÓÊı¾İ¿â
-ÃüÁî£º use <Êı¾İ¿âÃû>
+4.4 è¿æ¥æ•°æ®åº“
+å‘½ä»¤ï¼š use <æ•°æ®åº“å>
 
-ÀıÈç£ºÈç¹ûxhkdbÊı¾İ¿â´æÔÚ£¬³¢ÊÔ´æÈ¡Ëü£º
+ä¾‹å¦‚ï¼šå¦‚æœxhkdbæ•°æ®åº“å­˜åœ¨ï¼Œå°è¯•å­˜å–å®ƒï¼š
    mysql> use xhkdb;
-ÆÁÄ»ÌáÊ¾£ºDatabase changed
+å±å¹•æç¤ºï¼šDatabase changed
 
-use Óï¾ä¿ÉÒÔÍ¨¸æMySQL°Ñdb_nameÊı¾İ¿â×÷ÎªÄ¬ÈÏ£¨µ±Ç°£©Êı¾İ¿âÊ¹ÓÃ£¬ÓÃÓÚºóĞøÓï¾ä¡£¸ÃÊı¾İ¿â±£³ÖÎªÄ¬ÈÏÊı¾İ¿â£¬Ö±µ½Óï¶ÎµÄ½áÎ²£¬»òÕßÖ±µ½·¢²¼Ò»¸ö²»Í¬µÄUSEÓï¾ä£º
+use è¯­å¥å¯ä»¥é€šå‘ŠMySQLæŠŠdb_nameæ•°æ®åº“ä½œä¸ºé»˜è®¤ï¼ˆå½“å‰ï¼‰æ•°æ®åº“ä½¿ç”¨ï¼Œç”¨äºåç»­è¯­å¥ã€‚è¯¥æ•°æ®åº“ä¿æŒä¸ºé»˜è®¤æ•°æ®åº“ï¼Œç›´åˆ°è¯­æ®µçš„ç»“å°¾ï¼Œæˆ–è€…ç›´åˆ°å‘å¸ƒä¸€ä¸ªä¸åŒçš„USEè¯­å¥ï¼š
    mysql> USE db1;
    mysql> SELECT COUNT(*) FROM mytable;   # selects from db1.mytable
    mysql> USE db2;
    mysql> SELECT COUNT(*) FROM mytable;   # selects from db2.mytable
 
-Ê¹ÓÃUSEÓï¾äÎªÒ»¸öÌØ¶¨µÄµ±Ç°µÄÊı¾İ¿â×ö±ê¼Ç£¬²»»á×è°­Äú·ÃÎÊÆäËüÊı¾İ¿âÖĞµÄ±í¡£ÏÂÃæµÄÀı×Ó¿ÉÒÔ´Ódb1Êı¾İ¿â·ÃÎÊ×÷Õß±í£¬²¢´Ódb2Êı¾İ¿â·ÃÎÊ±à¼­±í£º
+ä½¿ç”¨USEè¯­å¥ä¸ºä¸€ä¸ªç‰¹å®šçš„å½“å‰çš„æ•°æ®åº“åšæ ‡è®°ï¼Œä¸ä¼šé˜»ç¢æ‚¨è®¿é—®å…¶å®ƒæ•°æ®åº“ä¸­çš„è¡¨ã€‚ä¸‹é¢çš„ä¾‹å­å¯ä»¥ä»db1æ•°æ®åº“è®¿é—®ä½œè€…è¡¨ï¼Œå¹¶ä»db2æ•°æ®åº“è®¿é—®ç¼–è¾‘è¡¨ï¼š
    mysql> USE db1;
    mysql> SELECT author_name,editor_name FROM author,db2.editor
        ->        WHERE author.editor_id = db2.editor.editor_id;
 
-USEÓï¾ä±»ÉèÁ¢³öÀ´£¬ÓÃÓÚÓëSybaseÏà¼æÈİ¡£
+USEè¯­å¥è¢«è®¾ç«‹å‡ºæ¥ï¼Œç”¨äºä¸Sybaseç›¸å…¼å®¹ã€‚
 
-ÓĞĞ©ÍøÓÑÎÊµ½£¬Á¬½ÓÒÔºóÔõÃ´ÍË³ö¡£ÆäÊµ£¬²»ÓÃÍË³öÀ´£¬use Êı¾İ¿âºó£¬Ê¹ÓÃshow databases¾ÍÄÜ²éÑ¯ËùÓĞÊı¾İ¿â£¬Èç¹ûÏëÌøµ½ÆäËûÊı¾İ¿â£¬ÓÃ
-   use ÆäËûÊı¾İ¿âÃû×Ö
-¾Í¿ÉÒÔÁË¡£
-4.5 µ±Ç°Ñ¡ÔñµÄÊı¾İ¿â
-ÃüÁî£ºmysql> select database();
+æœ‰äº›ç½‘å‹é—®åˆ°ï¼Œè¿æ¥ä»¥åæ€ä¹ˆé€€å‡ºã€‚å…¶å®ï¼Œä¸ç”¨é€€å‡ºæ¥ï¼Œuse æ•°æ®åº“åï¼Œä½¿ç”¨show databaseså°±èƒ½æŸ¥è¯¢æ‰€æœ‰æ•°æ®åº“ï¼Œå¦‚æœæƒ³è·³åˆ°å…¶ä»–æ•°æ®åº“ï¼Œç”¨
+   use å…¶ä»–æ•°æ®åº“åå­—
+å°±å¯ä»¥äº†ã€‚
+4.5 å½“å‰é€‰æ‹©çš„æ•°æ®åº“
+å‘½ä»¤ï¼šmysql> select database();
 
-MySQLÖĞSELECTÃüÁîÀàËÆÓÚÆäËû±à³ÌÓïÑÔÀïµÄprint»òÕßwrite£¬Äã¿ÉÒÔÓÃËüÀ´ÏÔÊ¾Ò»¸ö×Ö·û´®¡¢Êı×Ö¡¢ÊıÑ§±í´ïÊ½µÄ½á¹ûµÈµÈ¡£ÈçºÎÊ¹ÓÃMySQLÖĞSELECTÃüÁîµÄÌØÊâ¹¦ÄÜ£¿
+MySQLä¸­SELECTå‘½ä»¤ç±»ä¼¼äºå…¶ä»–ç¼–ç¨‹è¯­è¨€é‡Œçš„printæˆ–è€…writeï¼Œä½ å¯ä»¥ç”¨å®ƒæ¥æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²ã€æ•°å­—ã€æ•°å­¦è¡¨è¾¾å¼çš„ç»“æœç­‰ç­‰ã€‚å¦‚ä½•ä½¿ç”¨MySQLä¸­SELECTå‘½ä»¤çš„ç‰¹æ®ŠåŠŸèƒ½ï¼Ÿ
 
-1.ÏÔÊ¾MYSQLµÄ°æ±¾
+1.æ˜¾ç¤ºMYSQLçš„ç‰ˆæœ¬
 mysql> select version(); 
 +-----------------------+ 
 | version()             | 
@@ -122,7 +125,7 @@ mysql> select version();
 +-----------------------+ 
 1 row in set (0.02 sec) 
 
-2. ÏÔÊ¾µ±Ç°Ê±¼ä
+2. æ˜¾ç¤ºå½“å‰æ—¶é—´
 mysql> select now(); 
 +---------------------+ 
 | now()               | 
@@ -131,7 +134,7 @@ mysql> select now();
 +---------------------+ 
 1 row in set (0.04 sec) 
 
-3. ÏÔÊ¾ÄêÔÂÈÕ
+3. æ˜¾ç¤ºå¹´æœˆæ—¥
 SELECT DAYOFMONTH(CURRENT_DATE); 
 +--------------------------+ 
 | DAYOFMONTH(CURRENT_DATE) | 
@@ -156,7 +159,7 @@ SELECT YEAR(CURRENT_DATE);
 +--------------------+ 
 1 row in set (0.00 sec) 
 
-4. ÏÔÊ¾×Ö·û´®
+4. æ˜¾ç¤ºå­—ç¬¦ä¸²
 mysql> SELECT "welecome to my blog!"; 
 +----------------------+ 
 | welecome to my blog! | 
@@ -165,7 +168,7 @@ mysql> SELECT "welecome to my blog!";
 +----------------------+ 
 1 row in set (0.00 sec) 
 
-5. µ±¼ÆËãÆ÷ÓÃ
+5. å½“è®¡ç®—å™¨ç”¨
 select ((4 * 4) / 10 ) + 25; 
 +----------------------+ 
 | ((4 * 4) / 10 ) + 25 | 
@@ -174,7 +177,7 @@ select ((4 * 4) / 10 ) + 25;
 +----------------------+ 
 1 row in set (0.00 sec) 
 
-6. ´®½Ó×Ö·û´®
+6. ä¸²æ¥å­—ç¬¦ä¸²
 select CONCAT(f_name, " ", l_name) 
 AS Name 
 from employee_data 
@@ -187,66 +190,66 @@ where title = 'Marketing Executive';
 | Joseph Irvine | 
 +---------------+ 
 3 rows in set (0.00 sec) 
-×¢Òâ£ºÕâÀïÓÃµ½CONCAT()º¯Êı£¬ÓÃÀ´°Ñ×Ö·û´®´®½ÓÆğÀ´¡£ÁíÍâ£¬ÎÒÃÇ»¹ÓÃµ½ÒÔÇ°Ñ§µ½µÄAS¸ø½á¹ûÁĞ'CONCAT(f_name, " ", l_name)'ÆğÁË¸ö¼ÙÃû¡£
-5.1 ´´½¨Êı¾İ±í
-ÃüÁî£ºcreate table <±íÃû> ( <×Ö¶ÎÃû1> <ÀàĞÍ1> [,..<×Ö¶ÎÃûn> <ÀàĞÍn>]);
+æ³¨æ„ï¼šè¿™é‡Œç”¨åˆ°CONCAT()å‡½æ•°ï¼Œç”¨æ¥æŠŠå­—ç¬¦ä¸²ä¸²æ¥èµ·æ¥ã€‚å¦å¤–ï¼Œæˆ‘ä»¬è¿˜ç”¨åˆ°ä»¥å‰å­¦åˆ°çš„ASç»™ç»“æœåˆ—'CONCAT(f_name, " ", l_name)'èµ·äº†ä¸ªå‡åã€‚
+5.1 åˆ›å»ºæ•°æ®è¡¨
+å‘½ä»¤ï¼šcreate table <è¡¨å> ( <å­—æ®µå1> <ç±»å‹1> [,..<å­—æ®µån> <ç±»å‹n>]);
 
-ÀıÈç£¬½¨Á¢Ò»¸öÃûÎªMyClassµÄ±í£¬
-×Ö¶ÎÃû	Êı×ÖÀàĞÍ	Êı¾İ¿í¶È	ÊÇ·ñÎª¿Õ	ÊÇ·ñÖ÷¼ü	×Ô¶¯Ôö¼Ó	Ä¬ÈÏÖµ
-id	int	4	·ñ	primary key	auto_increment	 
-name	char	20	·ñ	 	 	 
-sex	int	4	·ñ	 	 	0
-degree	double	16	ÊÇ	 	 	 
+ä¾‹å¦‚ï¼Œå»ºç«‹ä¸€ä¸ªåä¸ºMyClassçš„è¡¨ï¼Œ
+å­—æ®µå	æ•°å­—ç±»å‹	æ•°æ®å®½åº¦	æ˜¯å¦ä¸ºç©º	æ˜¯å¦ä¸»é”®	è‡ªåŠ¨å¢åŠ 	é»˜è®¤å€¼
+id	int	4	å¦	primary key	auto_increment	 
+name	char	20	å¦	 	 	 
+sex	int	4	å¦	 	 	0
+degree	double	16	æ˜¯	 	 	 
 mysql> create table MyClass(
 > id int(4) not null primary key auto_increment,
 > name char(20) not null,
 > sex int(4) not null default '0',
 > degree double(16,2));
-5.3 É¾³ıÊı¾İ±í
-ÃüÁî£ºdrop table <±íÃû>
+5.3 åˆ é™¤æ•°æ®è¡¨
+å‘½ä»¤ï¼šdrop table <è¡¨å>
 
-ÀıÈç£ºÉ¾³ı±íÃûÎª MyClass µÄ±í
+ä¾‹å¦‚ï¼šåˆ é™¤è¡¨åä¸º MyClass çš„è¡¨
    mysql> drop table MyClass;
 
-DROP TABLEÓÃÓÚÈ¡ÏûÒ»¸ö»ò¶à¸ö±í¡£Äú±ØĞëÓĞÃ¿¸ö±íµÄDROPÈ¨ÏŞ¡£ËùÓĞµÄ±íÊı¾İºÍ±í¶¨Òå»á±»È¡Ïû£¬ËùÒÔÊ¹ÓÃ±¾Óï¾äÒªĞ¡ĞÄ£¡
+DROP TABLEç”¨äºå–æ¶ˆä¸€ä¸ªæˆ–å¤šä¸ªè¡¨ã€‚æ‚¨å¿…é¡»æœ‰æ¯ä¸ªè¡¨çš„DROPæƒé™ã€‚æ‰€æœ‰çš„è¡¨æ•°æ®å’Œè¡¨å®šä¹‰ä¼šè¢«å–æ¶ˆï¼Œæ‰€ä»¥ä½¿ç”¨æœ¬è¯­å¥è¦å°å¿ƒï¼
 
-×¢Òâ£º¶ÔÓÚÒ»¸ö´ø·ÖÇøµÄ±í£¬DROP TABLE»áÓÀ¾ÃĞÔµØÈ¡Ïû±í¶¨Òå£¬È¡Ïû¸÷·ÖÇø£¬²¢È¡Ïû´¢´æÔÚÕâĞ©·ÖÇøÖĞµÄËùÓĞÊı¾İ¡£DROP TABLE»¹»áÈ¡ÏûÓë±»È¡ÏûµÄ±íÓĞ¹ØÁªµÄ·ÖÇø¶¨Òå£¨.par£©ÎÄ¼ş¡£
+æ³¨æ„ï¼šå¯¹äºä¸€ä¸ªå¸¦åˆ†åŒºçš„è¡¨ï¼ŒDROP TABLEä¼šæ°¸ä¹…æ€§åœ°å–æ¶ˆè¡¨å®šä¹‰ï¼Œå–æ¶ˆå„åˆ†åŒºï¼Œå¹¶å–æ¶ˆå‚¨å­˜åœ¨è¿™äº›åˆ†åŒºä¸­çš„æ‰€æœ‰æ•°æ®ã€‚DROP TABLEè¿˜ä¼šå–æ¶ˆä¸è¢«å–æ¶ˆçš„è¡¨æœ‰å…³è”çš„åˆ†åŒºå®šä¹‰ï¼ˆ.parï¼‰æ–‡ä»¶ã€‚
 
-¶ÔÓë²»´æÔÚµÄ±í£¬Ê¹ÓÃIF EXISTSÓÃÓÚ·ÀÖ¹´íÎó·¢Éú¡£µ±Ê¹ÓÃIF EXISTSÊ±£¬¶ÔÓÚÃ¿¸ö²»´æÔÚµÄ±í£¬»áÉú³ÉÒ»¸öNOTE¡£
+å¯¹ä¸ä¸å­˜åœ¨çš„è¡¨ï¼Œä½¿ç”¨IF EXISTSç”¨äºé˜²æ­¢é”™è¯¯å‘ç”Ÿã€‚å½“ä½¿ç”¨IF EXISTSæ—¶ï¼Œå¯¹äºæ¯ä¸ªä¸å­˜åœ¨çš„è¡¨ï¼Œä¼šç”Ÿæˆä¸€ä¸ªNOTEã€‚
 
-RESTRICTºÍCASCADE¿ÉÒÔÊ¹·ÖÇø¸üÈİÒ×¡£Ä¿Ç°£¬RESTRICTºÍCASCADE²»Æğ×÷ÓÃ¡£
-5.4 ±í²åÈëÊı¾İ
-ÃüÁî£ºinsert into <±íÃû> [( <×Ö¶ÎÃû1>[,..<×Ö¶ÎÃûn > ])] values ( Öµ1 )[, ( Öµn )]
+RESTRICTå’ŒCASCADEå¯ä»¥ä½¿åˆ†åŒºæ›´å®¹æ˜“ã€‚ç›®å‰ï¼ŒRESTRICTå’ŒCASCADEä¸èµ·ä½œç”¨ã€‚
+5.4 è¡¨æ’å…¥æ•°æ®
+å‘½ä»¤ï¼šinsert into <è¡¨å> [( <å­—æ®µå1>[,..<å­—æ®µån > ])] values ( å€¼1 )[, ( å€¼n )]
 
-ÀıÈç£ºÍù±í MyClassÖĞ²åÈë¶şÌõ¼ÇÂ¼, Õâ¶şÌõ¼ÇÂ¼±íÊ¾£º±àºÅÎª1µÄÃûÎªTomµÄ³É¼¨Îª96.45, ±àºÅÎª2 µÄÃûÎªJoan µÄ³É¼¨Îª82.99£¬ ±àºÅÎª3 µÄÃûÎªWang µÄ³É¼¨Îª96.5¡£
+ä¾‹å¦‚ï¼šå¾€è¡¨ MyClassä¸­æ’å…¥äºŒæ¡è®°å½•, è¿™äºŒæ¡è®°å½•è¡¨ç¤ºï¼šç¼–å·ä¸º1çš„åä¸ºTomçš„æˆç»©ä¸º96.45, ç¼–å·ä¸º2 çš„åä¸ºJoan çš„æˆç»©ä¸º82.99ï¼Œ ç¼–å·ä¸º3 çš„åä¸ºWang çš„æˆç»©ä¸º96.5ã€‚
    mysql> insert into MyClass values(1,'Tom',96.45),(2,'Joan',82.99), (2,'Wang', 96.59);
 
-×¢Òâ£ºinsert intoÃ¿´ÎÖ»ÄÜÏò±íÖĞ²åÈëÒ»Ìõ¼ÇÂ¼¡£
-5.5 ²éÑ¯±íÖĞµÄÊı¾İ
-1)¡¢²éÑ¯ËùÓĞĞĞ
-ÃüÁî£º select <×Ö¶Î1£¬×Ö¶Î2£¬...> from < ±íÃû > where < ±í´ïÊ½ >
-ÀıÈç£º²é¿´±í MyClass ÖĞËùÓĞÊı¾İ
+æ³¨æ„ï¼šinsert intoæ¯æ¬¡åªèƒ½å‘è¡¨ä¸­æ’å…¥ä¸€æ¡è®°å½•ã€‚
+5.5 æŸ¥è¯¢è¡¨ä¸­çš„æ•°æ®
+1)ã€æŸ¥è¯¢æ‰€æœ‰è¡Œ
+å‘½ä»¤ï¼š select <å­—æ®µ1ï¼Œå­—æ®µ2ï¼Œ...> from < è¡¨å > where < è¡¨è¾¾å¼ >
+ä¾‹å¦‚ï¼šæŸ¥çœ‹è¡¨ MyClass ä¸­æ‰€æœ‰æ•°æ®
    mysql> select * from MyClass;
 
-2£©¡¢²éÑ¯Ç°¼¸ĞĞÊı¾İ
-ÀıÈç£º²é¿´±í MyClass ÖĞÇ°2ĞĞÊı¾İ
+2ï¼‰ã€æŸ¥è¯¢å‰å‡ è¡Œæ•°æ®
+ä¾‹å¦‚ï¼šæŸ¥çœ‹è¡¨ MyClass ä¸­å‰2è¡Œæ•°æ®
 mysql> select * from MyClass order by id limit 0,2;
 
-selectÒ»°ãÅäºÏwhereÊ¹ÓÃ£¬ÒÔ²éÑ¯¸ü¾«È·¸ü¸´ÔÓµÄÊı¾İ¡£
-5.6 É¾³ı±íÖĞÊı¾İ
+selectä¸€èˆ¬é…åˆwhereä½¿ç”¨ï¼Œä»¥æŸ¥è¯¢æ›´ç²¾ç¡®æ›´å¤æ‚çš„æ•°æ®ã€‚
+5.6 åˆ é™¤è¡¨ä¸­æ•°æ®
  
  
  
-ÃüÁî£ºdelete from ±íÃû where ±í´ïÊ½
+å‘½ä»¤ï¼šdelete from è¡¨å where è¡¨è¾¾å¼
 
-ÀıÈç£ºÉ¾³ı±í MyClassÖĞ±àºÅÎª1 µÄ¼ÇÂ¼
+ä¾‹å¦‚ï¼šåˆ é™¤è¡¨ MyClassä¸­ç¼–å·ä¸º1 çš„è®°å½•
 mysql> delete from MyClass where id=1;
 
-ÏÂÃæÊÇÒ»¸öÉ¾³ıÊı¾İÇ°ºó±íµÄ¶Ô±È¡£
+ä¸‹é¢æ˜¯ä¸€ä¸ªåˆ é™¤æ•°æ®å‰åè¡¨çš„å¯¹æ¯”ã€‚
 FirstName	LastName	Age
 Peter	Griffin	35
 Glenn	Quagmire	33
-ÏÂÃæÒÔPHP´úÂëÎªÀıÉ¾³ı "Persons" ±íÖĞËùÓĞ LastName='Griffin' µÄ¼ÇÂ¼£º
+ä¸‹é¢ä»¥PHPä»£ç ä¸ºä¾‹åˆ é™¤ "Persons" è¡¨ä¸­æ‰€æœ‰ LastName='Griffin' çš„è®°å½•ï¼š
 <?php 
    $con = mysql_connect("localhost","peter","abc123"); 
    if (!$con) 
@@ -256,128 +259,128 @@ Glenn	Quagmire	33
    mysql_select_db("my_db", $con); 
    mysql_query("DELETE FROM Persons WHERE LastName='Griffin'"); mysql_close($con); 
 ?>
-ÔÚÕâ´ÎÉ¾³ıÖ®ºó£¬±íÊÇÕâÑùµÄ£º
+åœ¨è¿™æ¬¡åˆ é™¤ä¹‹åï¼Œè¡¨æ˜¯è¿™æ ·çš„ï¼š
 FirstName	LastName	Age
 Glenn	Quagmire	33
 
-5.7 ĞŞ¸Ä±íÖĞÊı¾İ
-Óï·¨£ºupdate ±íÃû set ×Ö¶Î=ĞÂÖµ,¡­ where Ìõ¼ş
+5.7 ä¿®æ”¹è¡¨ä¸­æ•°æ®
+è¯­æ³•ï¼šupdate è¡¨å set å­—æ®µ=æ–°å€¼,â€¦ where æ¡ä»¶
    mysql> update MyClass set name='Mary' where id=1;
 
-Àı×Ó1£ºµ¥±íµÄMySQL UPDATEÓï¾ä£º
+ä¾‹å­1ï¼šå•è¡¨çš„MySQL UPDATEè¯­å¥ï¼š
    UPDATE [LOW_PRIORITY] [IGNORE] tbl_name SET col_name1=expr1 [, col_name2=expr2 ...] [WHERE where_definition] [ORDER BY ...] [LIMIT row_count]
 
-Àı×Ó2£º¶à±íµÄUPDATEÓï¾ä£º
+ä¾‹å­2ï¼šå¤šè¡¨çš„UPDATEè¯­å¥ï¼š
 UPDATE [LOW_PRIORITY] [IGNORE] table_references SET col_name1=expr1 [, col_name2=expr2 ...] [WHERE where_definition]
 
-UPDATEÓï·¨¿ÉÒÔÓÃĞÂÖµ¸üĞÂÔ­ÓĞ±íĞĞÖĞµÄ¸÷ÁĞ¡£SET×Ó¾äÖ¸Ê¾ÒªĞŞ¸ÄÄÄĞ©ÁĞºÍÒª¸øÓèÄÄĞ©Öµ¡£WHERE×Ó¾äÖ¸¶¨Ó¦¸üĞÂÄÄĞ©ĞĞ¡£Èç¹ûÃ»ÓĞWHERE×Ó¾ä£¬Ôò¸üĞÂËùÓĞµÄĞĞ¡£Èç¹ûÖ¸¶¨ÁËORDER BY×Ó¾ä£¬Ôò°´ÕÕ±»Ö¸¶¨µÄË³Ğò¶ÔĞĞ½øĞĞ¸üĞÂ¡£LIMIT×Ó¾äÓÃÓÚ¸ø¶¨Ò»¸öÏŞÖµ£¬ÏŞÖÆ¿ÉÒÔ±»¸üĞÂµÄĞĞµÄÊıÄ¿¡£
+UPDATEè¯­æ³•å¯ä»¥ç”¨æ–°å€¼æ›´æ–°åŸæœ‰è¡¨è¡Œä¸­çš„å„åˆ—ã€‚SETå­å¥æŒ‡ç¤ºè¦ä¿®æ”¹å“ªäº›åˆ—å’Œè¦ç»™äºˆå“ªäº›å€¼ã€‚WHEREå­å¥æŒ‡å®šåº”æ›´æ–°å“ªäº›è¡Œã€‚å¦‚æœæ²¡æœ‰WHEREå­å¥ï¼Œåˆ™æ›´æ–°æ‰€æœ‰çš„è¡Œã€‚å¦‚æœæŒ‡å®šäº†ORDER BYå­å¥ï¼Œåˆ™æŒ‰ç…§è¢«æŒ‡å®šçš„é¡ºåºå¯¹è¡Œè¿›è¡Œæ›´æ–°ã€‚LIMITå­å¥ç”¨äºç»™å®šä¸€ä¸ªé™å€¼ï¼Œé™åˆ¶å¯ä»¥è¢«æ›´æ–°çš„è¡Œçš„æ•°ç›®ã€‚
  
-5.8 Ôö¼Ó×Ö¶Î
-ÃüÁî£ºalter table ±íÃû add×Ö¶Î ÀàĞÍ ÆäËû;
-ÀıÈç£ºÔÚ±íMyClassÖĞÌí¼ÓÁËÒ»¸ö×Ö¶Îpasstest£¬ÀàĞÍÎªint(4)£¬Ä¬ÈÏÖµÎª0
+5.8 å¢åŠ å­—æ®µ
+å‘½ä»¤ï¼šalter table è¡¨å addå­—æ®µ ç±»å‹ å…¶ä»–;
+ä¾‹å¦‚ï¼šåœ¨è¡¨MyClassä¸­æ·»åŠ äº†ä¸€ä¸ªå­—æ®µpasstestï¼Œç±»å‹ä¸ºint(4)ï¼Œé»˜è®¤å€¼ä¸º0
    mysql> alter table MyClass add passtest int(4) default '0'
 
-¼ÓË÷Òı
-   mysql> alter table ±íÃû add index Ë÷ÒıÃû (×Ö¶ÎÃû1[£¬×Ö¶ÎÃû2 ¡­]);
-Àı×Ó£º mysql> alter table employee add index emp_name (name);
+åŠ ç´¢å¼•
+   mysql> alter table è¡¨å add index ç´¢å¼•å (å­—æ®µå1[ï¼Œå­—æ®µå2 â€¦]);
+ä¾‹å­ï¼š mysql> alter table employee add index emp_name (name);
 
-¼ÓÖ÷¹Ø¼ü×ÖµÄË÷Òı
-  mysql> alter table ±íÃû add primary key (×Ö¶ÎÃû);
-Àı×Ó£º mysql> alter table employee add primary key(id);
+åŠ ä¸»å…³é”®å­—çš„ç´¢å¼•
+  mysql> alter table è¡¨å add primary key (å­—æ®µå);
+ä¾‹å­ï¼š mysql> alter table employee add primary key(id);
 
-¼ÓÎ¨Ò»ÏŞÖÆÌõ¼şµÄË÷Òı
-   mysql> alter table ±íÃû add unique Ë÷ÒıÃû (×Ö¶ÎÃû);
-Àı×Ó£º mysql> alter table employee add unique emp_name2(cardnumber);
+åŠ å”¯ä¸€é™åˆ¶æ¡ä»¶çš„ç´¢å¼•
+   mysql> alter table è¡¨å add unique ç´¢å¼•å (å­—æ®µå);
+ä¾‹å­ï¼š mysql> alter table employee add unique emp_name2(cardnumber);
 
-É¾³ıÄ³¸öË÷Òı
-   mysql> alter table ±íÃû drop index Ë÷ÒıÃû;
-Àı×Ó£º mysql>alter table employee drop index emp_name;
+åˆ é™¤æŸä¸ªç´¢å¼•
+   mysql> alter table è¡¨å drop index ç´¢å¼•å;
+ä¾‹å­ï¼š mysql>alter table employee drop index emp_name;
 
-Ôö¼Ó×Ö¶Î£º
+å¢åŠ å­—æ®µï¼š
 mysql> ALTER TABLE table_name ADD field_name field_type;
 
-ĞŞ¸ÄÔ­×Ö¶ÎÃû³Æ¼°ÀàĞÍ£º
+ä¿®æ”¹åŸå­—æ®µåç§°åŠç±»å‹ï¼š
 mysql> ALTER TABLE table_name CHANGE old_field_name new_field_name field_type;
 
-É¾³ı×Ö¶Î£º
+åˆ é™¤å­—æ®µï¼š
 MySQL ALTER TABLE table_name DROP field_name;
-5.9 ĞŞ¸Ä±íÃû
-ÃüÁî£ºrename table Ô­±íÃû to ĞÂ±íÃû;
+5.9 ä¿®æ”¹è¡¨å
+å‘½ä»¤ï¼šrename table åŸè¡¨å to æ–°è¡¨å;
 
-ÀıÈç£ºÔÚ±íMyClassÃû×Ö¸ü¸ÄÎªYouClass
+ä¾‹å¦‚ï¼šåœ¨è¡¨MyClassåå­—æ›´æ”¹ä¸ºYouClass
    mysql> rename table MyClass to YouClass;
 
-µ±ÄãÖ´ĞĞ RENAME Ê±£¬Äã²»ÄÜÓĞÈÎºÎËø¶¨µÄ±í»ò»î¶¯µÄÊÂÎñ¡£ÄãÍ¬ÑùÒ²±ØĞëÓĞ¶ÔÔ­³õ±íµÄ ALTER ºÍ DROP È¨ÏŞ£¬ÒÔ¼°¶ÔĞÂ±íµÄ CREATE ºÍ INSERT È¨ÏŞ¡£
+å½“ä½ æ‰§è¡Œ RENAME æ—¶ï¼Œä½ ä¸èƒ½æœ‰ä»»ä½•é”å®šçš„è¡¨æˆ–æ´»åŠ¨çš„äº‹åŠ¡ã€‚ä½ åŒæ ·ä¹Ÿå¿…é¡»æœ‰å¯¹åŸåˆè¡¨çš„ ALTER å’Œ DROP æƒé™ï¼Œä»¥åŠå¯¹æ–°è¡¨çš„ CREATE å’Œ INSERT æƒé™ã€‚
 
-Èç¹ûÔÚ¶à±í¸üÃûÖĞ£¬MySQL ÔâÓöµ½ÈÎºÎ´íÎó£¬Ëü½«¶ÔËùÓĞ±»¸üÃûµÄ±í½øĞĞµ¹ÍË¸üÃû£¬½«Ã¿¼şÊÂÎïÍË»Øµ½×î³õ×´Ì¬¡£
+å¦‚æœåœ¨å¤šè¡¨æ›´åä¸­ï¼ŒMySQL é­é‡åˆ°ä»»ä½•é”™è¯¯ï¼Œå®ƒå°†å¯¹æ‰€æœ‰è¢«æ›´åçš„è¡¨è¿›è¡Œå€’é€€æ›´åï¼Œå°†æ¯ä»¶äº‹ç‰©é€€å›åˆ°æœ€åˆçŠ¶æ€ã€‚
 
-RENAME TABLE ÔÚ MySQL 3.23.23 ÖĞ±»¼ÓÈë¡£
-6¡¢±¸·İÊı¾İ¿â
-ÃüÁîÔÚDOSµÄ[url=file://\\mysql\\bin]\\mysql\\bin[/url]Ä¿Â¼ÏÂÖ´ĞĞ
+RENAME TABLE åœ¨ MySQL 3.23.23 ä¸­è¢«åŠ å…¥ã€‚
+6ã€å¤‡ä»½æ•°æ®åº“
+å‘½ä»¤åœ¨DOSçš„[url=file://\\mysql\\bin]\\mysql\\bin[/url]ç›®å½•ä¸‹æ‰§è¡Œ
 
-1.µ¼³öÕû¸öÊı¾İ¿â
-µ¼³öÎÄ¼şÄ¬ÈÏÊÇ´æÔÚmysql\binÄ¿Â¼ÏÂ
-    mysqldump -u ÓÃ»§Ãû -p Êı¾İ¿âÃû > µ¼³öµÄÎÄ¼şÃû
+1.å¯¼å‡ºæ•´ä¸ªæ•°æ®åº“
+å¯¼å‡ºæ–‡ä»¶é»˜è®¤æ˜¯å­˜åœ¨mysql\binç›®å½•ä¸‹
+    mysqldump -u ç”¨æˆ·å -p æ•°æ®åº“å > å¯¼å‡ºçš„æ–‡ä»¶å
     mysqldump -u user_name -p123456 database_name > outfile_name.sql
 
-2.µ¼³öÒ»¸ö±í
-    mysqldump -u ÓÃ»§Ãû -p Êı¾İ¿âÃû ±íÃû> µ¼³öµÄÎÄ¼şÃû
+2.å¯¼å‡ºä¸€ä¸ªè¡¨
+    mysqldump -u ç”¨æˆ·å -p æ•°æ®åº“å è¡¨å> å¯¼å‡ºçš„æ–‡ä»¶å
     mysqldump -u user_name -p database_name table_name > outfile_name.sql
 
-3.µ¼³öÒ»¸öÊı¾İ¿â½á¹¹
-    mysqldump -u user_name -p -d ¨Cadd-drop-table database_name > outfile_name.sql
-    -d Ã»ÓĞÊı¾İ ¨Cadd-drop-table ÔÚÃ¿¸öcreateÓï¾äÖ®Ç°Ôö¼ÓÒ»¸ödrop table
+3.å¯¼å‡ºä¸€ä¸ªæ•°æ®åº“ç»“æ„
+    mysqldump -u user_name -p -d â€“add-drop-table database_name > outfile_name.sql
+    -d æ²¡æœ‰æ•°æ® â€“add-drop-table åœ¨æ¯ä¸ªcreateè¯­å¥ä¹‹å‰å¢åŠ ä¸€ä¸ªdrop table
 
-4.´øÓïÑÔ²ÎÊıµ¼³ö
-    mysqldump -uroot -p ¨Cdefault-character-set=latin1 ¨Cset-charset=gbk ¨Cskip-opt database_name > outfile_name.sql
+4.å¸¦è¯­è¨€å‚æ•°å¯¼å‡º
+    mysqldump -uroot -p â€“default-character-set=latin1 â€“set-charset=gbk â€“skip-opt database_name > outfile_name.sql
 
-ÀıÈç£¬½«aaa¿â±¸·İµ½ÎÄ¼şback_aaaÖĞ£º
-¡¡¡¡[root@test1 root]# cd¡¡/home/data/mysql
-¡¡¡¡[root@test1 mysql]# mysqldump -u root -p --opt aaa > back_aaa
-7.1 Ò»¸ö½¨¿âºÍ½¨±íµÄÊµÀı1
-drop database if exists school; //Èç¹û´æÔÚSCHOOLÔòÉ¾³ı
-create database school; //½¨Á¢¿âSCHOOL
-use school; //´ò¿ª¿âSCHOOL
-create table teacher //½¨Á¢±íTEACHER
+ä¾‹å¦‚ï¼Œå°†aaaåº“å¤‡ä»½åˆ°æ–‡ä»¶back_aaaä¸­ï¼š
+ã€€ã€€[root@test1 root]# cdã€€/home/data/mysql
+ã€€ã€€[root@test1 mysql]# mysqldump -u root -p --opt aaa > back_aaa
+7.1 ä¸€ä¸ªå»ºåº“å’Œå»ºè¡¨çš„å®ä¾‹1
+drop database if exists school; //å¦‚æœå­˜åœ¨SCHOOLåˆ™åˆ é™¤
+create database school; //å»ºç«‹åº“SCHOOL
+use school; //æ‰“å¼€åº“SCHOOL
+create table teacher //å»ºç«‹è¡¨TEACHER
 (
     id int(3) auto_increment not null primary key,
     name char(10) not null,
-    address varchar(50) default ¡®ÉîÛÚ¡¯,
+    address varchar(50) default â€˜æ·±åœ³â€™,
     year date
-); //½¨±í½áÊø
+); //å»ºè¡¨ç»“æŸ
 
-//ÒÔÏÂÎª²åÈë×Ö¶Î
-insert into teacher values(¡±,¡¯allen¡¯,'´óÁ¬Ò»ÖĞ¡¯,'1976-10-10¡ä);
-insert into teacher values(¡±,¡¯jack¡¯,'´óÁ¬¶şÖĞ¡¯,'1975-12-23¡ä);
+//ä»¥ä¸‹ä¸ºæ’å…¥å­—æ®µ
+insert into teacher values(â€,â€™allenâ€™,'å¤§è¿ä¸€ä¸­â€™,'1976-10-10â€²);
+insert into teacher values(â€,â€™jackâ€™,'å¤§è¿äºŒä¸­â€™,'1975-12-23â€²);
 
-Èç¹ûÄãÔÚmysqlÌáÊ¾·û¼üÈëÉÏÃæµÄÃüÁîÒ²¿ÉÒÔ£¬µ«²»·½±ãµ÷ÊÔ¡£
-1¡¢Äã¿ÉÒÔ½«ÒÔÉÏÃüÁîÔ­ÑùĞ´ÈëÒ»¸öÎÄ±¾ÎÄ¼şÖĞ£¬¼ÙÉèÎªschool.sql£¬È»ºó¸´ÖÆµ½c:\\ÏÂ£¬²¢ÔÚDOS×´Ì¬½øÈëÄ¿Â¼[url=file://\\mysql\\bin]\\mysql\\bin[/url]£¬È»ºó¼üÈëÒÔÏÂÃüÁî£º
-    mysql -uroot -pÃÜÂë < c:\\school.sql
-Èç¹û³É¹¦£¬¿Õ³öÒ»ĞĞÎŞÈÎºÎÏÔÊ¾£»ÈçÓĞ´íÎó£¬»áÓĞÌáÊ¾¡££¨ÒÔÉÏÃüÁîÒÑ¾­µ÷ÊÔ£¬ÄãÖ»Òª½«//µÄ×¢ÊÍÈ¥µô¼´¿ÉÊ¹ÓÃ£©¡£
+å¦‚æœä½ åœ¨mysqlæç¤ºç¬¦é”®å…¥ä¸Šé¢çš„å‘½ä»¤ä¹Ÿå¯ä»¥ï¼Œä½†ä¸æ–¹ä¾¿è°ƒè¯•ã€‚
+1ã€ä½ å¯ä»¥å°†ä»¥ä¸Šå‘½ä»¤åŸæ ·å†™å…¥ä¸€ä¸ªæ–‡æœ¬æ–‡ä»¶ä¸­ï¼Œå‡è®¾ä¸ºschool.sqlï¼Œç„¶åå¤åˆ¶åˆ°c:\\ä¸‹ï¼Œå¹¶åœ¨DOSçŠ¶æ€è¿›å…¥ç›®å½•[url=file://\\mysql\\bin]\\mysql\\bin[/url]ï¼Œç„¶åé”®å…¥ä»¥ä¸‹å‘½ä»¤ï¼š
+    mysql -uroot -på¯†ç  < c:\\school.sql
+å¦‚æœæˆåŠŸï¼Œç©ºå‡ºä¸€è¡Œæ— ä»»ä½•æ˜¾ç¤ºï¼›å¦‚æœ‰é”™è¯¯ï¼Œä¼šæœ‰æç¤ºã€‚ï¼ˆä»¥ä¸Šå‘½ä»¤å·²ç»è°ƒè¯•ï¼Œä½ åªè¦å°†//çš„æ³¨é‡Šå»æ‰å³å¯ä½¿ç”¨ï¼‰ã€‚
 
-2¡¢»òÕß½øÈëÃüÁîĞĞºóÊ¹ÓÃ mysql> source c:\\school.sql; Ò²¿ÉÒÔ½«school.sqlÎÄ¼şµ¼ÈëÊı¾İ¿âÖĞ¡£
+2ã€æˆ–è€…è¿›å…¥å‘½ä»¤è¡Œåä½¿ç”¨ mysql> source c:\\school.sql; ä¹Ÿå¯ä»¥å°†school.sqlæ–‡ä»¶å¯¼å…¥æ•°æ®åº“ä¸­ã€‚
 
-7.2 Ò»¸ö½¨¿âºÍ½¨±íµÄÊµÀı2
-drop database if exists school; //Èç¹û´æÔÚSCHOOLÔòÉ¾³ı
-create database school; //½¨Á¢¿âSCHOOL
-use school; //´ò¿ª¿âSCHOOL
-create table teacher //½¨Á¢±íTEACHER
+7.2 ä¸€ä¸ªå»ºåº“å’Œå»ºè¡¨çš„å®ä¾‹2
+drop database if exists school; //å¦‚æœå­˜åœ¨SCHOOLåˆ™åˆ é™¤
+create database school; //å»ºç«‹åº“SCHOOL
+use school; //æ‰“å¼€åº“SCHOOL
+create table teacher //å»ºç«‹è¡¨TEACHER
 (
     id int(3) auto_increment not null primary key,
     name char(10) not null,
-    address varchar(50) default ''ÉîÛÚ'',
+    address varchar(50) default ''æ·±åœ³'',
     year date
-); //½¨±í½áÊø
+); //å»ºè¡¨ç»“æŸ
 
-//ÒÔÏÂÎª²åÈë×Ö¶Î
-insert into teacher values('''',''glchengang'',''ÉîÛÚÒ»ÖĞ'',''1976-10-10'');
-insert into teacher values('''',''jack'',''ÉîÛÚÒ»ÖĞ'',''1975-12-23'');
+//ä»¥ä¸‹ä¸ºæ’å…¥å­—æ®µ
+insert into teacher values('''',''glchengang'',''æ·±åœ³ä¸€ä¸­'',''1976-10-10'');
+insert into teacher values('''',''jack'',''æ·±åœ³ä¸€ä¸­'',''1975-12-23'');
 
-×¢£ºÔÚ½¨±íÖĞ
-1¡¢½«IDÉèÎª³¤¶ÈÎª3µÄÊı×Ö×Ö¶Î:int(3)£»²¢ÈÃËüÃ¿¸ö¼ÇÂ¼×Ô¶¯¼ÓÒ»:auto_increment£»²¢²»ÄÜÎª¿Õ:not null£»¶øÇÒÈÃËû³ÉÎªÖ÷×Ö¶Îprimary key¡£
+æ³¨ï¼šåœ¨å»ºè¡¨ä¸­
+1ã€å°†IDè®¾ä¸ºé•¿åº¦ä¸º3çš„æ•°å­—å­—æ®µ:int(3)ï¼›å¹¶è®©å®ƒæ¯ä¸ªè®°å½•è‡ªåŠ¨åŠ ä¸€:auto_incrementï¼›å¹¶ä¸èƒ½ä¸ºç©º:not nullï¼›è€Œä¸”è®©ä»–æˆä¸ºä¸»å­—æ®µprimary keyã€‚
 
-2¡¢½«NAMEÉèÎª³¤¶ÈÎª10µÄ×Ö·û×Ö¶Î
+2ã€å°†NAMEè®¾ä¸ºé•¿åº¦ä¸º10çš„å­—ç¬¦å­—æ®µ
 
-3¡¢½«ADDRESSÉèÎª³¤¶È50µÄ×Ö·û×Ö¶Î£¬¶øÇÒÈ±Ê¡ÖµÎªÉîÛÚ¡£
+3ã€å°†ADDRESSè®¾ä¸ºé•¿åº¦50çš„å­—ç¬¦å­—æ®µï¼Œè€Œä¸”ç¼ºçœå€¼ä¸ºæ·±åœ³ã€‚
 
-4¡¢½«YEARÉèÎªÈÕÆÚ×Ö¶Î¡£
+4ã€å°†YEARè®¾ä¸ºæ—¥æœŸå­—æ®µã€‚
