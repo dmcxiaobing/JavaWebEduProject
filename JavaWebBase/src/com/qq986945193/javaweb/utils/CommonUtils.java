@@ -15,7 +15,7 @@ public class CommonUtils {
 	/**
 	 * 将map中的数据直接封装到一个javabean中
 	 */
-	public static <T> T toBean(Map<String, String> map,Class<T> clazz) {
+	public static <T> T toBean(Map map,Class<T> clazz) {
 		try {
 			/**
 			 * 创建指定类型的JavaBean对象

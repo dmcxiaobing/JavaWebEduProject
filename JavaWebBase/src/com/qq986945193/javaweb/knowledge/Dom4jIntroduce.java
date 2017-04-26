@@ -7,6 +7,7 @@ package com.qq986945193.javaweb.knowledge;
 import java.util.List;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.Node;
@@ -28,8 +29,36 @@ public class Dom4jIntroduce {
 		// modifyAge();
 		// delSch();
 		// getValues();
-		test1XPATH();
-		test2XPATH();
+		// test1XPATH();
+		// test2XPATH();
+		// saxReaderXml();
+		byUsernameSelect();
+	}
+
+	/**
+	 * 根据用户名查找value 利用xpath获取
+	 */
+	public static void byUsernameSelect() {
+		/*
+		 * 1、得到document 2、直接使用selectSingleNode方法实现 - xpath ：
+		 * //user[@id1='aaaa']/name
+		 */
+		// 得到document
+		Document document = Dom4jUtils.getDocument("src/user.xml");
+		// String username = "lisi";
+		// 直接使用selectSingleNode方法实现
+		Element element = (Element) document.selectSingleNode("//user[@username='zhangsan']"); // username的元素
+		// Element ele = (Element)document.selectSingleNode("//user[@username='"
+		// + username + "']");
+		// 得到name里面的值
+		if (element == null) {
+			System.out.println("为空");
+		} else {
+			System.out.println("不为空");
+		}
+		// 然后可以取出各个元素的值
+		System.out.println(element.attributeValue("username"));
+		System.out.println(element.attributeValue("password"));
 	}
 
 	// 获取第一个p1里面的属性id1的值
@@ -236,38 +265,70 @@ public class Dom4jIntroduce {
 			System.out.println(s);
 		}
 	}
-	
-	//使用xpath实现：获取第一个p1下面的name的值
+
+	/**
+	 * sax读取xml
+	 */
+	public static void saxReaderXml() {
+		/*
+		 * 1、创建解析器 2、得到document 3、得到根节点
+		 * 
+		 * 4、得到p1 5、得到p1下面的name 6、得到name里面的值
+		 */
+		// 创建解析器
+		SAXReader saxReader = new SAXReader();
+		// 得到document
+		Document document;
+		try {
+			document = saxReader.read("src/p1.xml");
+			// 得到根节点
+			Element root = document.getRootElement();
+			List<Element> list = root.elements("user");
+			// 遍历list
+			for (Element element : list) {
+				// element是每一个p1元素
+				// 得到p1下面的name元素
+				Element name1 = element.element("username");
+				// 得到name里面的值
+				String s = name1.getText();
+				System.out.println(s);
+			}
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	// 使用xpath实现：获取第一个p1下面的name的值
 	public static void test1XPATH() throws Exception {
 		/*
-		 * 1、得到document
-		 * 2、直接使用selectSingleNode方法实现
-		 * 	- xpath ： //p1[@id1='aaaa']/name
-		 * */
-		//得到document
+		 * 1、得到document 2、直接使用selectSingleNode方法实现 - xpath ：
+		 * //p1[@id1='aaaa']/name
+		 */
+		// 得到document
 		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
-		//直接使用selectSingleNode方法实现
-		Node name1 = document.selectSingleNode("//p1[@id1='aaaa']/name"); //name的元素
-		//得到name里面的值
+		// 直接使用selectSingleNode方法实现
+		Node name1 = document.selectSingleNode("//p1[@id1='aaaa']/name"); // name的元素
+		// 得到name里面的值
 		String s1 = name1.getText();
 		System.out.println(s1);
 	}
-	
-	//查询xml中所有name元素的值
+
+	// 查询xml中所有name元素的值
 	public static void test2XPATH() throws Exception {
 		/*
-		 * 1、得到document
-		 * 2、直接使用selectNodes("//name")方法得到所有的name元素
+		 * 1、得到document 2、直接使用selectNodes("//name")方法得到所有的name元素
 		 * 
-		 * */
-		//得到document
+		 */
+		// 得到document
 		Document document = Dom4jUtils.getDocument(Dom4jUtils.PATH);
-		//使用selectNodes("//name")方法得到所有的name元素
+		// 使用selectNodes("//name")方法得到所有的name元素
 		List<Node> list = document.selectNodes("//name");
-		//遍历list集合
+		// 遍历list集合
 		for (Node node : list) {
-			//node是每一个name元素
-			//得到name元素里面的值
+			// node是每一个name元素
+			// 得到name元素里面的值
 			String s = node.getText();
 			System.out.println(s);
 		}

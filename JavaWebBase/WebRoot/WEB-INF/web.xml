@@ -201,6 +201,16 @@
     <servlet-name>MvcClickServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.MvcClickServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UserRegistServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.UserRegistServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.UserLoginServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -360,6 +370,14 @@
   <servlet-mapping>
     <servlet-name>MvcClickServlet</servlet-name>
     <url-pattern>/MvcClickServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserRegistServlet</servlet-name>
+    <url-pattern>/UserRegistServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLoginServlet</servlet-name>
+    <url-pattern>/UserLoginServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
