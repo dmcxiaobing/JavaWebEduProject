@@ -30,8 +30,8 @@
 	<p style="color: red ">${msg}</p>
 	<form
 		action="<c:url value = '/UserLoginServlet'/>" method="post">
-		用户名<input type="text" name="username" value="${user.username}" /><br />
-		密 码<input type="text" name="password" value="${user.password }" /><br />
+		用户名<input type="text" name="username" value="${user.username}" /><br/>
+		密　码<input type="text" name="password" value="${user.password }" /><br />
 		<input type="submit" value="登陆" />
 
 	</form>
