@@ -39,6 +39,7 @@ public class IntroduceServlet extends HttpServlet {
 		// setRequestDispather(req, resp);
 		// introduceCookie(req, resp);
 		// introduceHttpSession(request, response);
+		response.setHeader("refresh", "1");
 
 	}
 
