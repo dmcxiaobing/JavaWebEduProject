@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+	<user username="zhangsan" password="zhangsanpassword" />
+	<user username="lisi" password="lisi12" />
+	<user username="wangwu" password="wangwu23" />
+</users>
+    
