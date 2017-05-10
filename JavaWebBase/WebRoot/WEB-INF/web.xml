@@ -209,6 +209,11 @@
     <servlet-name>UserLoginServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.UserLoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UpdateAppServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.UpdateAppServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -378,6 +383,10 @@
   <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/UserLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateAppServlet</servlet-name>
+    <url-pattern>/servlet/UpdateAppServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
