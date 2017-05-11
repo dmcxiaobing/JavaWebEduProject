@@ -98,7 +98,7 @@
   分组查询是把记录使用某一列进行分组，然后查询组信息。
   例如：查看所有部门的记录数。
   SELECT deptno, COUNT(*) FROM emp GROUP BY deptno;
-  --> 使用deptno分组，查询部门编号和每个部门的记录数
+  --> 使用deptno分组，查询部门编号和每个部门的记录数总和
   SELECT job, MAX(SAL) FROM emp GROUP BY job;
   --> 使用job分组，查询每种工作的最高工资
 
@@ -132,7 +132,7 @@ where
 group by
 having
 order by
-
+ 
 
 练习：
 
