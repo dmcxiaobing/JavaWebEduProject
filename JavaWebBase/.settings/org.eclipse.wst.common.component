@@ -3,6 +3,6 @@
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <property name="java-output-path" value="/JavaWebBase/WebRoot/WEB-INF/classes"/>
-        <property name="context-root" value="JavaWebBase"/>
+        <property name="context-root" value="/javaweb"/>
     </wb-module>
 </project-modules>
