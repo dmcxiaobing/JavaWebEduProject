@@ -1,5 +1,9 @@
 package com.qq986945193.javaweb.knowledge;
-
+/**
+ * @Author ：程序员小冰
+ * @GitHub: https://github.com/QQ986945193
+ */
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,6 +13,7 @@ import java.sql.Statement;
 import org.junit.Test;
 
 import com.mysql.jdbc.Driver;
+import com.qq986945193.javaweb.utils.JdbcUtils;
 
 /**
  * jdbc的一些简单的功能介绍
@@ -16,9 +21,10 @@ import com.mysql.jdbc.Driver;
 public class JDBCIntroduce {
 
 	@Test
-	public void fun1() throws ClassNotFoundException, SQLException {
-		java.sql.Connection connection = getConnection();
-		insert(connection);
+	public void fun1() throws ClassNotFoundException, SQLException, IOException {
+//		java.sql.Connection connection = getConnection();
+//		insert(connection);
+		System.out.println(JdbcUtils.getConnection());
 	}
 
 	private void insert(Connection connection) throws SQLException {
@@ -76,4 +82,6 @@ public class JDBCIntroduce {
 		System.out.println(connection);
 		return connection;
 	}
+	
+		
 }
