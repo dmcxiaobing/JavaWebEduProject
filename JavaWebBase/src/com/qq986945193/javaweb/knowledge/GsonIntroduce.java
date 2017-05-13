@@ -1,11 +1,16 @@
 package com.qq986945193.javaweb.knowledge;
 
+/**
+ * david 
+ * http://weibo.com/mcxiaobing
+ */
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.io.IOUtils;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.google.gson.Gson;
@@ -13,6 +18,9 @@ import com.qq986945193.javaweb.domain.UpdateAppBean;
 import com.qq986945193.javaweb.domain.UpdateAppNoListBean;
 import com.qq986945193.javaweb.domain.User;
 
+/**
+ * 利用google的gson操作json的一些简单介绍。
+ */
 public class GsonIntroduce {
 	public static void main(String[] args) throws IllegalAccessException, InvocationTargetException {
 		// TODO 自动生成的方法存根
