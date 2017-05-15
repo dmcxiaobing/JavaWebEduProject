@@ -1,18 +1,27 @@
 package com.qq986945193.javaweb.knowledge;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 /**
  * @Author ：程序员小冰
  * @GitHub: https://github.com/QQ986945193
  */
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.sql.rowset.serial.SerialBlob;
+
+import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
+import com.mysql.jdbc.Blob;
 import com.mysql.jdbc.Driver;
 import com.qq986945193.javaweb.utils.JdbcUtils;
 
@@ -161,7 +170,87 @@ public class JDBCIntroduce {
 		}
 
 	}
-	
-	
-	
+
+	/**
+	 * 使用批处理操作数据库 开启mysql的批处理
+	 */
+	/**
+	 * 1,用循环向preparedStatement添加sql参数，它自己有模板，使用一组参数与模板罚没可以匹配出一条sql语句
+	 * 2,调用他的执行批处理方法，完成向数据库发送
+	 * 
+	 * @throws SQLException
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
+	public void funPreparedStatement() throws ClassNotFoundException, IOException, SQLException {
+		Connection connection = JdbcUtils.getConnection();
+		String sql = "insert into t_stu values(?,?,?)";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		for (int i = 0; i < 10000; i++) {
+			preparedStatement.setString(1, i + "");
+			preparedStatement.setString(2, "stu_" + i);
+			preparedStatement.setInt(3, i);
+			// 添加批处理，这一组参数就保存到集合中了。
+			preparedStatement.addBatch();
+		}
+		long start = System.currentTimeMillis();
+		preparedStatement.execute();// 执行批处理
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+
+	}
+
+	/**
+	 * 大数据，将MP3文件保存到数据库中
+	 * 
+	 * @throws SQLException
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
+	public void funBigData() throws ClassNotFoundException, IOException, SQLException {
+		/**
+		 * 得到connection，给出sql模板，创建preparestatement
+		 * 设置sql模板中的参数，调用executeUpdata()执行
+		 */
+		Connection connection = JdbcUtils.getConnection();
+		String sql = "insert into tab_bin values(?,?)";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setInt(1, 1);
+		/**
+		 * 需要得到blob对象。我们有的是文件，可以将文件转为字节数组，然后在转为blob对象
+		 */
+		byte[] datas = IOUtils.toByteArray(new FileInputStream("d:/david.mp3"));
+		SerialBlob blob = new SerialBlob(datas);
+		preparedStatement.setBlob(2, blob);
+		preparedStatement.executeUpdate();
+
+	}
+
+	/**
+	 * 从数据库中读取文件
+	 * 
+	 * @throws SQLException
+	 * @throws IOException
+	 * @throws ClassNotFoundException
+	 */
+	@Test
+	public void funReadFile() throws SQLException, ClassNotFoundException, IOException {
+		// 获取connection
+		Connection connection = JdbcUtils.getConnection();
+		// 查询出文件
+		String sql = "select * from tab_bin";
+
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		ResultSet resultSet = preparedStatement.executeQuery();
+		// 遍历resultSet
+		if (resultSet.next()) {
+			Blob blob = (Blob) resultSet.getBlob("data");
+			// 通过blob变成硬盘的文件
+			InputStream inputStream = blob.getBinaryStream();
+			OutputStream outputStream = new FileOutputStream("d:/david.mp3");
+			IOUtils.copy(inputStream, outputStream);
+		}
+
+	}
+
 }
