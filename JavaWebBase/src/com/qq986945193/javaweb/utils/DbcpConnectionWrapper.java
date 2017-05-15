@@ -18,7 +18,9 @@ import java.sql.Struct;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.Executor;
-
+/**
+ * 一个dbcp的连接
+ */
 public class DbcpConnectionWrapper implements Connection {
 	protected Connection con;
 	
