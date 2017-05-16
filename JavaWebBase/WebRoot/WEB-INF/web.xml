@@ -213,6 +213,11 @@
     <servlet-name>UpdateAppServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.UpdateAppServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>JNDIintroduceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.knowledge.JNDIintroduceServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -387,6 +392,10 @@
   <servlet-mapping>
     <servlet-name>UpdateAppServlet</servlet-name>
     <url-pattern>/servlet/UpdateAppServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JNDIintroduceServlet</servlet-name>
+    <url-pattern>/servlet/JNDIintroduceServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>

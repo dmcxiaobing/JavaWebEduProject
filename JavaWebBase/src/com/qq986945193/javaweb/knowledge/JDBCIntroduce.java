@@ -27,6 +27,7 @@ import org.junit.Test;
 
 import com.mysql.jdbc.Blob;
 import com.mysql.jdbc.Driver;
+import com.qq986945193.javaweb.dao.JDBCAccountDao;
 import com.qq986945193.javaweb.utils.JdbcUtils;
 
 /**
@@ -254,7 +255,55 @@ public class JDBCIntroduce {
 			OutputStream outputStream = new FileOutputStream("d:/david.mp3");
 			IOUtils.copy(inputStream, outputStream);
 		}
+	}
 
+	/**
+	 * 利用转账的代码来展示事务的功能
+	 */
+	public void funAutoCommit() {
+		Connection connection = null;
+		// 这是转钱的人，付款人
+		String fromUser = "zhangsan";
+		// 这是收钱人
+		String toUser = "lisi";
+		// 这是要转的钱数
+		Double banlance = (double) 200;
+		PreparedStatement preparedStatement = null;
+		try {
+			connection = JdbcUtils.getC3P0Connection();
+			// 手动开启事务，提交
+			connection.setAutoCommit(false);
+			/**
+			 * 这里操作数据库 依靠dao数据库层
+			 */
+			JDBCAccountDao dao = new JDBCAccountDao();
+			dao.updateBalance(fromUser,toUser,banlance,preparedStatement);
+			connection.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			// 提交事务异常，则回滚
+			try {
+				if (connection != null) {
+					connection.rollback();
+				}
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		} finally {
+
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+
+			}
+		}
 	}
 
 }
