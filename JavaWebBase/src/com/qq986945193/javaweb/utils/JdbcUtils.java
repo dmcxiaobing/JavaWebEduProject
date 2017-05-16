@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import javax.sql.DataSource;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
@@ -61,7 +63,7 @@ public class JdbcUtils {
 	/**
 	 * 返回连接池对象
 	 */
-	public static ComboPooledDataSource getDataSource() {
+	public static DataSource getDataSource() {
 		return dataSource;
 	}
 }
