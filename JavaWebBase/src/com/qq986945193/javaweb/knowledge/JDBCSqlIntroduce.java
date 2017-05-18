@@ -13,18 +13,18 @@ import java.sql.SQLException;
 import org.junit.Test;
 
 import com.mysql.jdbc.Statement;
+import com.qq986945193.javaweb.domain.User;
 import com.qq986945193.javaweb.utils.JdbcUtils;
 
 /**
- * 演示一下sql注入攻击的代码 
- * 所以我们操作应该使用preparedstatement,和sql模板参数用？代替
+ * 演示一下sql注入攻击的代码 所以我们操作应该使用preparedstatement,和sql模板参数用？代替
  */
 public class JDBCSqlIntroduce {
 	@Test
-	public void funTest() throws ClassNotFoundException, IOException, SQLException{
-//		String username = "zhangsan";
-//		String password = "1234";
-//		System.out.println(login(username, password));
+	public void funTest() throws ClassNotFoundException, IOException, SQLException {
+		// String username = "zhangsan";
+		// String password = "1234";
+		// System.out.println(login(username, password));
 		/**
 		 * 下面使用sql攻击
 		 */
@@ -32,12 +32,13 @@ public class JDBCSqlIntroduce {
 		String password = "a' or 'a'='a";
 		System.out.println(username);
 		System.out.println(password);
-		//select * from tb_user where username = 'a' or 'a'='a' and password = 'a' or 'a'='a'
-		//也是返回的true
+		// select * from tb_user where username = 'a' or 'a'='a' and password =
+		// 'a' or 'a'='a'
+		// 也是返回的true
 		System.out.println(loginPreparedStatment(username, password));
-	
+
 	}
-	
+
 	/**
 	 * 登陆，使用username和password去查询数据 若查询出结果集，则返回true，若查询不到则说明用户名或密码错误，返回false
 	 * 
@@ -51,19 +52,23 @@ public class JDBCSqlIntroduce {
 		 * 这里提前说明，使用statement和直接写sql代码，会有sql注入的攻击
 		 */
 		java.sql.Statement statement = connection.createStatement();
-		String sqlString = "select * from tb_user where username = '" + username + "' and password = '" + password + "'";
+		String sqlString = "select * from tb_user where username = '" + username + "' and password = '" + password
+				+ "'";
 		System.out.println(sqlString);
 		ResultSet resultSet = statement.executeQuery(sqlString);
 		return resultSet.next();
 	}
+
 	/**
 	 * 登陆，使用username和password去查询数据 若查询出结果集，则返回true，若查询不到则说明用户名或密码错误，返回false
 	 * 这里解决了sql注入问题
+	 * 
 	 * @throws SQLException
 	 * @throws IOException
 	 * @throws ClassNotFoundException
 	 */
-	public boolean loginPreparedStatment(String username, String password) throws ClassNotFoundException, IOException, SQLException {
+	public boolean loginPreparedStatment(String username, String password)
+			throws ClassNotFoundException, IOException, SQLException {
 		Connection connection = JdbcUtils.getConnection();
 		/**
 		 * 这里提前说明，使用statement和直接写sql代码，会有sql注入的攻击
@@ -79,5 +84,49 @@ public class JDBCSqlIntroduce {
 		ResultSet resultSet = preparedStatement.executeQuery(sqlString);
 		return resultSet.next();
 	}
-	
+
+	/**
+	 * 简化jdbc的代码。根据uid查询用户信息
+	 */
+	public User getUserInfo(int uid) {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		User user = new User();
+		try {
+			// 获取连接
+			connection = JdbcUtils.getC3P0Connection();
+			// 设置sql模板
+			String sql = "select * from where uid = ?";
+			preparedStatement = connection.prepareStatement(sql);
+			// 设置参数
+			preparedStatement.setInt(1, uid);
+			resultSet = preparedStatement.executeQuery();
+			// 将resultSet赋值到User对象
+
+			if (resultSet.next()) {
+				user.setusername(resultSet.getString("username"));
+				user.setpassword(resultSet.getString("password"));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (resultSet != null) {
+					resultSet.close();
+				}
+				if (preparedStatement != null) {
+					resultSet.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+
+		}
+		return user;
+	}
 }

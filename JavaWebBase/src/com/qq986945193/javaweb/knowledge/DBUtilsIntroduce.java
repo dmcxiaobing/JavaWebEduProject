@@ -1,4 +1,4 @@
-package com.qq986945193.javaweb.utils;
+package com.qq986945193.javaweb.knowledge;
 /**
  * @Author ：程序员小冰
  * @新浪微博 ：http://weibo.com/mcxiaobing
@@ -24,6 +24,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import org.junit.Test;
 
 import com.qq986945193.javaweb.domain.User;
+import com.qq986945193.javaweb.utils.JdbcUtils;
 
 /*
  * dbutils的使用简单介绍
