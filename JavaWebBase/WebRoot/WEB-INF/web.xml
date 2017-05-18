@@ -217,6 +217,11 @@
     <servlet-name>JNDIintroduceServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.knowledge.JNDIintroduceServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>TestBaseServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.TestBaseServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -396,6 +401,10 @@
   <servlet-mapping>
     <servlet-name>JNDIintroduceServlet</servlet-name>
     <url-pattern>/servlet/JNDIintroduceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TestBaseServlet</servlet-name>
+    <url-pattern>/servlet/TestBaseServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
