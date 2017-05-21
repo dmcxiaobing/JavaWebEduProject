@@ -1,5 +1,7 @@
 package com.qq986945193.javaweb.dao;
-
+/**
+ * http://weibo.com/mcxiaobing
+ */
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 

@@ -1,5 +1,7 @@
 package com.qq986945193.javaweb.dao;
-
+/**
+ * http://weibo.com/mcxiaobing
+ */
 import com.qq986945193.javaweb.domain.User;
 
 /**
