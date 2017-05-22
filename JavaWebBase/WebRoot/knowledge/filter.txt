@@ -1,0 +1,105 @@
+JavaWeb三大组件
+
+1. 都需要在web.xml中进行配置
+Servlet
+Listener(2个感知监听器不需要配置)
+Filter
+
+2. 过滤器
+  它会在一组资源（jsp、servlet、.css、.html等等）的前面执行！
+  它可以让请求得到目标资源，也可以不让请求达到！
+  * 过滤器有拦截请求的能力！
+
+登录：
+允许它访问AServlet、BServlet、CServlet
+
+-------------------------------
+
+过滤器如何编写
+
+1. 写一个类实现Filter接口
+2. 在web.xml中进行配置
+
+Filter接口
+
+void init(FilterConfig)
+  * 创建之后，马上执行；Filter会在服务器启动时就创建！
+void destory()
+  * 销毁之前执行！在服务器关闭时销毁
+void doFilter(ServletRequest,ServletResponse,FilterChain)
+  * 每次过滤时都会执行
+
+Filter是单例的！
+
+web.xml
+<filter>
+  <filter-name>xxx</filter-name>
+  <filter-class>cn.david.web.filter.AFitler</fitler-class>
+</servlet>
+<fitler-mapping>
+  <filter-name>xxx</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+-------------------------------
+
+FilterConfig-->与ServletConfig相似
+  * 获取初始化参数：getInitParameter()
+  * 获取过滤器名称：getFilterName()
+  * 获取appliction：getServletContext()
+
+FilterChain
+  * doFilter(ServletRequest, ServletResponse)：放行！
+  放行，就相当于调用了目标Servlet的service()方法！
+
+-------------------------------
+
+-------------------------------
+
+多过滤器
+
+FilterChain#doFilter()方法：
+  执行目标资源，或是执行下一个过滤器！如果没有下一个过滤器那么执行的是目标资源，如果有，那么就执行下一个过滤器！
+
+
+-------------------------------
+
+过滤器的四种拦截方式
+
+  <dispatcher>REQUEST</dispatcher>默认的！
+  <dispatcher>FORWARD</dispatcher>
+  <dispatcher>INCLUDE</dispatcher>
+  <dispatcher>ERROR</dispatcher>
+
+在<filter-mapping>中进行配置!
+
+
+-------------------------------
+
+多个过滤器的执行顺序
+
+<filter-mapping>的配置顺序决定了过滤器的执行顺序！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
