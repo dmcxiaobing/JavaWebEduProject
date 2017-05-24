@@ -24,7 +24,9 @@ public class CountSumListener implements ServletContextListener{
 		//将map对象保存到application中
 		application.setAttribute("map", map);
 	}
-
+	/**
+	 * 在服务器关闭时执行
+	 */
 	@Override
 	public void contextDestroyed(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
