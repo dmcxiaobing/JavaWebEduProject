@@ -12,6 +12,22 @@
 		<error-code>404</error-code>
 		<location>/jsps/notfound.jsp</location>
 	</error-page>
+	<!-- 统计网页访问数量的filter -->
+	<filter>
+		<filter-name>CountSumFilter</filter-name>
+		<filter-class>com.qq986945193.javaweb.filter.CountSumFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CountSumFilter</filter-name>
+		<!-- 表示拦截所有 -->
+		<url-pattern>/*</url-pattern>
+		<!-- 拦截请求，有四种选择。include forward等 -->
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	<!-- 统计网页访问数量的listener -->
+	<listener>
+		<listener-class>com.qq986945193.javaweb.listener.CountSumListener</listener-class>
+	</listener>
 	<!--CatServletMethodServlet的配置 -->
 	<servlet>
 		<servlet-name>CatServletMethodServlet</servlet-name>
