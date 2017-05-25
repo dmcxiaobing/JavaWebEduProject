@@ -1,5 +1,8 @@
 package com.qq986945193.javaweb.filter;
 
+/**
+ * http://weibo.com/mcxiaobing
+ */
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -19,12 +22,13 @@ public class CountSumFilter implements Filter {
 	 * 通过filterConfig的get***()方法可以获得ServletContext等对象
 	 */
 	private FilterConfig filterConfig;
+
 	/**
 	 * 在服务器启动时就会执行本方法，而且本方法只会执行一次
 	 */
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-				this.filterConfig = filterConfig;
+		this.filterConfig = filterConfig;
 	}
 
 	@Override
@@ -44,27 +48,23 @@ public class CountSumFilter implements Filter {
 		 */
 		if (hashMap.containsKey(ip)) {
 			int count = hashMap.get(ip);
-			hashMap.put(ip, count+1);
-		}else {//这里说明不存在，是第一次访问
+			hashMap.put(ip, count + 1);
+		} else {// 这里说明不存在，是第一次访问
 			hashMap.put(ip, 1);
 		}
-		//然后再将hashmap放回到application中
+		// 然后再将hashmap放回到application中
 		application.setAttribute("map", hashMap);
-		
+
 		/**
 		 * 最后放行，然后在一个jsp页面，显示数量
 		 */
 		chain.doFilter(request, response);
-		
-		
+
 	}
 
 	@Override
 	public void destroy() {
 
 	}
-	
-	
-	
 
 }

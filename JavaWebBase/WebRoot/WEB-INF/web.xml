@@ -24,6 +24,15 @@
 		<!-- 拦截请求，有四种选择。include forward等 -->
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
+	<!-- 处理编码的filter -->
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>com.qq986945193.javaweb.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/EncodingServlet</url-pattern>
+	</filter-mapping>
 	<!-- 统计网页访问数量的listener -->
 	<listener>
 		<listener-class>com.qq986945193.javaweb.listener.CountSumListener</listener-class>
@@ -237,6 +246,11 @@
     <servlet-name>TestBaseServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.TestBaseServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>EncodingServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.EncodingServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -421,6 +435,10 @@
   <servlet-mapping>
     <servlet-name>TestBaseServlet</servlet-name>
     <url-pattern>/servlet/TestBaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EncodingServlet</servlet-name>
+    <url-pattern>/EncodingServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>

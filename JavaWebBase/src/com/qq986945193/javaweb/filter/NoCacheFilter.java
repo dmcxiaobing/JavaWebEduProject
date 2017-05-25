@@ -1,5 +1,8 @@
 package com.qq986945193.javaweb.filter;
 
+/**
+ * http://weibo.com/mcxiaobing
+ */
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
