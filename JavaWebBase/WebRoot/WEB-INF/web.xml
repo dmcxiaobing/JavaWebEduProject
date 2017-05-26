@@ -254,6 +254,11 @@
     <servlet-name>UploadIntroduceServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.knowledge.UploadIntroduceServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DownloadIntroduceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.knowledge.DownloadIntroduceServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -448,6 +453,10 @@
   <servlet-mapping>
     <servlet-name>UploadIntroduceServlet</servlet-name>
     <url-pattern>/servlet/UploadIntroduceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DownloadIntroduceServlet</servlet-name>
+    <url-pattern>/servlet/DownloadIntroduceServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
