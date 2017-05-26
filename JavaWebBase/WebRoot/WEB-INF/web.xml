@@ -250,6 +250,11 @@
     <servlet-name>EncodingServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.EncodingServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UploadIntroduceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.knowledge.UploadIntroduceServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -439,6 +444,10 @@
   <servlet-mapping>
     <servlet-name>EncodingServlet</servlet-name>
     <url-pattern>/EncodingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadIntroduceServlet</servlet-name>
+    <url-pattern>/servlet/UploadIntroduceServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>

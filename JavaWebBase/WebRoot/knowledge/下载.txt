@@ -1,0 +1,70 @@
+下载
+1. 下载就是向客户端响应字节数据！
+  原来我们响应的都是html的字符数据！
+  把一个文件变成字节数组，使用response.getOutputStream()来各应给浏览器！！！
+
+2. 下载的要求
+  * 两个头一个流！
+    > Content-Type：你传递给客户端的文件是什么MIME类型，例如：image/pjpeg
+      * 通过文件名称调用ServletContext的getMimeType()方法，得到MIME类型！
+    > Content-Disposition：它的默认值为inline，表示在浏览器窗口中打开！attachment;filename=xxx
+      * 在filename=后面跟随的是显示在下载框中的文件名称！
+    > 流：要下载的文件数据！
+      * 自己new一个输入流即可！
+
+---------------------------
+
+下载的细节
+
+1. 显示在下载框中的中文名称时，会出现乱码。
+  * FireFox：Base64编码。
+  * 其他大部分浏览器：URL编码。
+
+  通用方案：filename = new String(filename.getBytes("GBK"), "ISO-8859-1");
+
+
+	public static String filenameEncoding(String filename, HttpServletRequest request) throws IOException {
+		String agent = request.getHeader("User-Agent"); //获取浏览器
+		if (agent.contains("Firefox")) {
+			BASE64Encoder base64Encoder = new BASE64Encoder();
+			filename = "=?utf-8?B?"
+					+ base64Encoder.encode(filename.getBytes("utf-8"))
+					+ "?=";
+		} else if(agent.contains("MSIE")) {
+			filename = URLEncoder.encode(filename, "utf-8");
+		} else {
+			filename = URLEncoder.encode(filename, "utf-8");
+		}
+		return filename;
+	}
+
+---------------------------
+---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

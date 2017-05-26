@@ -1,0 +1,1024 @@
+
+jta.jar 标准JTA API必要
+
+commons-collections.jar 集合类 必要
+
+antlr.jar  ANother Tool for Language Recognition 必要
+
+asm.jar  ASM字节码库  如果使用“cglib” 则必要
+
+asm-attrs.jar  ASM字节码库 如果使用“cglib” 则必要
+
+ehcache.jar  EHCache缓存  如果没有其他的缓存，则是必要的
+
+cglib.jar  CGLIB字节码解释器  如果使用“cglib” 则必要
+
+commons-beanutils.jar  提供对java反射和自省API的包装  对bean操作的类，可以访问类的属性及get和set方法
+
+commons-digester.jar  Digester基于规则的XML文档解析，主要用于XML到java对象的映射
+
+commons-lang.jar  包含了一些数据类型工具类，是java.lang.* 的扩展  必须使用的包
+
+commons-pool.jar,commons-dbcp.jar   DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP
+
+commons-chain.jar  Jakarta Commons的子项目Chain将上述两个模式组合成一个可复用的Java框架用于描述顺序的处理流程  strutsheShale应用框架作为处理HTTP请求处理的基础机制
+
+commons-validator.jar  用来帮助进行验证的工具。比如验证Email字符串，日期字符串等是否合法。
+
+Burlap.jar  支持ejb，远程调用Remoting方面的类
+
+buffalo.jar  处理xml的jar包
+
+commons-betwixt.jar  用xml生成报表时需要用到的包
+
+commons-el.jar   Apache 组织中一个用来解析 JSP 2.0 的表达式语言的 Java 
+
+htmlparser.jar   是一个纯的java写的html解析的库，它不依赖于其它的java库文件，主要用于改造或提取html类库
+
+jakarta-oro.jar   java正则表达式所需的包
+
+jaxen.jar  在jdom中使用xpath需要导入jaxen.jar包
+
+mina-core.jar  Apache MINA(Multipurpose Infrastructure for Network Applications) 是 Apache 组织一个较新的项目，它为开发高性能和高可用性的网络应用程序提供了非常便利的框架
+
+
+
+这里主要介绍的是Hibernate使用到的.jar 
+
+Hibernate一共包括了23个jar包，令人眼花缭乱。本文将详细讲解Hibernate每个jar包的作用，便于你在应用中根据自己的需要进行取舍。 
+
+下载Hibernate，例如2.0.3稳定版本，解压缩，可以看到一个hibernate2.jar和lib目录下有22个jar包： 
+
+hibernate2.jar: 
+
+Hibernate的库，没有什么可说的，必须使用的jar包 
+
+cglib-asm.jar: 
+
+CGLIB库，Hibernate用它来实现PO字节码的动态生成，非常核心的库，必须使用的jar包 
+
+dom4j.jar: 
+
+dom4j是一个Java的XML API，类似于jdom，用来读写XML文件的。dom4j是一个非常非常优秀的Java XML API，具有性能优异、功能强大和极端易用使用的特点，同时它也是一个开放源代码的软件，可以在SourceForge上找到它。在IBM developerWorks上面可以找到一篇文章，对主流的Java XML API进行的性能、功能和易用性的评测，dom4j无论在那个方面都是非常出色的。我早在将近两年之前就开始使用dom4j，直到现在。如今你可以看到越来越多的Java软件都在使用dom4j来读写XML，特别值得一提的是连Sun的JAXM也在用dom4j。这是必须使用的jar包，Hibernate用它来读写配置文件。 
+
+odmg.jar: 
+
+ODMG是一个ORM的规范，Hibernate实现了ODMG规范，这是一个核心的库，必须使用的jar包。 
+
+commons-collections.jar： 
+
+Apache Commons包中的一个，包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包。 
+
+commons-beanutils.jar： 
+
+Apache Commons包中的一个，包含了一些Bean工具类类。必须使用的jar包。 
+
+commons-lang.jar: 
+
+Apache Commons包中的一个，包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。 
+
+commons-logging.jar: 
+
+Apache Commons包中的一个，包含了日志功能，必须使用的jar包。这个包本身包含了一个Simple Logger，但是功能很弱。在运行的时候它会先在CLASSPATH找log4j，如果有，就使用log4j，如果没有，就找JDK1.4带的java.util.logging，如果也找不到就用Simple Logger。commons-logging.jar的出现是一个历史的的遗留的遗憾，当初Apache极力游说Sun把log4j加入JDK1.4，然而JDK1.4项目小组已经接近发布JDK1.4产品的时间了，因此拒绝了Apache的要求，使用自己的java.util.logging，这个包的功能比log4j差的很远，性能也一般。后来Apache就开发出来了commons-logging.jar用来兼容两个logger。因此用commons-logging.jar写的log程序，底层的Logger是可以切换的，你可以选择log4j，java.util.logging或者它自带的Simple Logger。不过我仍然强烈建议使用log4j，因为log4j性能很高，log输出信息时间几乎等于System.out，而处理一条log平均只需要5us。你可以在Hibernate的src目录下找到Hibernate已经为你准备好了的log4j的配置文件，你只需要到Apache 网站去下载log4j就可以了。commons-logging.jar也是必须的jar包。 
+
+使用Hibernate必须的jar包就是以上的这几个，剩下的都是可选的。 
+
+ant.jar: 
+
+Ant编译工具的jar包，用来编译Hibernate源代码的。如果你不准备修改和编译Hibernate源代码，那么就没有什么用，可选的jar包 
+
+optional.jar： 
+
+Ant的一个辅助包。 
+
+c3p0.jar： 
+
+C3PO是一个数据库连接池，Hibernate可以配置为使用C3PO连接池。如果你准备用这个连接池，就需要这个jar包。 
+
+proxool.jar： 
+
+也是一个连接池，同上。 
+
+commons-pool.jar, commons-dbcp.jar: 
+
+DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。 
+
+实际上Hibernate自己也实现了一个非常非常简单的数据库连接池，加上上面3个，你实际上可以在Hibernate上选择4种不同的数据库连接池，选择哪一个看个人的偏好，不过DBCP可能更通用一些。另外强调一点，如果在EJB中使用Hibernate，一定要用App Server的连接池，不要用以上4种连接池，否则容器管理事务不起作用。 
+
+connector.jar: 
+
+JCA 规范，如果你在App Server上把Hibernate配置为Connector的话，就需要这个jar。不过实际上一般App Server肯定会带上这个包，所以实际上是多余的包。 
+
+jaas.jar: 
+
+JAAS是用来进行权限验证的，已经包含在JDK1.4里面了。所以实际上是多余的包。 
+
+jcs.jar： 
+
+如果你准备在Hibernate中使用JCS的话，那么必须包括它，否则就不用。 
+
+jdbc2_0-stdext.jar: 
+
+JDBC2.0的扩展包，一般来说数据库连接池会用上它。不过App Server都会带上，所以也是多余的。 
+
+jta.jar： 
+
+JTA规范，当Hibernate使用JTA的时候需要，不过App Server都会带上，所以也是多余的。 
+
+junit.jar: 
+
+Junit包，当你运行Hibernate自带的测试代码的时候需要，否则就不用。 
+
+xalan.jar, xerces.jar, xml-apis.jar: 
+
+Xerces是XML解析器，Xalan是格式化器，xml-apis实际上是JAXP。一般App Server都会带上，JDK1.4也包含了解析器，不过不是Xerces，是Crimson，效率比较差，不过Hibernate用XML只不过是读取配置文件，性能没什么紧要的，所以也是多余的。
+
+
+
+
+J2EE的部分jar的作用:
+
+activation.jar:与javaMail有关的jar包，使用javaMail时应与mail.jar一起加入到lib中去，具体负责mail的数据源和类型等
+
+ajaxtags-1.2-beta3.jar:ajax提供的标签库，使用户能像使用jsp普通标签一样使用ajax
+
+ant.jar和antlr.jar（可以删去）:的是ant编译用的包，在工程中不用添加
+
+asm.jar:Hebernate的包，Hibernate在运行时使用这个代码生成库增强类（与java反射机制联合使用）.ASM字节码库，cglib.jar包依赖的包。必需的jar包。
+
+axis-ant.jar:是Axis为支持Ant构建，提供了的文件。该文件包含三个可选任务(task)的定义和实现：axis-wsdl2java，axis-java2wsdl和axis-admin。
+
+cglib-2.1.3.jar:全称是Code Generation Library，它可以用来动态继承Java类或者实现接口，很多知名的开源项目中用到了它.Hibernate用它来实现PO字节码的动态生成，非常核心的库，必需的jar包。
+
+chartengineapi.jar:不大清楚，大概是Birt关于字体的类库。
+
+com.ibm.icu_3.6.1.v10070417.jar:从3.2版本开始，eclipse就增加了一个com.ibm.icu插件，用于增强对多语言的支持。应该是没用的。
+
+commons-beanutils.jar:下面几个带“commons”的都是Apache Commons包中的一个，这里是被hibernate使用的，估计在工程中没有全部用到这些包，所以有的应该能删去。本包包含了一些Bean工具类类，是必须使用的jar包。
+
+commons-cli-1.0.jar:这是一个处理命令的工具。比如main方法输入的string[]需要解析。你可以预先定义好参数的规则，然后就可以调用CLI来解析。
+
+commond-collections.jar:包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包.
+
+commons-digester.jar:它能方便地将XML文档所定义的元素转化为JAVA对象，其实它的用法有点象栈(当然内在的原理就是那个古老的东西,只是提供了更高一层的封装)。
+
+commons-discovery-0.2.jar:discovery模式的实现，提供定位与实例化类或其他资源的通用方法。使用最好的算法得到接口的所有实现。当用户想找到所有的提供某一服务的提供商时，这将特别有用
+
+commons-fileupload.jar:jsp的上传文件功能
+
+commons-io.jar:可以看成是java.io的扩展
+
+commons-lang.jar:包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。
+
+commons-pool-1.2.jar:DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。
+
+commons-validator.jar:用来帮助进行验证的工具。比如验证Email字符串，日期字符串等是否合法。
+
+coreapi.jar:一种应用的核心 类库，这里是Birt的核心包。
+
+dataadapterapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dom4j-1.4.jar:是一个Java的XML API，类似于jdom，用来读写XML文件的。Hibernate使用dom4j解析XML配置文件和XML映射元文件。必需的。
+
+dteapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dwr.jar:dwr的核心包
+
+ehcache-1.2.jar:Hibernate可以使用不同cache缓存工具作为二级缓存。EHCache是缺省的cache缓存工具。如果没有其它的可选缓存工具，则为必需的。
+
+engineapi.jar:Birt的有关数据集的包
+
+FCKeditor.jar:支持FCKEditor的图片文件上传和浏览的包
+
+flute.jar:有关解析css的类库，谁的还没弄清楚
+
+freemarker.jar:是webwork的包，FreeMarker允许Java servlet保持图形设计同应用程序逻辑的分离，这是通过在模板中密封HTML完成的。模板用servlet提供的数据动态地生成HTML。
+
+hibernate3.jar:hibernate3的核心类库。
+
+itext.jar:java：是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html文件转化为PDF文件。
+
+iTextAsian.jar:itext中关于亚洲编码的类库，在这里用于中文字体的输入。
+
+jasperreports.jar:有关报表功能的类库
+
+javamail.jar:javamail的核心类，提供了mail发送的基本接口。
+
+jaxrpc.jar:（java APIs for XML-Based Remote Procedure Call，JAX-RPC）将XML 类型转换为 Java 类型，以确保 Web 服务客户机和基于 Java 的应用程序之间能够进行平稳的数据交换。是spring需要的。
+
+jenkov-prizetags-bin-3.2.0.jar:一个集许多功能于一身的Jsp标签库。其中最受欢迎的Tree Tag，这个Tag可以为不同节点指定
+
+activation.jar:与javaMail有关的jar包，使用javaMail时应与mail.jar一起加入到lib中去，具体负责mail的数据源和类型等
+
+ajaxtags-1.2-beta3.jar:ajax提供的标签库，使用户能像使用jsp普通标签一样使用ajax
+
+ant.jar和antlr.jar（可以删去）:的是ant编译用的包，在工程中不用添加
+
+asm.jar:Hebernate的包，Hibernate在运行时使用这个代码生成库增强类（与java反射机制联合使用）.ASM字节码库，cglib.jar包依赖的包。必需的jar包。
+
+axis-ant.jar:是Axis为支持Ant构建，提供了的文件。该文件包含三个可选任务(task)的定义和实现：axis-wsdl2java，axis-java2wsdl和axis-admin。
+
+cglib-2.1.3.jar:全称是Code Generation Library，它可以用来动态继承Java类或者实现接口，很多知名的开源项目中用到了它.Hibernate用它来实现PO字节码的动态生成，非常核心的库，必需的jar包。
+
+chartengineapi.jar:不大清楚，大概是Birt关于字体的类库。
+
+com.ibm.icu_3.6.1.v10070417.jar:从3.2版本开始，eclipse就增加了一个com.ibm.icu插件，用于增强对多语言的支持。应该是没用的。
+
+commons-beanutils.jar:下面几个带“commons”的都是Apache Commons包中的一个，这里是被hibernate使用的，估计在工程中没有全部用到这些包，所以有的应该能删去。本包包含了一些Bean工具类类，是必须使用的jar包。
+
+commons-cli-1.0.jar:这是一个处理命令的工具。比如main方法输入的string[]需要解析。你可以预先定义好参数的规则，然后就可以调用CLI来解析。
+
+commond-collections.jar:包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包.
+
+commons-digester.jar:它能方便地将XML文档所定义的元素转化为JAVA对象，其实它的用法有点象栈(当然内在的原理就是那个古老的东西,只是提供了更高一层的封装)。
+
+commons-discovery-0.2.jar:discovery模式的实现，提供定位与实例化类或其他资源的通用方法。使用最好的算法得到接口的所有实现。当用户想找到所有的提供某一服务的提供商时，这将特别有用
+
+commons-fileupload.jar:jsp的上传文件功能
+
+commons-io.jar:可以看成是java.io的扩展
+
+commons-lang.jar:包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。 
+
+commons-pool-1.2.jar:DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。
+
+commons-validator.jar:用来帮助进行验证的工具。比如验证Email字符串，日期字符串等是否合法。
+
+coreapi.jar:一种应用的核心 类库，这里是Birt的核心包。
+
+dataadapterapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dom4j-1.4.jar:是一个Java的XML API，类似于jdom，用来读写XML文件的。Hibernate使用dom4j解析XML配置文件和XML映射元文件。必需的。
+
+dteapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dwr.jar:dwr的核心包
+
+ehcache-1.2.jar:Hibernate可以使用不同cache缓存工具作为二级缓存。EHCache是缺省的cache缓存工具。如果没有其它的可选缓存工具，则为必需的。
+
+engineapi.jar:Birt的有关数据集的包
+
+FCKeditor.jar:支持FCKEditor的图片文件上传和浏览的包
+
+flute.jar:有关解析css的类库，谁的还没弄清楚
+
+freemarker.jar:是webwork的包，FreeMarker允许Java servlet保持图形设计同应用程序逻辑的分离，这是通过在模板中密封HTML完成的。模板用servlet提供的数据动态地生成HTML。
+
+hibernate3.jar:hibernate3的核心类库。
+
+itext.jar:java：是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html文件转化为PDF文件。
+
+iTextAsian.jar:itext中关于亚洲编码的类库，在这里用于中文字体的输入。
+
+jasperreports.jar:有关报表功能的类库
+
+javamail.jar:javamail的核心类，提供了mail发送的基本接口。
+
+jaxrpc.jar:（java APIs for XML-Based Remote Procedure Call，JAX-RPC）将XML 类型转换为 Java 类型，以确保 Web 服务客户机和基于Java 的应用程序之间能够进行平稳的数据交换。是spring需要的。
+
+jenkov-prizetags-bin-3.2.0.jar:一个集许多功能于一身的Jsp标签库。其中最受欢迎的Tree Tag，这个Tag可以为不同节点指定
+
+
+js.jar:java关于处理javascript的类库。
+
+jstl.jar:（jsp standard taglib）jstl的核心标签库。
+
+jta.jar:java的事务规范，当用到事务处理时是必需的，hebernate中用到。
+
+jxl.jar:(java excel api)是一个韩国人写的处理Excel的类库，能够方便的导入和到处Excel。
+
+log4j.jar:日志包，可以更加详细的记录日志。可选的。
+
+modelapi.jar:birt关于报表生成的类库，具体功能有待考究。
+
+mysql-connector-java-5.0.5-bin.jar:mysql的数据库联接驱动，符合JCA 规范，如果你在App Server上把Hibernate配置为mysql数据库联接池的话，就需要这个jar。
+
+ognl.jar:OGNL(Object Graph Navigation Language)是一种表达式语言,使用它可以使表达式与java对象中的getter和setter属性绑定,且一个OGNL表达式可以进行存和取两方面的操作.ognl.jar是java对ognl的支持，webwork加载的。
+
+org.eclipse.birt.report.viewer.nl1_2.2.0.v20070526-1010.jar:有关Birt的报表生成的类库
+
+org.eclipse.emf.common_2.2.1.v200702131851.jar:　　EMF根据ecore建模(可以和schema的xsd相互转换)生成强类型的EMF代码. 这个强类型更强的地方是可以取得meta信息,从而可以用于校验和界面辅助信息的生成.类似于动态bean,属性也可以根据名称动态取得，这几个类库都与 Birt的报表生成有关
+
+org.eclipse.emf.ecore.xmi_2.2.2.v200702131851.jar
+
+org.eclipse.emf.ecore_2.2.2.v200702131851.jar
+
+oscore.jar:webwork的一个通用功能类库
+
+poi.jar:Apache的操作数据转换的类库，能导入和到处Excel，与jxl.jar功能重复。
+
+proxool-0.9.0RC3.jar:是一个连接池，如果你准备用这个连接池，就需要这个jar包。 
+
+quartz-1.6.0.jar:一个定时器
+
+rife-continuations.jar:rife原来是一个基于组件模型的Java Web框架，被webwork集成。
+
+saaj.jar:SOAP with Attachments API for Java。能为java提供按照SOAP规范的收发信息。谁带进来的有待考究。
+
+sac.jar:Simple API for CSS,java处理CSS的类。
+
+scriptapi.jar:能够在Java中使用脚本语言引擎，在脚本语言和Java之间交换数据。可能是Birt引入的。
+
+sitemesh.jar:Sitemesh 是一个基于WEB页面的布局、装饰以及应用整合的开源框架。它能帮助我们在由大量页面构成的项目中创建一致的页面布局和外观，如一致的导航条，一致的 banner，一致的版权，等等。它不仅仅能处理动态的内容，如jsp，php，asp等产生的内容，它也能处理静态的内容，使得它的内容也符合你的页面结构的要求.sitemesh.jar是其类库
+
+spring.jar:spring的核心类库。
+
+standard.jar:jstl的类库，包含TLD 和标记句柄。
+
+velocity-dep.jar: webwork的包。依赖的Velocity类库
+
+velocity-tools-view.jar:同上
+
+velocity.jar:webwork带来的包。是一个的模板引擎（template engine）。它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码定义的对象。
+
+webwork-2.2.5.jar:webwork的核心类库。
+
+wsdl4j-1.5.1.jar:一个可扩展的 WSDL 分析框架,WSIF 在此基础上进行构建。AXIS必需的包。
+
+xwork.jar:包含webwork构建所依赖的xwork类库，webwork是基于xwork的
+
+
+
+activation.jar:与javaMail有关的jar包，使用javaMail时应与mail.jar一起加入到lib中去，具体负责mail的数据源和类型等
+ajaxtags-1.2-beta3.jar:ajax提供的标签库，使用户能像使用jsp普通标签一样使用ajax
+ant.jar和antlr.jar（可以删去）:的是ant编译用的包，在工程中不用添加
+asm.jar:Hebernate的包，Hibernate在运行时使用这个代码生成库增强类（与java反射机制联合使用）.ASM字节码库，cglib.jar包依赖的包。必需的jar包。
+axis-ant.jar:是Axis为支持Ant构建，提供了的文件。该文件包含三个可选任务(task)的定义和实现：axis-wsdl2java，axis-java2wsdl和axis-admin。
+cglib-2.1.3.jar:全称是Code Generation Library，它可以用来动态继承Java类或者实现接口，很多知名的开源项目中用到了它.Hibernate用它来实现PO字节码的动态生成，非常核心的库，必需的jar包。
+chartengineapi.jar:不大清楚，大概是Birt关于字体的类库。
+com.ibm.icu_3.6.1.v10070417.jar:从3.2版本开始，eclipse就增加了一个com.ibm.icu插件，用于增强对多语言的支持。应该是没用的。
+commons-beanutils.jar:下面几个带“commons”的都是Apache Commons包中的一个，这里是被hibernate使用的，估计在工程中没有全部用到这些包，所以有的应该能删去。本包包含了一些Bean工具类类，是必须使用的jar包。
+commons-cli-1.0.jar:这是一个处理命令的工具。比如main方法输入的string[]需要解析。你可以预先定义好参数的规则，然后就可以调用CLI来解析。
+commond-collections.jar:包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包.
+commons-digester.jar:它能方便地将XML文档所定义的元素转化为JAVA对象，其实它的用法有点象栈(当然内在的原理就是那个古老的东西,只是提供了更高一层的封装)。
+commons-discovery-0.2.jar:discovery模式的实现，提供定位与实例化类或其他资源的通用方法。使用最好的算法得到接口的所有实现。当用户想找到所有的提供某一服务的提供商时，这将特别有用
+commons-fileupload.jar:jsp的上传文件功能
+commons-io.jar:可以看成是java.io的扩展
+commons-lang.jar:包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。 
+commons-pool-1.2.jar:DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。
+commons-validator.jar:用来帮助进行验证的工具。比如验证Email字符串，日期字符串等是否合法。
+coreapi.jar:一种应用的核心 类库，这里是Birt的核心包。
+dataadapterapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+dom4j-1.4.jar:是一个Java的XML API，类似于jdom，用来读写XML文件的。Hibernate使用dom4j解析XML配置文件和XML映射元文件。必需的。
+dteapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+dwr.jar:dwr的核心包
+ehcache-1.2.jar:Hibernate可以使用不同cache缓存工具作为二级缓存。EHCache是缺省的cache缓存工具。如果没有其它的可选缓存工具，则为必需的。
+engineapi.jar:Birt的有关数据集的包
+FCKeditor.jar:支持FCKEditor的图片文件上传和浏览的包
+flute.jar:有关解析css的类库，谁的还没弄清楚
+freemarker.jar:是webwork的包，FreeMarker允许Java servlet保持图形设计同应用程序逻辑的分离，这是通过在模板中密封HTML完成的。模板用servlet提供的数据动态地生成HTML。
+hibernate3.jar:hibernate3的核心类库。
+itext.jar:java：是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html文件转化为PDF文件。
+iTextAsian.jar:itext中关于亚洲编码的类库，在这里用于中文字体的输入。
+jasperreports.jar:有关报表功能的类库
+javamail.jar:javamail的核心类，提供了mail发送的基本接口。
+jaxrpc.jar:（java APIs for XML-Based Remote Procedure Call，JAX-RPC）将XML 类型转换为 Java 类型，以确保 Web 服务客户机和基于 Java 的应用程序之间能够进行平稳的数据交换。是spring需要的。
+jenkov-prizetags-bin-3.2.0.jar:一个集许多功能于一身的Jsp标签库。其中最受欢迎的Tree Tag，这个Tag可以为不同节点指定
+
+hibernate2.jar: 
+　　Hibernate的库，没有什么可说的，必须使用的jar包 
+
+　　cglib-asm.jar: 
+　　CGLIB库，Hibernate用它来实现PO字节码的动态生成，非常核心的库，必须使用的jar包 
+
+　　dom4j.jar: 
+　　dom4j是一个Java的XML   API，类似于jdom，用来读写XML文件的。dom4j是一个非常非常优秀的Java   XML   API，具有性能优异、功能强大和极端易用使用的特点，同时它也是一个开放源代码的软件，可以在SourceForge上找到它。在IBM   developerWorks上面可以找到一篇文章，对主流的Java   XML   API进行的性能、功能和易用性的评测，dom4j无论在那个方面都是非常出色的。我早在将近两年之前就开始使用dom4j，直到现在。如今你可以看到越来越多的Java软件都在使用dom4j来读写XML，特别值得一提的是连Sun的JAXM也在用dom4j。这是必须使用的jar包，   Hibernate用它来读写配置文件。 
+
+　　odmg.jar: 
+　　ODMG是一个ORM的规范，Hibernate实现了ODMG规范，这是一个核心的库，必须使用的jar包。 
+
+　　commons-collections.jar： 
+　　Apache   Commons包中的一个，包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包。 
+
+　　commons-beanutils.jar： 
+　　Apache   Commons包中的一个，包含了一些Bean工具类类。必须使用的jar包。 
+
+　　commons-lang.jar: 
+　　Apache   Commons包中的一个，包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。 
+
+　　commons-logging.jar: 
+　　Apache   Commons包中的一个，包含了日志功能，必须使用的jar包。这个包本身包含了一个Simple   Logger，但是功能很弱。在运行的时候它会先在CLASSPATH找log4j，如果有，就使用log4j，如果没有，就找JDK1.4带的   java.util.logging，如果也找不到就用Simple   Logger。commons-logging.jar的出现是一个历史的的遗留的遗憾，当初Apache极力游说Sun把log4j加入JDK1.4，然而JDK1.4项目小组已经接近发布JDK1.4产品的时间了，因此拒绝了Apache的要求，使用自己的java.util.logging，这个包的功能比log4j差的很远，性能也一般。 
+
+　　后来Apache就开发出来了commons-logging.jar用来兼容两个   logger。因此用commons-logging.jar写的log程序，底层的Logger是可以切换的，你可以选择log4j，   java.util.logging或者它自带的Simple   Logger。不过我仍然强烈建议使用log4j，因为log4j性能很高，log输出信息时间几乎等于System.out，而处理一条log平均只需要5us。你可以在Hibernate的src目录下找到Hibernate已经为你准备好了的log4j的配置文件，你只需要到Apache   网站去下载log4j就可以了。commons-logging.jar也是必须的jar包。 
+
+　　使用Hibernate必须的jar包就是以上的这几个，剩下的都是可选的。 
+
+　　ant.jar: 
+　　Ant编译工具的jar包，用来编译Hibernate源代码的。如果你不准备修改和编译Hibernate源代码，那么就没有什么用，可选的jar包 
+
+　　optional.jar： 
+　　Ant的一个辅助包。 
+
+　　c3p0.jar： 
+　　C3PO是一个数据库连接池，Hibernate可以配置为使用C3PO连接池。如果你准备用这个连接池，就需要这个jar包。 
+
+　　proxool.jar： 
+　　也是一个连接池，同上。 
+
+　　commons-pool.jar,   commons-dbcp.jar: 
+　　DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。 
+
+　　实际上Hibernate自己也实现了一个非常非常简单的数据库连接池，加上上面3个，你实际上可以在Hibernate上选择4种不同的数据库连接池，选择哪一个看个人的偏好，不过DBCP可能更通用一些。另外强调一点，如果在EJB中使用Hibernate，一定要用App   Server的连接池，不要用以上4种连接池，否则容器管理事务不起作用。 
+
+　　connector.jar: 
+　　JCA   规范，如果你在App   Server上把Hibernate配置为Connector的话，就需要这个jar。不过实际上一般App   Server肯定会带上这个包，所以实际上是多余的包。 
+
+　　jaas.jar: 
+　　JAAS是用来进行权限验证的，已经包含在JDK1.4里面了。所以实际上是多余的包。 
+
+　　jcs.jar： 
+　　如果你准备在Hibernate中使用JCS的话，那么必须包括它，否则就不用。 
+
+　　jdbc2_0-stdext.jar: 
+　　JDBC2.0的扩展包，一般来说数据库连接池会用上它。不过App   Server都会带上，所以也是多余的。 
+
+　　jta.jar： 
+　　JTA规范，当Hibernate使用JTA的时候需要，不过App   Server都会带上，所以也是多余的。 
+
+　　junit.jar: 
+　　Junit包，当你运行Hibernate自带的测试代码的时候需要，否则就不用。 
+
+　　xalan.jar,   xerces.jar,   xml-apis.jar: 
+　　Xerces是XML解析器，Xalan是格式化器，xml-apis实际上是JAXP。一般App   Server都会带上，JDK1.4也包含了解析器，不过不是Xerces，是Crimson，效率比较差，不过Hibernate用XML只不过是读取配置文件，性能没什么紧要的，所以也是多余的。 
+
+
+
+
+Jakarta common:
+
+Commons Logging
+Jakarta Commons Logging (JCL)提供的是一个日志(Log)接口(interface)，同时兼顾轻量级和不依赖于具体的日志实现工具。 它提供给中间
+
+件/日志工具开发者一个简单的日志操作抽象，允许程序开发人员使用不同的具体日志实现工具。用户被假定已熟悉某种日志实现工具的更高级
+
+别的细节。JCL提供的接口，对其它一些日志工具，包括Log4J, Avalon LogKit, and JDK 1.4等，进行了简单的包装，此接口更接近于Log4J和
+
+LogKit的实现. 
+
+Commons-Latka
+Commons-Latka 是一个HTTP 功能测试包，用于自动化的QA,验收和衰减测试. 
+
+Commons-Pool
+Commons-Pool 提供了通用对象池接口，一个用于创建模块化对象池的工具包，以及通常的对象池实 
+
+Commons-Math
+Math 是一个轻量的，自包含的数学和统计组件，解决了许多非常通用但没有及时出现在Java标准语言中的实践问题. 
+
+Commons-Jelly
+Jelly能够把XML转换成可执行代码,所以Jelly是一个基于XML与Java的脚本和处理引擎。 Jelly借鉴了JSP定指标签，Velocity, 
+
+Cocoon和Xdoclet中的脚本引擎的许多优点。Jelly可以用在命令行，Ant或者Servlet之中。 
+
+Commons-FileUpload
+FileUpload 使得在你可以在应用和Servlet中容易的加入强大和高性能的文件上传能力. 
+
+Commons-BeanUtils 
+Commons-BeanUtils 提供对 Java 反射和自省API的包装 
+
+Commons-Chain
+Chain 提供实现组织复杂的处理流程的“责任链模式”. 
+
+Commons-Codec
+Codec 包含一些通用的编码解码算法。包括一些语音编码器， Hex, Base64, 以及URL encoder. 
+
+Commons-Collections
+Commons-Collections 提供一个类包来扩展和增加标准的 Java Collection框架 
+
+Commons-Discovery
+Commons-Discovery 提供工具来定位资源 (包括类) ，通过使用各种模式来映射服务/引用名称和资源名称。 
+
+Commons-EL
+Commons-EL 提供在JSP2.0规范中定义的EL表达式的解释器. 
+
+Commons-Jexl
+Jexl是一个表达式语言，通过借鉴来自于Velocity的经验扩展了JSTL定义的表达式语言。. 
+
+Jakarta Commons HttpClient
+HttpClient作为HTTP客户端组件与服务器进行通讯，同时使用了jdom进行XML数据的解析。 
+
+Jakarta Commons Net
+一个用于操作Internet基础协议（Finger，Whois，TFTP，Telnet，POP3，FTP，NNTP，以及SMTP）的底层API。Net包不仅支持对各种低层次协
+
+议的访问，而且还提供了一个高层的抽象。它使得开发者不再需要直接面对各种协议的Socket级的低层命令。 
+
+Commons-Configuration
+Commons-Configuration 工具可以从
+*Properties文件 
+*XML文件 
+*JNDI 
+*JDBC 数据源 
+*System properties 
+*Applet parameters 
+*Servlet parameters等来读取相应的信息 
+
+Commons-validator
+commons-validator提供了一个简单的，可扩展的框架来在一个XML文件中定义校验器 (校验方法)和校验规则。支持校验规则的和错误消息的国
+
+际化。 
+
+Commons-Digester
+Digester基于规则的XML文档解析,主要用于XML到Java对象的映射. 
+
+Commons Betwixt
+Commons Betwixt这个组件提供一个XML自省(introspection)机制用来把Java Bean映射到XML文档.他实现了与标准的Introspector及BeanInfo
+
+类相似的XMLIntrospector及XMLBeanIfno类. 
+
+Commons-Convert
+Commons-Convert的目标是提供一个简单的包来完成把一种类型的对象转换成另一种.但它目前只支持String到Object或Object到String的转换. 
+
+Commons4E
+这个Eclipse插件方便了利用Jakarta Commons组件所进行地开发.Commons4E根据用户选择的字段(fields)利用commons-lang builders来自动生
+
+成以下方法:toString(),hashcode(),equals(Object)和compareTo(Object). 
+
+Commons-Email
+Commons-Email的目的是提供一组用于发送Email的API,它基于Java Mail API基础之上并进行了简化。它提供的主要Java类有：SimpleEmail：
+
+这个类用于发送简单的文本类型email。MultiPartEmail：这个类允许发送文本消息并附带附件。HtmlEmail：用于发送Html格式的附件并支持
+
+内含图片。EmailAttachment：这是一个简单的容器类用于简化附件的处理。 
+
+Commons-IO
+Commons IO是Jakarta Commons项目的一个子项目。用来帮助进行IO功能开发．它包含三个主要的领域:Utility classes-提供一些静态方法来
+
+完成公共任务．Filters-提供文件过滤器的各种实现．Streams-提供实用的Stream，reader与writer实现．
+-----------------------------------------------------------------------------
+
+ANother Tool for Language Recognition（ANTLR）:它的描述语言可以生成词法分析器、语法分析器与语义分析器，也就是说，我们可以用它
+
+来识别加工不同的语言（编译器的编译器）。它同时支持3大类语言的输出：C++, Java, C#（按照生日排序），也就是说，我们可以利用它来
+
+用C#生成编译器,它是这样的一种工具，它可以接受词文法语言描述,并能产生识别这些语言的语句的程序。作为翻译程序的一部分,你可以使用
+
+简单的操作符和动作来参数化你的文法，使之告诉ANTLR怎样去创建抽象语法树(AST)和怎样产生输出。ANTLR知道怎样去生成识别程序，语言包
+
+括Java，C++，C#. 。类似的还有coco/r 。
+
+cglib是一个强大的,高性能,高质量的Code生成类库。它可以在运行期扩展Java类与实现Java 接口。Hibernate用它来实现PO字节码的动态生成
+
+。 主页 http://cglib.sourceforge.net
+
+
+c3p0-0.8.4.5.jar
+
+c3p0是一个容易使用的java库,用于扩充传统的基于驱动管理的JDBC驱动和JNDI绑定数据源，包括执行Connection和Statement Pooling的数据
+
+源。
+
+
+cleanimports是对java文件中的无用的imports作清理，并通过配置文件提供的格式对imports代码段进行格式整理。
+
+concurrent-1.3.2.jar
+
+concurrent包提供标准化、高效的版本的实用的类，用于并行的Java程序。
+http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
+
+
+connector.jar
+JCA（J2EE Connector Architecture）规范的包
+
+dom4j-1.5.2.jar
+Dom4J是一个在Java平台上使用Java Collections Framework与XML、 XPath和XSLT协同工作的开源Java库，它全面支持DOM、SAX和JAXP。
+
+ehcache-1.1.jar
+
+EHCache 是一个纯java的在进程中的缓存，它具有以下特性：快速，简单，为Hibernate2.1充当可插入的缓存，最小的依赖性，全面的文档和
+
+测试。
+官方网站 http://ehcache.sourceforge.net/
+
+jaxen-1.1-beta-4.jar
+jaxen是一个用Java开发的XPath 引擎，用于配合各种基于XML的对象模型，如DOM， dom4j ，JDOM以及Java Beans。
+jboss-cache.jar
+JBossCache是一个复制的事务处理缓存，它允许你缓存企业级应用数据来更好的改善性能。缓存数据被自动复制，让你轻松进行JBoss服务器之
+
+间的集群工作。JBossCache能够通过JBoss应用服务或其他J2EE容器来运行一个MBean服务，当然，它也能独立运行。
+JBossCache包括两个模块：TreeCache和TreeCacheAOP。
+TreeCache --是一个树形结构复制的事务处理缓存。
+TreeCacheAOP --是一个“面向对象”缓存，它使用AOP来动态管理POJO(Plain Old Java Objects)
+注：AOP是OOP的延续，是Aspect Oriented Programming的缩写，意思是面向方面编程。
+官方网站 http://www.jboss.org/products/jbosscache
+jboss-jmx.jar
+JMX(Java Management Extensions)是一个为应用程序植入管理功能的框架。JMX是一套标准的代理和服务，实际上，用户可以在任何Java应用
+
+程序中使用这些代理和服务实现管理。
+
+oscache-2.0.2.jar
+OSCache是个一个广泛采用的高性能的J2EE缓存框架，OSCache能用于任何Java应用程序的普通的缓存解决方案。
+OSCache有以下特点：
+缓存任何对象，你可以不受限制的缓存部分jsp页面或HTTP请求，任何java对象都可以缓存。
+拥有全面的API--OSCache API给你全面的程序来控制所有的OSCache特性。
+永久缓存--缓存能随意的写入硬盘，因此允许昂贵的创建（expensive-to-create）数据来保持缓存，甚至能让应用重启。
+支持集群--集群缓存数据能被单个的进行参数配置，不需要修改代码。
+缓存记录的过期--你可以有最大限度的控制缓存对象的过期，包括可插入式的刷新策略（如果默认性能不需要时）。
+官方网站 http://www.opensymphony.com/oscache/
+
+
+proxool-0.8.3.jar
+Proxool是Java数据库连接池，它能向存在的JDBC驱动中透明的增加数据库连接池。
+
+
+swarmcache-1.0rc2.jar
+SwarmCache是一个简单且有效的分布式缓存，它使用IP multicast与同一个局域网的其他主机进行通讯，是特别为集群和数据驱动web应用程序
+
+而设计的。SwarmCache能够让典型的读操作大大超过写操作的这类应用提供更好的性能支持。
+SwarmCache使用JavaGroups来管理从属关系和分布式缓存的通讯。
+官方网站 http://swarmcache.sourceforge.net
+
+
+xalan-2.6.jar
+Xalan名称来自于一种罕见的乐器。
+
+Xalan-Java是一个将XML转换成HTML、text或其他XML文件类型的XSLT（XSL Transformations）处理机制。它使用XSL Transformations (XSLT) 
+
+Version 1.0 and XML Path Language (XPath) Version 1.0。它在命令行方式、applet、servlet、或其他程序的模块中都可以使用。
+Xalan同时构建于SAX2和DOM level 2上。
+
+官方网站；http://xml.apache.org/xalan-j/
+
+xerces-2.6.2.jar
+
+Xerces（名称来源于一种叫Xerces 
+
+Blue的蝴蝶）提供世界级的XML解析和产生。充分验证的语法分析可用于Java和C++，执行W3C的XML和DOM(Level1 and 
+
+2)标准，以及SAX（version 2）标准。其语法具有高模块化和可配置化。同时提供支持XML Schema（W3C标准草案）。
+
+
+checkstyle检查java程序源代码编码风格的，是java程序员不可或缺的工具，用以检查自己的编码习惯是否符合公司的要求或sun的约定。当然
+
+如果你用了ide，那里可能有相应的功能或插件来帮助程序员来完成这项工作。也如checkstyle其名所示，它只检查，不进行beautifier操作。
+
+所以，它应比较适合用于项目管理，用于dailybuild.如果你想借助工具来beautifier你的java源代码，可以参考我写的jalopy安装使用.
+
+
+Clickstream：它是一个JavaServlet过滤器，用来跟踪用户请求（比如：点击）和请求 队列（比如：点击流）以向网络管理员显示谁在她的网
+
+站上以及每个用户正在访问那个页面。 http://www.opensymphony.com/clickstream/
+
+
+Cargo是一个Java类包用来操作当前J2EE容器.它提供了Ant和Maven API来停止/启动/配置Java容器也提供了Java API来解释/创建J2EE组件.
+
+
+DbUnit是为数据库驱动的项目提供的一个对JUnit 的扩展，除了提供一些常用功能，它可以将你的数据库置于一个测试轮回之间的状态。
+
+iText是一个能够快速产生PDF文件的java类库。iText的java类对于那些要产生包含文本，表格，图形的只读文档是很有用的。它的类库尤其与
+
+java Servlet有很好的给合。使用iText与PDF能够使你正确的控制Servlet的输出。
+
+DWR(Direct Web Remoting)是一个WEB远程调用框架.利用这个框架可以让AJAX开发变得很简单.利用DWR可以在客户端利用JavaScript直接调用
+
+服务端的Java方法并返回值给JavaScript就好像直接本地客户端调用一样(DWR根据Java类来动态生成JavaScrip代码).它的最新版本DWR0.6添加
+
+许多特性如:支持Dom Trees的自动配置,支持Spring(JavaScript远程调用spring bean),更好浏览器支持,还支持一个可选的commons-logging日
+
+记操作.
+
+Java2Html 能够的把java源代码转换为高亮有序的HTML, RTF, TeX 与 XHTML格式。这个开源项目有一个java applet 与许多插件以便能够与
+
+其它系统很好的给合。
+
+jMock利用mock objects思想来对Java code进行测试。jMock具有以下特点:容易扩展，让你快速简单地定义mock objects,因此不必打破程序间
+
+的关联，让你定义灵活的超越对象之间交互作用而带来测试局限，减少你测试地脆弱性。
+
+PMD是一个Java源码分析器。它可以发现不需要使用的变量，空的Catch块和不需要创建的对象等。它还包含一个CPD工具可以探测一块代码中相
+
+同的部分。 
+
+OS(OpenSymphony)的SiteMesh是一个用来在JSP中实现页面布局和装饰（layout and decoration）的框架组件，能够帮助网站开发人员较容易
+
+实现页面中动态内容和静态装饰外观的分离。
+
+Velocity是一个基于java的模板引擎（template engine）。它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码
+
+定义的对象。 当Velocity应用于web开发时，界面设计人员可以和java程序开发人员同步开发一个遵循MVC架构的web站点，也就是说，页面设
+
+计人员可以只关注页面的显示效果，而由java程序开发人员关注业务逻辑编码。Velocity将java代码从web页面中分离出来，这样为web站点的
+
+长期维护提供了便利，同时也为我们在JSP和PHP之外又提供了一种可选的方案。 Velocity的能力远不止web站点开发这个领域，例如，它可以
+
+从模板（template）产生SQL和PostScript、XML，它也可以被当作一个独立工具来产生源代码和报告，或者作为其他系统的集成组件使用。Vel
+
+ocity也可以为Turbine web开发架构提供模板服务（template service）。Velocity+Turbine提供一个模板服务的方式允许一个web应用以一个
+
+真正的MVC模型进行开发。 【VeloEclipse ：Velocity在Eclipse平台下的一个辅助开发插件】 
+
+Jakarta ORO一套文本处理工具，能提供perl5.0兼容的正则表达式,AWK-like正则表达式, glob表达式。还提供替换,分割,文件名过虑等功能. 
+
+
+caucho:
+Burlap是一个轻量级的XML RPC协议.利用Burlap Web服务协议使用Web服务不需要大型的框架也不用学习其它协议字母汤(alphabet soup).
+
+Caucho Resin提供了最快的jsp/servlets运行平台。它支持Servlet,XSL Filtering6并且具备XSLT和XPath1.0引擎。
+
+Hessian也是一个轻量级的,自定义描述的二进制RPC协议.因为它是一个二进制协议,所以它很适合于发送二进制数据而需要使用其它附件来扩展
+
+这个协议.
+
+-----------------
+cos上传组件它是著名O'Reilly的图书出版公司开发的。这个上传的组件做得很棒。
+
+
+EasyMock为Mock Objects提供接口并在JUnit测试中利用Java的proxy设计模式生成它们的实例。EasyMock最适合于测试驱动开发。
+
+FreeMarker允许Java servlet保持图形设计同应用程序逻辑的分离，这是通过在模板中密封HTML完成的。模板用servlet提供的数据动态地生成 
+
+HTML。模板语言是强大的直观的，编译器速度快，输出接近静态HTML页面的速度。
+
+Jamon是一个Java文本模板引擎，用于生成动态HTML, XML,或任何基于文本的内容。它有一个丰富的功能集，支持封装，参数化，功能分解，表
+
+达逻辑重用。模板声明它们要求生成的参数，包括动态模板内容("fragments"),并被翻译成带有公有方法的Java类，它的符号反映了在模板中
+
+声明的参数。 
+
+
+JasperReports是一个基于Java的开源报表工具，它可以在Java环境下像其它IDE报表工具一样来制作报表。JasperReports支持PDF、HTML、XLS
+
+、CSV和XML文件输出格式。JasperReports是当前Java开发者最常用的报表工具。
+Java Excel API(JXL)是一个成熟，开源的Excel电子表格读取，修改，写入的项目。Java开发者利用它简单，便利的API就能够读取Excel电子
+
+表格,进行修改并能够把修改后的变化写到任何output stream中(如：Disk, HTTP, database, 或任何socket),这个项目基于GPL发布,而且对中
+
+文有很好的支持。
+● 支持字体、数字、日期操作
+● 能够修饰单元格属性
+● 支持图像和图表 
+
+JOTM 是一个基于Java开放源代码的事务处理管理器。它遵循JTA APIs规范与Business Transaction Protocol（BTP）规范以提供了对Web 
+
+Service的支持。
+
+ObJectRelationalBridge-OJB是基于XML的对象/关系映射工具.OJB提供一些高级的特性如:对象缓存,延迟加载,利用事务隔离级别的结构进行分
+
+布式管理,支持悲观与乐观锁.OJB还提供了一个灵活的配置与插件机制以便可以扩展加入自己的功能. 
+
+Jakarta POI可以让你使用Java来读写MS Excel ,Word文件
+
+
+Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目,它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来
+
+创建简单或为运行十个，百个，甚至是好几万个Jobs这样复杂的日程序表。Jobs可以做成标准的Java组件或 EJBs。
+
+
+xfire框架所需jar包：
+
+activation-1.0.2.jar
+commons-attributes-api-2.1.jar
+commons-beanutils-1.7.0.jar
+commons-codec-1.3.jar
+commons-httpclient-3.0.jar
+commons-logging-1.0.4.jar
+httpunit-1.6.1.jar
+jaxen-1.1-beta-8.jar
+jdom-1.0.jar
+js-1.5R4.1.jar
+jtidy-4aug2000r7-dev.jar
+log4j-1.2.6.jar
+mail-1.3.3_01.jar
+nekohtml-0.9.1.jar
+org.mortbay.jetty-5.1.3.jar
+qdox-1.5.jar
+servlet-api-2.3.jar
+spring-1.2.6.jar
+stax-api-1.0.jar
+stax-utils-snapshot-20040917.jar
+wsdl4j-1.5.2.jar
+wstx-asl-2.9.jar
+xbean-2.1.0.jar
+xbean-spring-2.2.jar
+xercesImpl-2.6.2.jar
+xfire-aegis-1.0.jar
+xfire-annotations-1.0.jar
+xfire-core-1.0.jar
+xfire-spring-1.0.jar
+xfire-xmlbeans-1.0.jar
+xmlParserAPIs-2.6.2.jar
+XmlSchema-1.0.jar
+
+
+activation.jar:与javaMail有关的jar包，使用javaMail时应与mail.jar一起加入到lib中去，具体负责mail的数据源和类型等
+
+ajaxtags-1.2-beta3.jar:ajax提供的标签库，使用户能像使用jsp普通标签一样使用ajax
+
+ant.jar和antlr.jar（可以删去）:的是ant编译用的包，在工程中不用添加
+
+asm.jar:Hebernate的包，Hibernate在运行时使用这个代码生成库增强类（与java反射机制联合使用）.ASM字节码库，cglib.jar包依赖的包。必需的jar包。
+
+axis-ant.jar:是Axis为支持Ant构建，提供了的文件。该文件包含三个可选任务(task)的定义和实现：axis-wsdl2java，axis-java2wsdl和axis-admin。
+
+cglib-2.1.3.jar:全称是Code Generation Library，它可以用来动态继承Java类或者实现接口，很多知名的开源项目中用到了它.Hibernate用它来实现PO字节码的动态生成，非常核心的库，必需的jar包。
+
+chartengineapi.jar:不大清楚，大概是Birt关于字体的类库。
+
+com.ibm.icu_3.6.1.v10070417.jar:从3.2版本开始，eclipse就增加了一个com.ibm.icu插件，用于增强对多语言的支持。应该是没用的。
+
+commons-beanutils.jar:下面几个带“commons”的都是Apache Commons包中的一个，这里是被hibernate使用的，估计在工程中没有全部用到这些包，所以有的应该能删去。本包包含了一些Bean工具类类，是必须使用的jar包。
+
+commons-cli-1.0.jar:这是一个处理命令的工具。比如main方法输入的string[]需要解析。你可以预先定义好参数的规则，然后就可以调用CLI来解析。
+
+commond-collections.jar:包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包.
+
+commons-digester.jar:它能方便地将XML文档所定义的元素转化为JAVA对象，其实它的用法有点象栈(当然内在的原理就是那个古老的东西,只是提供了更高一层的封装)。
+
+commons-discovery-0.2.jar:discovery模式的实现，提供定位与实例化类或其他资源的通用方法。使用最好的算法得到接口的所有实现。当用户想找到所有的提供某一服务的提供商时，这将特别有用
+
+commons-fileupload.jar:jsp的上传文件功能
+
+commons-io.jar:可以看成是java.io的扩展
+
+commons-lang.jar:包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。 
+
+commons-pool-1.2.jar:DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。
+
+commons-validator.jar:用来帮助进行验证的工具。比如验证Email字符串，日期字符串等是否合法。
+
+coreapi.jar:一种应用的核心 类库，这里是Birt的核心包。
+
+dataadapterapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dom4j-1.4.jar:是一个Java的XML API，类似于jdom，用来读写XML文件的。Hibernate使用dom4j解析XML配置文件和XML映射元文件。必需的。
+
+dteapi.jar:Birt的有关数据处理的包，具体作用还没摸清楚。
+
+dwr.jar:dwr的核心包
+
+ehcache-1.2.jar:Hibernate可以使用不同cache缓存工具作为二级缓存。EHCache是缺省的cache缓存工具。如果没有其它的可选缓存工具，则为必需的。
+
+engineapi.jar:Birt的有关数据集的包
+
+FCKeditor.jar:支持FCKEditor的图片文件上传和浏览的包
+
+flute.jar:有关解析css的类库，谁的还没弄清楚
+
+freemarker.jar:是webwork的包，FreeMarker允许Java servlet保持图形设计同应用程序逻辑的分离，这是通过在模板中密封HTML完成的。模板用servlet提供的数据动态地生成HTML。
+
+hibernate3.jar:hibernate3的核心类库。
+
+itext.jar:java：是用于生成PDF文档的一个java类库。通过iText不仅可以生成PDF或rtf的文档，而且可以将XML、Html文件转化为PDF文件。
+
+iTextAsian.jar:itext中关于亚洲编码的类库，在这里用于中文字体的输入。
+
+jasperreports.jar:有关报表功能的类库
+
+javamail.jar:javamail的核心类，提供了mail发送的基本接口。
+
+jaxrpc.jar:（java APIs for XML-Based Remote Procedure Call，JAX-RPC）将XML 类型转换为 Java 类型，以确保 Web 服务客户机和基于Java 的应用程序之间能够进行平稳的数据交换。是spring需要的。
+
+jenkov-prizetags-bin-3.2.0.jar:一个集许多功能于一身的Jsp标签库。其中最受欢迎的Tree Tag，这个Tag可以为不同节点指定
+
+
+js.jar:java关于处理javascript的类库。
+
+jstl.jar:（jsp standard taglib）jstl的核心标签库。
+
+jta.jar:java的事务规范，当用到事务处理时是必需的，hebernate中用到。
+
+jxl.jar:(java excel api)是一个韩国人写的处理Excel的类库，能够方便的导入和到处Excel。
+
+log4j.jar:日志包，可以更加详细的记录日志。可选的。
+
+modelapi.jar:birt关于报表生成的类库，具体功能有待考究。
+
+mysql-connector-java-5.0.5-bin.jar:mysql的数据库联接驱动，符合JCA 规范，如果你在App Server上把Hibernate配置为mysql数据库联接池的话，就需要这个jar。
+
+ognl.jar:OGNL(Object Graph Navigation Language)是一种表达式语言,使用它可以使表达式与java对象中的getter和setter属性绑定,且一个OGNL表达式可以进行存和取两方面的操作.ognl.jar是java对ognl的支持，webwork加载的。
+
+org.eclipse.birt.report.viewer.nl1_2.2.0.v20070526-1010.jar:有关Birt的报表生成的类库
+
+org.eclipse.emf.common_2.2.1.v200702131851.jar:　　EMF根据ecore建模(可以和schema的xsd相互转换)生成强类型的EMF代码. 这个强类型更强的地方是可以取得meta信息,从而可以用于校验和界面辅助信息的生成.类似于动态bean,属性也可以根据名称动态取得，这几个类库都与 Birt的报表生成有关
+
+org.eclipse.emf.ecore.xmi_2.2.2.v200702131851.jar
+
+org.eclipse.emf.ecore_2.2.2.v200702131851.jar
+
+oscore.jar:webwork的一个通用功能类库
+
+poi.jar:Apache的操作数据转换的类库，能导入和到处Excel，与jxl.jar功能重复。
+
+proxool-0.9.0RC3.jar:是一个连接池，如果你准备用这个连接池，就需要这个jar包。 
+
+quartz-1.6.0.jar:一个定时器
+
+rife-continuations.jar:rife原来是一个基于组件模型的Java Web框架，被webwork集成。
+
+saaj.jar:SOAP with Attachments API for Java。能为java提供按照SOAP规范的收发信息。谁带进来的有待考究。
+
+sac.jar:Simple API for CSS,java处理CSS的类。
+
+scriptapi.jar:能够在Java中使用脚本语言引擎，在脚本语言和Java之间交换数据。可能是Birt引入的。
+
+sitemesh.jar:Sitemesh 是一个基于WEB页面的布局、装饰以及应用整合的开源框架。它能帮助我们在由大量页面构成的项目中创建一致的页面布局和外观，如一致的导航条，一致的 banner，一致的版权，等等。它不仅仅能处理动态的内容，如jsp，php，asp等产生的内容，它也能处理静态的内容，使得它的内容也符合你的页面结构的要求.sitemesh.jar是其类库
+
+spring.jar:spring的核心类库。
+
+standard.jar:jstl的类库，包含TLD 和标记句柄。
+
+velocity-dep.jar: webwork的包。依赖的Velocity类库
+
+velocity-tools-view.jar:同上
+
+velocity.jar:webwork带来的包。是一个的模板引擎（template engine）。它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码定义的对象。
+
+webwork-2.2.5.jar:webwork的核心类库。
+
+wsdl4j-1.5.1.jar:一个可扩展的 WSDL 分析框架,WSIF 在此基础上进行构建。AXIS必需的包。
+
+xwork.jar:包含webwork构建所依赖的xwork类库，webwork是基于xwork的
+
+（1）hibernate3.jar:
+Hibernate的核心库，没有什么可说的，必须使用的jar包
+
+（2）cglib-asm.jar:
+CGLIB库，Hibernate用它来实现PO字节码的动态生成，非常核心的库，必须使用的jar包
+
+（3）dom4j.jar:
+dom4j是一个Java的XML API，类似于jdom，用来读写XML文件的。dom4j是一个非常非常优秀的Java XML API，具有性能优异、功能强大和极端易用使用的特点，同时它也是一个开放源代码的软件，可以在SourceForge上找到它。在IBM developerWorks上面可以找到一篇文章，对主流的Java XML API进行的性能、功能和易用性的评测，dom4j无论在那个方面都是非常出色的。我早在将近两年之前就开始使用dom4j，直到现在。如今你可以看到越 来越多的Java软件都在使用dom4j来读写XML，特别值得一提的是连Sun的JAXM也在用dom4j。这是必须使用的jar 包，Hibernate用它来读写配置文件。
+
+（4）odmg.jar:
+ODMG是一个ORM的规范，Hibernate实现了ODMG规范，这是一个核心的库，必须使用的jar包。
+
+（5）commons-collections.jar：
+Apache Commons包中的一个，包含了一些Apache开发的集合类，功能比java.util.*强大。必须使用的jar包。
+
+（6）commons-beanutils.jar：
+　　Apache Commons包中的一个，包含了一些Bean工具类类。必须使用的jar包。
+
+（7）commons-lang.jar:
+Apache Commons包中的一个，包含了一些数据类型工具类，是java.lang.*的扩展。必须使用的jar包。
+
+（8）commons-logging.jar:
+Apache Commons包中的一个，包含了日志功能，必须使用的jar包。这个包本身包含了一个Simple Logger，但是功能很弱。在运行的时候它会先在CLASSPATH找log4j，如果有，就使用log4j，如果没有，就找JDK1.4带的 java.util.logging，如果也找不到就用Simple Logger。commons-logging.jar的出现是一个历史的的遗留的遗憾，当初Apache极力游说Sun把log4j加入JDK1.4， 然而JDK1.4项目小组已经接近发布JDK1.4产品的时间了，因此拒绝了Apache的要求，使用自己的java.util.logging，这个包 的功能比log4j差的很远，性能也一般。
+
+后来Apache就开发出来了commons-logging.jar用来兼容两个logger。因此用commons-logging.jar写的 log程序，底层的Logger是可以切换的，你可以选择log4j，java.util.logging或者它自带的Simple Logger。不过我仍然强烈建议使用log4j，因为log4j性能很高，log输出信息时间几乎等于System.out，而处理一条log平均只需 要5us。你可以在Hibernate的src目录下找到Hibernate已经为你准备好了的log4j的配置文件，你只需要到Apache 网站去下载log4j就可以了。commons-logging.jar也是必须的jar包。
+
+使用Hibernate必须的jar包就是以上的这几个，剩下的都是可选的。
+ant.jar:
+Ant编译工具的jar包，用来编译Hibernate源代码的。如果你不准备修改和编译Hibernate源代码，那么就没有什么用，可选的jar包
+
+optional.jar：
+Ant的一个辅助包。
+
+c3p0.jar：
+C3PO是一个数据库连接池，Hibernate可以配置为使用C3PO连接池。如果你准备用这个连接池，就需要这个jar包。
+
+proxool.jar：
+也是一个连接池，同上。
+
+commons-pool.jar, commons-dbcp.jar:
+DBCP数据库连接池，Apache的Jakarta组织开发的，Tomcat4的连接池也是DBCP。
+
+实际上Hibernate自己也实现了一个非常非常简单的数据库连接池，加上上面3个，你实际上可以在Hibernate上选择4种不同的数据库连接 池，选择哪一个看个人的偏好，不过DBCP可能更通用一些。另外强调一点，如果在EJB中使用Hibernate，一定要用App Server的连接池，不要用以上4种连接池，否则容器管理事务不起作用。
+
+connector.jar:
+JCA 规范，如果你在App Server上把Hibernate配置为Connector的话，就需要这个jar。不过实际上一般App Server肯定会带上这个包，所以实际上是多余的包。
+
+jaas.jar:
+JAAS是用来进行权限验证的，已经包含在JDK1.4里面了。所以实际上是多余的包。
+
+jcs.jar：
+如果你准备在Hibernate中使用JCS的话，那么必须包括它，否则就不用。
+
+jdbc2_0-stdext.jar:
+JDBC2.0的扩展包，一般来说数据库连接池会用上它。不过App Server都会带上，所以也是多余的。
+
+jta.jar：
+JTA规范，当Hibernate使用JTA的时候需要，不过App Server都会带上，所以也是多余的。
+
+junit.jar:
+Junit包，当你运行Hibernate自带的测试代码的时候需要，否则就不用。
+
+xalan.jar, xerces.jar, xml-apis.jar:
+Xerces是XML解析器，Xalan是格式化器，xml-apis实际上是JAXP。一般App Server都会带上，JDK1.4也包含了解析器，不过不是Xerces，是Crimson，效率比较差，不过Hibernate用XML只不过是读取 配置文件，性能没什么紧要的，所以也是多余的。
+
+ant-1.63.jar Ant 的核心包,在构建Hibernate 时会用到
+antlr-2.7.5H3.jar 语言转换工,Hibernate利用它实现 HQL 到 SQL的转换
+asm.jar/asm-attrs.jar ASM 字节转换库
+c3p0-0.8.5.2.jar C3PO JDBC 连接池工具
+cglib-2.1.jar 高效的代码生成工具, Hibernate用它在运行时扩展 Java类和实现 Java 接口
+commons-collections-2.1.1.jar Apache 的工具集,用来增强Java对集合的处理能力
+commons-logging-1.0.4.jar Apache 软件基我组所提供的日志工具
+concurrent-1.3.2.jar 线程同步工具,在使用JBoss 的树状缓存时需要用到
+connector.jar 用连接多个应用服务器的标准连接器
+dom4j-1.6.jar dom4j XML 解析器
+ehcache-1.1.jar 缓存工具.在没有提供其他缓存工具时,这个缓存工具是必不可少的
+jaas.jar 标准的 Java 权限和认证服务包
+jaxen-1.1-beta-4.jar 通用的 XPath 处理引擎
+jboss-cache.jar JBoss 的一种树状缓存实现工具
+jboss-common.jar Jboss 的基础包,在使用 JBoss 的树状缓存时必须有此包
+jboss-jmx.jar JBoss 的 JMX 实现包
+jboss-system.jar JBoss 的核心,包括服务器和部署引擎
+jdbc2_0-stdext.jar 标准的 JDBC 2.0 扩展API
+jgroups2.2.7.jar 网络通信工具包
+jta.jar 标准的 JAVA 事务处理接口
+junit-3.8.1.jar JUnit 测试框架
+log4.j-1.2.9.jar log4j 库,Apache 的日志工具
+oscache-2.1.jar Java 对象的缓存工具
+proxool-0.8.3.jar Proxool JDBC 连接池 工具
+swarmcache-1.0rc2.jar Hibernate 可以使用的一种缓存工具
+versioncheck.jar 版本检查工具包,用于在构建 Hibernate 的时候检查辅助 jar 包文件的版本
+xerces-2.6.2.jar SAX XML 解析器
+xml-apis.jar Java语言中标准的XML 解析器
+
+
