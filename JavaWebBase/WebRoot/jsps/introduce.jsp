@@ -1,6 +1,10 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="com.qq986945193.javaweb.domain.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!-- 导入el函数库(标签库) -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<!-- 导入C标签库 -->
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!-- 当jsp报错的时候，指向指定的错误页面。如500tomcat有默认，这样就会指向我们设置的error.jsp -->
 <%-- <%@page errorPage="error.jsp"%> --%>
 <%
@@ -39,10 +43,24 @@
 		out.println(request.getAttribute("name"));
 	%>
 	<%!//定义方法名和变量名，就像在类中
-	int num = 0;
+	//int num = 0;//
+	int num = 11;//
 	int sum = 20;%>
 	<br />
 	<!-- 这样肯定会报500算法错误,由于我们上面配置了error.jsp -->
-	<%=sum / num%>
+	<!-- <%=sum / num%> -->
+	
+	<br/>
+	cookie的jsessionid:${cookie.JSESSIONID.value }<br>
+	<h1>---------------------</h1><br>
+	<%
+		User user = new User();
+		user.setusername("username");
+		user.setpassword("pwd");
+		request.setAttribute("user", user);
+	 %>
+	 <h1>JSTL提供的el函数库</h1>
+	 ${requestScope.user.username }<br>
+	 ${requestScope.user.password }
 </body>
 </html>
