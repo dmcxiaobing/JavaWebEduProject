@@ -26,6 +26,50 @@ import org.apache.commons.io.output.ByteArrayOutputStream;
 
 /**
  * Servlet的一些常用方法 简介 介绍
+ * 
+ * 在Servlet中可以很方便的获取各种运行环境信息，这些信息包括Servlet自身信息、服务器端信息和客户端信息三类。
+ 1. 获取Servlet自身信息
+Servlet自身信息主要是指在web.xml文件中的配置信息，包括初始化参数和配置名称等，通过javax.serlet.ServletConfig接口定义的方法获取。
+·             获取初始化参数
+所谓的获取初始化参数即获得web.xml配置文件中<servlet>元素下子元素<init-param>子元素的相关设置，这些信息的获得是在Servlet生命周期中的初始化阶段完成。参数的获得可以通过getInitParameter(String name)方法获得，其中方法中的参数name为<init-param>子元素中定义的参数名称，返回值为该子元素中设置的初始值。因为在 GenericServlet中实现了ServletConfig接口，因此在其子类中可以直接调用getInitParameter（）方法。
+另外，getParameterNames（）方法可以返回初始化参数名称的一个集合，返回类型为Enumeration
+·             获取Servlet配置名称
+获得Servlet在web.xml配置文件中配置名称getServletName（），返回类型为String，与getInitParameter（）方法类似，可以在子类中直接使用该方法。
+ 2.获取服务器端信息
+在Servlet中可以很方便的获取正在执行它的服务器的信息，例如站点名称、监听端口、Servlet软件名称和版本、Servlet容器属性等。这些信息的获取是通过ServletContext和ServletRequest接口提供的方法实现的。
+ServletRequest
+String getServerName（）
+获取服务器的站点名称
+int getServerPort（）
+获取服务器的监听端口号
+ServletContext
+String getServerInfo（）
+获取服务器的名称和版本
+Enumeration getAttributeNames()
+获取服务器所有的属性名称
+Object getAttribute（String name）
+按名称获取服务器的属性值
+int getMajorVersion（）
+服务器支持的Servlet主版本号
+int getMinorVersion（）
+服务器支持的Servlet次版本号
+ 3.获取客户端信息
+客户请求的相关信息存储在ServletRequest对象中，获取客户端信息主要是通过调用ServletRequest接口或者子接口HttpRequest提供的方法。
+String getRemoteHost()
+获取客户端主机名
+String getRomoteAddr()
+获取客户端IP地址
+int getRemotePort()
+获取客户端端口号
+String getProtocol()
+获取客户端请求协议
+String getCharacterEncoding()
+获取客户请求的编码方式
+Enumeration getParameterNames()
+获取客户端发送的所有请求参数名称
+String getParameter(String name)
+获取name指定的参数值
+
  *
  */
 public class IntroduceServlet extends HttpServlet {
