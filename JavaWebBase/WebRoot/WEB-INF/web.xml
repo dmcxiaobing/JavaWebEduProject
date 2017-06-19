@@ -262,6 +262,16 @@
     <servlet-name>JsonIntroduceServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.JsonIntroduceServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.UploadFileServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UploadMyFileServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.day11.UploadMyFileServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -466,6 +476,14 @@
   <servlet-mapping>
     <servlet-name>JsonIntroduceServlet</servlet-name>
     <url-pattern>/servlet/JsonIntroduceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadMyFileServlet</servlet-name>
+    <url-pattern>/servlet/UploadMyFileServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
