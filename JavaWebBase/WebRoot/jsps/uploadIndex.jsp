@@ -26,6 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <h1>一个网络硬盘的小功能展示</h1>
     <a href="<c:url value = '/jsps/uploadFile.jsp'/>">点击上传文件</a><br/>
-    <a href="<c:url value = '/UploadFileServlet?method=findAll'/>">点击查看文件列表</a>
+    <a href="<c:url value = '/servlet/UploadFileServlet?method=findAll'/>">点击查看文件列表</a>
   </body>
 </html>

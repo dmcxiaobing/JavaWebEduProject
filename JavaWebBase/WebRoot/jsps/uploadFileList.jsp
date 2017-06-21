@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'uploadFile.jsp' starting page</title>
+    <title>My JSP 'uploadFileList.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -24,12 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   <h1 >上传文件${pageContext.request.contextPath}</h1>
-   <!-- 如果有这个属性enctype="multipart/form-data"。则 hidden属性将会失效。因为getParameter()将获取为null -->
-   	<form action="<c:url value = '/servlet/UploadMyFileServlet'/>" method="post" enctype="multipart/form-data">
-   		文件：<input type ="file" name = "myfile"/>
-   		<input type = "submit" value = "上传"/>
-   	</form>
-   
+   显示上传的文件列表. <br>
+<table border="1" width="70%" align="center">
+	<tr>
+		<th>文件列表</th>
+	</tr>
+</table>
+<c:forEach items="${requestScope.lists}" var="listsName">
+	<tr>
+		<td>${listsName}</td>
+	</tr>
+</c:forEach>
   </body>
 </html>
