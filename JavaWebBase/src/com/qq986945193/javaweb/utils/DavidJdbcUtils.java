@@ -1,5 +1,8 @@
 package com.qq986945193.javaweb.utils;
-
+/**
+ * @Author ：程序员小冰
+ * @GitHub: https://github.com/QQ986945193
+ */
 import java.sql.Connection;
 import java.sql.SQLException;
 

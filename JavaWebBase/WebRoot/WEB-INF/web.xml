@@ -270,6 +270,11 @@
     <servlet-name>UploadMyFileServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.day11.UploadMyFileServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.demo.CustomerServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -484,6 +489,10 @@
   <servlet-mapping>
     <servlet-name>UploadMyFileServlet</servlet-name>
     <url-pattern>/servlet/UploadMyFileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/demo/servlet/CustomerServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
