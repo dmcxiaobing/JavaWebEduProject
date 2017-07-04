@@ -31,7 +31,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>EncodingFilter</filter-name>
-		<url-pattern>/EncodingServlet</url-pattern>
+		<url-pattern>/GetDataServlet</url-pattern>
 	</filter-mapping>
 	<!-- 统计网页访问数量的listener -->
 	<listener>

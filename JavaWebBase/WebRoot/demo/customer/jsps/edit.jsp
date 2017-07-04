@@ -15,10 +15,10 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link rel="stylesheet" type="text/css" href="<c:url value='/jquery/jquery.datepick.css'/>">
-	<script type="text/javascript" src="<c:url value='/jquery/jquery-1.5.1.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='/jquery/jquery.datepick.js'/>"></script>
-	<script type="text/javascript" src="<c:url value='/jquery/jquery.datepick-zh-CN.js'/>"></script>
+	<link rel="stylesheet" type="text/css" href="<c:url value='/demo/customer/jquery/jquery.datepick.css'/>">
+	<script type="text/javascript" src="<c:url value='/demo/customer/jquery/jquery-1.5.1.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/demo/customer/jquery/jquery.datepick.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/demo/customer/jquery/jquery.datepick-zh-CN.js'/>"></script>
 	
 <script type="text/javascript">
 	$(function() {
@@ -61,8 +61,8 @@
 要调用CustomerServlet#edit
 要传递cid
  --%>
-<form action="<c:url value='/CustomerServlet'/>" method="post">
-	<input type="hidden" name="method" value="edit"/>
+<form action="<c:url value='/demo/servlet/CustomerServlet'/>" method="post">
+	<input type="hidden" name="method" value="editSave"/>
 	<input type="hidden" name="cid" value="${cstm.cid }"/>
 <table border="0" align="center" width="40%" style="margin-left: 100px;">
 	<tr>

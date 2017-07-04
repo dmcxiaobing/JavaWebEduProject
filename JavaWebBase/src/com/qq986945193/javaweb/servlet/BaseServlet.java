@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public abstract class BaseServlet extends HttpServlet {
 	public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html;charset=UTF-8");//处理响应编码
+		req.setCharacterEncoding("UTF-8");
 		/*
 		 * 1. 获取参数，用来识别用户想请求的方法 2. 然后判断是否哪一个方法，是哪一个我们就调用哪一个
 		 */

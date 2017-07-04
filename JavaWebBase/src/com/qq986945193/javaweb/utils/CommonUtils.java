@@ -3,6 +3,9 @@ package com.qq986945193.javaweb.utils;
 import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
+
 
 /**
  * @Author ：程序员小冰
@@ -21,6 +24,7 @@ public class CommonUtils {
 			 * 创建指定类型的JavaBean对象
 			 */
 			T bean = clazz.newInstance();
+			ConvertUtils.register(new DateConverter(), java.util.Date.class);
 			//将数据封装在javabean中
 			BeanUtils.populate(bean, map);
 			//返回javabean对象
