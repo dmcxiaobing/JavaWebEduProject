@@ -16,6 +16,15 @@ public class DemoUserFilterLoginServlet extends BaseServlet {
 	/**
 	 * 登陆的方法
 	 */
+	
+	/*
+	 * 1. 获取用户名
+	 * 2. 判断用户名中是否包含user
+	 *   3. 如果包含，就是普通会员
+	 *   4. 如果包含admin，就是管理员
+	 * 5. 要把登录的用户名称保存到session中
+	 * 6. 转发到index.jsp
+	 */
 	public String login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
 		if (username != null && !username.trim().isEmpty()) {
