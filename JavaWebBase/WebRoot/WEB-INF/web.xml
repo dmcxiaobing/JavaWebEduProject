@@ -24,6 +24,28 @@
 		<!-- 拦截请求，有四种选择。include forward等 -->
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
+	
+	
+	<!-- 用户过滤的filter -->
+	<filter>
+		<filter-name>DemoUserFilter</filter-name>
+		<filter-class>com.qq986945193.javaweb.filter.DemoUserFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>DemoUserFilter</filter-name>
+		<url-pattern>/demo/userfilter/users/*</url-pattern>
+	</filter-mapping>
+	<!-- 管理员过滤的filter -->
+	<filter>
+		<filter-name>DemoAdminFilter</filter-name>
+		<filter-class>com.qq986945193.javaweb.filter.DemoAdminFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>DemoAdminFilter</filter-name>
+		<url-pattern>/demo/userfilter/admin/*</url-pattern>
+	</filter-mapping>
+	
+	
 	<!-- 处理编码的filter -->
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
@@ -193,6 +215,10 @@
 	<servlet>
 		<servlet-name>CharacterServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.servlet.day10.CharacterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DemoUserFilterLoginServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.demo.DemoUserFilterLoginServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>SumFunctionServlet</servlet-name>
@@ -493,6 +519,10 @@
   <servlet-mapping>
     <servlet-name>CustomerServlet</servlet-name>
     <url-pattern>/demo/servlet/CustomerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DemoUserFilterLoginServlet</servlet-name>
+    <url-pattern>/demo/servlet/DemoUserFilterLoginServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
