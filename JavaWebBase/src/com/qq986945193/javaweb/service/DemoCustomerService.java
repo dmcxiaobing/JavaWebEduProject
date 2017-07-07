@@ -57,5 +57,19 @@ public class DemoCustomerService {
 			return null;
 		}
 	}
+	
+	/**
+	 * 高级组合查询，记录数
+	 */
+	public int pageCountQuery(DemoCustomerBean customerBean) {
+		return dao.pageCountQuery(customerBean);
+	}
+	/**
+	 * 获取datas,即当前页记录 .从第几条记录查询，一共查询多少条记录
+	 */
+	public List<DemoCustomerBean> queryByPage(DemoCustomerBean formCustomerBean, int index, int ps) {
+		// TODO Auto-generated method stub
+		return dao.queryByPage(formCustomerBean,index,ps);
+	}
 
 }

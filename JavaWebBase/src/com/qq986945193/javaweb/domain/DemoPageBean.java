@@ -23,6 +23,13 @@ public class DemoPageBean<T> {
 		return tr % ps == 0 ? tp : tp + 1;
 	}
 
+	/**
+	 * 返回当前页首行的下标
+	 */
+	public int getIndex(){
+		return (pc-1)*pc;
+	}
+	
 	public int getPc() {
 		return pc;
 	}

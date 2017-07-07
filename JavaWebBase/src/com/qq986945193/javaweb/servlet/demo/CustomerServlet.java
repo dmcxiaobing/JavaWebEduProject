@@ -119,6 +119,41 @@ public class CustomerServlet extends BaseServlet {
 	}
 
 	/**
+	 * 高级搜索查询，带有分页 高级组合查询
+	 */
+	public String pageQuery(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		/**
+		 * 1，获取pc，如果pc不存在，则设置pc当前页为1 2，获取url，如果url（方法参数）中包含了&pc=，name截掉它
+		 */
+		int pageCode = getPc(request);
+
+		String url = GetUrl(request);
+		// 获取表单数据
+		DemoCustomerBean formCustomerBean = CommonUtils.toBean(request.getParameterMap(), DemoCustomerBean.class);
+		/**
+		 * 获取总记录数tr
+		 */
+		int tr = customerService.pageCountQuery(formCustomerBean);
+		// 设置每页显示的记录数
+		int ps = 10;
+		DemoPageBean<DemoCustomerBean> pageBean = new DemoPageBean<DemoCustomerBean>();
+		pageBean.setPs(ps);
+		pageBean.setTr(tr);
+		pageBean.setPc(pageCode);
+		pageBean.setUrl(url);
+		/**
+		 * 获取datas,即当前页记录 .从第几条记录查询，一共查询多少条记录
+		 */
+		List<DemoCustomerBean> datas = customerService.queryByPage(formCustomerBean, pageBean.getIndex(), ps);
+		pageBean.setDatas(datas);
+
+		request.setAttribute("pb", pageBean);
+		// 转发jsp
+		return "f:/demo/customer/jsps/pageList.jsp";
+	}
+
+	/**
 	 * 截取url
 	 */
 	private String GetUrl(HttpServletRequest request) {
@@ -131,13 +166,13 @@ public class CustomerServlet extends BaseServlet {
 		 * 如果url中存在pc,则需要把pc截取下去，不要它
 		 */
 		String url = request.getQueryString();
-		System.out.println("url:"+url);
+		System.out.println("url:" + url);
 		int index = url.lastIndexOf("&pc=");
-		//如果等于-1则说明不存在
+		// 如果等于-1则说明不存在
 		if (index == -1) {
 			return url;
 		}
-		return url.substring(0,index);
+		return url.substring(0, index);
 	}
 
 	/**

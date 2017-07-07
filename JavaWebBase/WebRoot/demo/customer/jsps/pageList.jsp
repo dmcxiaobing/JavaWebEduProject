@@ -89,6 +89,7 @@
 <%--循环显示页码列表 --%>
 <c:forEach begin="${begin }" end="${end }" var = "i">
 	<c:choose>
+	<%-- 	<!-- 当前页没有超链接，其他页会有超链接 -->	--%>
 		<c:when test="${i eq pb.pc }">${i}</c:when>
 		<c:otherwise>
 			<a href="<c:url value = '/demo/servlet/CustomerServlet?${pb.url }&pc=${i}'/>">[${i }]</a>

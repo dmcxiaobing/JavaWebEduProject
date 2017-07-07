@@ -143,7 +143,7 @@ public class DemoCustomerDao {
 	 *            当前页
 	 * @param ps
 	 *            每页记录数
-	 * @throws SQLException 
+	 * @throws SQLException
 	 */
 	public DemoPageBean<DemoCustomerBean> findByPage(int pc, int ps) throws SQLException {
 		String sql = "select count(*) from demo_tb_customer ";
@@ -159,6 +159,103 @@ public class DemoCustomerDao {
 		pageBean.setPs(ps);
 		pageBean.setTr(tr);
 		return pageBean;
+	}
+
+	/**
+	 * 高级组合查询，记录数
+	 */
+	public int pageCountQuery(DemoCustomerBean customerBean) {
+		// 定义查询的sql语句
+		String sql = "select count(*) from demo_tb_customer where 1 = 1";
+		StringBuilder sb = new StringBuilder(sql);
+		// 所需要的参数值
+		List<Object> params = new ArrayList<Object>();
+		String cname = customerBean.getCname();
+		if (cname != null && !cname.trim().isEmpty()) {
+			sb.append(" and cname like ?");
+			params.add("%" + cname + "%");
+		}
+		String gender = customerBean.getGender();
+		if (gender != null && !gender.trim().isEmpty()) {
+			sb.append(" and gender = ?");
+			params.add(gender);
+		}
+		String cellphone = customerBean.getCellphone();
+		if (cellphone != null && !cellphone.trim().isEmpty()) {
+			sb.append(" and cellphone like ?");
+			params.add("%" + cellphone + "%");
+		}
+		String email = customerBean.getEmail();
+		if (email != null && !email.trim().isEmpty()) {
+			sb.append(" and email like ?");
+			params.add("%" + email + "%");
+		}
+		try {
+			Long count = (Long) queryRunner.query(sb.toString(), new ScalarHandler(), params.toArray());
+			return count.intValue();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	/**
+	 * 获取datas,即当前页记录 .从第几条记录查询，一共查询多少条记录
+	 */
+	public List<DemoCustomerBean> queryByPage(DemoCustomerBean formCustomerBean, int index, int ps) {
+		try {
+			/*
+			 * 1. 给出sql模板 2. 给出参数 3. 调用query方法，使用结果集处理器：BeanListHandler
+			 */
+			/*
+			 * 一、 给出sql模板 二、 给出参数！
+			 */
+			/*
+			 * 1. 给出一个sql语句前半部
+			 */
+			StringBuilder sql = new StringBuilder("select * from demo_tb_customer where 1=1");
+			/*
+			 * 2. 判断条件，完成向sql中追加where子句
+			 */
+			/*
+			 * 3. 创建一个ArrayList，用来装载参数值
+			 * 
+			 */
+			List<Object> params = new ArrayList<Object>();
+			String cname = formCustomerBean.getCname();
+			if (cname != null && !cname.trim().isEmpty()) {
+				// 拼接sql语句
+				sql.append(" and cname like ?");
+				// 添加参数 放到集合中
+				params.add("%" + cname + "%");
+			}
+			String gender = formCustomerBean.getGender();
+			if (gender != null && !gender.trim().isEmpty()) {
+				sql.append(" and gender = ?");
+				params.add(gender);
+			}
+
+			String cellPhone = formCustomerBean.getCellphone();
+			if (cellPhone != null && !cellPhone.trim().isEmpty()) {
+				sql.append(" and cellPhone = ?");
+				params.add("%" + cellPhone + "%");
+			}
+			String email = formCustomerBean.getEmail();
+			if (email != null && !email.trim().isEmpty()) {
+				sql.append(" and email = ?");
+				params.add("%" + email + "%");
+			}
+
+			sql.append(" limit ?,?");
+			params.add(index);
+			params.add(ps);
+			return queryRunner.query(sql.toString(), new BeanListHandler<DemoCustomerBean>(DemoCustomerBean.class),
+					params.toArray());
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }
