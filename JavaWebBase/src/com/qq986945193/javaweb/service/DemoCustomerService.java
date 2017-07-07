@@ -1,9 +1,11 @@
 package com.qq986945193.javaweb.service;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.qq986945193.javaweb.dao.DemoCustomerDao;
 import com.qq986945193.javaweb.domain.DemoCustomerBean;
+import com.qq986945193.javaweb.domain.DemoPageBean;
 /**
  * 客户管理系统的业务层
  */
@@ -40,6 +42,20 @@ public class DemoCustomerService {
 	 */
 	public List<DemoCustomerBean> query(DemoCustomerBean customerBean) {
 		return dao.query(customerBean);
+	}
+	/**
+	 * 根据当前页和每页记录数查询数据
+	 * @param pc 当前页
+	 * @param ps 每页记录数
+	 */
+	public DemoPageBean<DemoCustomerBean> findByPage(int pc, int ps) {
+		try {
+			return dao.findByPage(pc,ps);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

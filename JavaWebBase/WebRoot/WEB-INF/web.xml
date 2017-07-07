@@ -20,8 +20,9 @@
 	<filter-mapping>
 		<filter-name>CountSumFilter</filter-name>
 		<!-- 表示拦截所有 -->
-		<url-pattern>/*</url-pattern>
+		<!-- <url-pattern>/*</url-pattern> -->
 		<!-- 拦截请求，有四种选择。include forward等 -->
+		<url-pattern>/GetDataServlet</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
 	

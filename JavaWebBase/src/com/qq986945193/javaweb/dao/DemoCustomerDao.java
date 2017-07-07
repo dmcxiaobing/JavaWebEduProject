@@ -7,8 +7,10 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.qq986945193.javaweb.domain.DemoCustomerBean;
+import com.qq986945193.javaweb.domain.DemoPageBean;
 import com.qq986945193.javaweb.utils.TxQueryRunner;
 
 /**
@@ -86,13 +88,10 @@ public class DemoCustomerDao {
 	public List<DemoCustomerBean> query(DemoCustomerBean customerBean) {
 		try {
 			/*
-			 * 1. 给出sql模板
-			 * 2. 给出参数
-			 * 3. 调用query方法，使用结果集处理器：BeanListHandler
+			 * 1. 给出sql模板 2. 给出参数 3. 调用query方法，使用结果集处理器：BeanListHandler
 			 */
 			/*
-			 * 一、　给出sql模板
-			 * 二、　给出参数！
+			 * 一、 给出sql模板 二、 给出参数！
 			 */
 			/*
 			 * 1. 给出一个sql语句前半部
@@ -104,36 +103,62 @@ public class DemoCustomerDao {
 			/*
 			 * 3. 创建一个ArrayList，用来装载参数值
 			 * 
-			 * */
+			 */
 			List<Object> params = new ArrayList<Object>();
 			String cname = customerBean.getCname();
-			if (cname!=null && !cname.trim().isEmpty()) {
-				//拼接sql语句
+			if (cname != null && !cname.trim().isEmpty()) {
+				// 拼接sql语句
 				sql.append(" and cname like ?");
-				//添加参数 放到集合中
-				params.add("%"+cname+"%");
+				// 添加参数 放到集合中
+				params.add("%" + cname + "%");
 			}
 			String gender = customerBean.getGender();
-			if (gender!=null && !gender.trim().isEmpty()) {
+			if (gender != null && !gender.trim().isEmpty()) {
 				sql.append(" and gender = ?");
 				params.add(gender);
 			}
-			
+
 			String cellPhone = customerBean.getCellphone();
-			if (cellPhone!=null && !cellPhone.trim().isEmpty()) {
+			if (cellPhone != null && !cellPhone.trim().isEmpty()) {
 				sql.append(" and cellPhone = ?");
-				params.add("%"+cellPhone+"%");
+				params.add("%" + cellPhone + "%");
 			}
 			String email = customerBean.getEmail();
-			if (email!=null && !email.trim().isEmpty()) {
+			if (email != null && !email.trim().isEmpty()) {
 				sql.append(" and email = ?");
-				params.add("%"+email+"%");
+				params.add("%" + email + "%");
 			}
-			
-			return queryRunner.query(sql.toString(), new BeanListHandler<DemoCustomerBean>(DemoCustomerBean.class),params.toArray());
+
+			return queryRunner.query(sql.toString(), new BeanListHandler<DemoCustomerBean>(DemoCustomerBean.class),
+					params.toArray());
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	/**
+	 * 根据当前页和每页记录数查询数据
+	 * 
+	 * @param pc
+	 *            当前页
+	 * @param ps
+	 *            每页记录数
+	 * @throws SQLException 
+	 */
+	public DemoPageBean<DemoCustomerBean> findByPage(int pc, int ps) throws SQLException {
+		String sql = "select count(*) from demo_tb_customer ";
+		// 总记录数
+		int tr = ((Number) queryRunner.query(sql, new ScalarHandler())).intValue();
+		// 当前页和每页的数量。
+		sql = "select * from demo_tb_customer limit ? ,?";
+		List<DemoCustomerBean> customerLists = queryRunner.query(sql,
+				new BeanListHandler<DemoCustomerBean>(DemoCustomerBean.class), (pc - 1) * ps, ps);
+		DemoPageBean<DemoCustomerBean> pageBean = new DemoPageBean<DemoCustomerBean>();
+		pageBean.setDatas(customerLists);
+		pageBean.setPc(pc);
+		pageBean.setPs(ps);
+		pageBean.setTr(tr);
+		return pageBean;
 	}
 
 }

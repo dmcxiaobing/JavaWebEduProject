@@ -8,13 +8,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.qq986945193.javaweb.domain.DemoCustomerBean;
+import com.qq986945193.javaweb.domain.DemoPageBean;
 import com.qq986945193.javaweb.service.DemoCustomerService;
 import com.qq986945193.javaweb.servlet.BaseServlet;
+import com.qq986945193.javaweb.servlet.day10.servlet02.GetUrlInfoServlet;
 import com.qq986945193.javaweb.utils.CommonUtils;
 import com.qq986945193.javaweb.utils.GetUUIDRandomUtils;
 
 /**
  * 客户关系管理系统 controller
+ * 
+ */
+/**
+ * 
+ * CREATE DATABASE IF NOT EXISTS customers; USE customers;
+ * 
+ * CREATE TABLE t_customer( cid CHAR(32) PRIMARY KEY, cname VARCHAR(40) NOT
+ * NULL, gender VARCHAR(6) NOT NULL, birthday CHAR(10), cellphone VARCHAR(15)
+ * NOT NULL, email VARCHAR(40), description VARCHAR(500) );
+ * 
+ * SELECT * FROM t_customer;
+ *
  */
 public class CustomerServlet extends BaseServlet {
 	private DemoCustomerService customerService = new DemoCustomerService();
@@ -45,21 +59,23 @@ public class CustomerServlet extends BaseServlet {
 	}
 
 	/**
-	 * 编辑客户
-	 *  编辑之前的加载工作
+	 * 编辑客户 编辑之前的加载工作
 	 */
-	public String preEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String preEdit(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String cid = request.getParameter("cid");
-		System.out.println("cid"+cid);
-		//根据cid查出客户信息
+		System.out.println("cid" + cid);
+		// 根据cid查出客户信息
 		DemoCustomerBean customerBean = customerService.findByCid(cid);
 		request.setAttribute("cstm", customerBean);
 		return "f:/demo/customer/jsps/edit.jsp";
 	}
+
 	/**
 	 * 编辑之后的保存操作
 	 */
-	public String editSave(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String editSave(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		/**
 		 * 得到用户提交的信息，然后进行更新数据库
 		 */
@@ -69,6 +85,7 @@ public class CustomerServlet extends BaseServlet {
 		return "f:/demo/customer/jsps/msg.jsp";
 
 	}
+
 	/**
 	 * 高级搜索，根据条件进行搜索客户
 	 */
@@ -80,7 +97,59 @@ public class CustomerServlet extends BaseServlet {
 		List<DemoCustomerBean> lists = customerService.query(customerBean);
 		request.setAttribute("cstmList", lists);
 		return "f:/demo/customer/jsps/list.jsp";
-		
+
 	}
-	
+
+	/**
+	 * 分页查询客户
+	 */
+	public String findByPage(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = GetUrl(request);
+		/**
+		 * 首先获取到当前的页码，pc（pageCode）
+		 */
+		int pc = getPc(request);
+		// 这里每页的记录数，直接写为10
+		int ps = 10;
+		DemoPageBean<DemoCustomerBean> pageBean = customerService.findByPage(pc, ps);
+		pageBean.setUrl(url);
+		request.setAttribute("pb", pageBean);
+		return "f:/demo/customer/jsps/pageList.jsp";
+	}
+
+	/**
+	 * 截取url
+	 */
+	private String GetUrl(HttpServletRequest request) {
+		// 获取请求的参数
+		// http://localhost/test.do?a=b&c=d&e=f
+		// 通过request.getQueryString()得到的是
+		// a=b&c=d&e=f
+		System.out.println("geturl");
+		/**
+		 * 如果url中存在pc,则需要把pc截取下去，不要它
+		 */
+		String url = request.getQueryString();
+		System.out.println("url:"+url);
+		int index = url.lastIndexOf("&pc=");
+		//如果等于-1则说明不存在
+		if (index == -1) {
+			return url;
+		}
+		return url.substring(0,index);
+	}
+
+	/**
+	 * 获得当前的页码 如果为null，默认为第一页，
+	 */
+	private int getPc(HttpServletRequest request) {
+		String pc = request.getParameter("pc");
+		if (pc != null && !pc.trim().isEmpty()) {
+			return Integer.parseInt(pc);
+		} else {
+			return 1;
+		}
+	}
+
 }

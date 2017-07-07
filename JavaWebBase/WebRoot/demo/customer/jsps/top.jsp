@@ -25,5 +25,6 @@
     <a href="<c:url value='/demo/customer/jsps/add.jsp'/>">添加客户</a> 　|　
     <a href="<c:url value='/demo/servlet/CustomerServlet?method=findAll'/>">查询客户</a>　|　
     <a href="<c:url value='/demo/customer/jsps/query.jsp'/>">高级搜索</a>　　
+     <a href="<c:url value='/demo/servlet/CustomerServlet?method=findByPage'/>">分页查询客户</a>　　
   </body>
 </html>
