@@ -17,6 +17,14 @@
 		<filter-name>CountSumFilter</filter-name>
 		<filter-class>com.qq986945193.javaweb.filter.CountSumFilter</filter-class>
 	</filter>
+	<filter>
+		<filter-name>StaticFilter</filter-name>
+		<filter-class>com.qq986945193.javaweb.filter.StaticFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>StaticFilter</filter-name>
+		<url-pattern>/servlet/DemoBookServlet</url-pattern>
+	</filter-mapping>
 	<filter-mapping>
 		<filter-name>CountSumFilter</filter-name>
 		<!-- 表示拦截所有 -->
@@ -25,8 +33,8 @@
 		<url-pattern>/GetDataServlet</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
-	
-	
+
+
 	<!-- 用户过滤的filter -->
 	<filter>
 		<filter-name>DemoUserFilter</filter-name>
@@ -45,8 +53,8 @@
 		<filter-name>DemoAdminFilter</filter-name>
 		<url-pattern>/demo/userfilter/admin/*</url-pattern>
 	</filter-mapping>
-	
-	
+
+
 	<!-- 处理编码的filter -->
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
@@ -245,62 +253,67 @@
 		<servlet-name>IntroduceServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.knowledge.IntroduceServlet</servlet-class>
 	</servlet>
-  <servlet>
-    <servlet-name>day11VerifyCodeServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.VerifyCodeServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>MvcClickServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.MvcClickServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UserRegistServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.UserRegistServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UserLoginServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.UserLoginServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UpdateAppServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.UpdateAppServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>JNDIintroduceServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.knowledge.JNDIintroduceServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>TestBaseServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.TestBaseServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>EncodingServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.EncodingServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UploadIntroduceServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.knowledge.UploadIntroduceServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>DownloadIntroduceServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.knowledge.DownloadIntroduceServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>JsonIntroduceServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.JsonIntroduceServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.UploadFileServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>UploadMyFileServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.day11.UploadMyFileServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>com.qq986945193.javaweb.servlet.demo.CustomerServlet</servlet-class>
-  </servlet>
+	<servlet>
+		<servlet-name>day11VerifyCodeServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.VerifyCodeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MvcClickServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.MvcClickServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserRegistServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.UserRegistServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.UserLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpdateAppServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.UpdateAppServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JNDIintroduceServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.knowledge.JNDIintroduceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TestBaseServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.TestBaseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EncodingServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.EncodingServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadIntroduceServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.knowledge.UploadIntroduceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DownloadIntroduceServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.knowledge.DownloadIntroduceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JsonIntroduceServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.JsonIntroduceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.UploadFileServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadMyFileServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.day11.UploadMyFileServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CustomerServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.demo.CustomerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DemoBookServlet</servlet-name>
+		<servlet-class>com.qq986945193.javaweb.servlet.demo.DemoBookServlet</servlet-class>
+	</servlet>
+
 
 
 
@@ -465,66 +478,70 @@
 		<servlet-name>day11LoginServlet</servlet-name>
 		<url-pattern>/day11LoginServlet</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>day11VerifyCodeServlet</servlet-name>
-    <url-pattern>/day11VerifyCodeServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>MvcClickServlet</servlet-name>
-    <url-pattern>/MvcClickServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserRegistServlet</servlet-name>
-    <url-pattern>/UserRegistServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UserLoginServlet</servlet-name>
-    <url-pattern>/UserLoginServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UpdateAppServlet</servlet-name>
-    <url-pattern>/servlet/UpdateAppServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>JNDIintroduceServlet</servlet-name>
-    <url-pattern>/servlet/JNDIintroduceServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>TestBaseServlet</servlet-name>
-    <url-pattern>/servlet/TestBaseServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>EncodingServlet</servlet-name>
-    <url-pattern>/EncodingServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UploadIntroduceServlet</servlet-name>
-    <url-pattern>/servlet/UploadIntroduceServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DownloadIntroduceServlet</servlet-name>
-    <url-pattern>/servlet/DownloadIntroduceServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>JsonIntroduceServlet</servlet-name>
-    <url-pattern>/servlet/JsonIntroduceServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UploadFileServlet</servlet-name>
-    <url-pattern>/servlet/UploadFileServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>UploadMyFileServlet</servlet-name>
-    <url-pattern>/servlet/UploadMyFileServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>CustomerServlet</servlet-name>
-    <url-pattern>/demo/servlet/CustomerServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>DemoUserFilterLoginServlet</servlet-name>
-    <url-pattern>/demo/servlet/DemoUserFilterLoginServlet</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>day11VerifyCodeServlet</servlet-name>
+		<url-pattern>/day11VerifyCodeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MvcClickServlet</servlet-name>
+		<url-pattern>/MvcClickServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserRegistServlet</servlet-name>
+		<url-pattern>/UserRegistServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<url-pattern>/UserLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateAppServlet</servlet-name>
+		<url-pattern>/servlet/UpdateAppServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JNDIintroduceServlet</servlet-name>
+		<url-pattern>/servlet/JNDIintroduceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestBaseServlet</servlet-name>
+		<url-pattern>/servlet/TestBaseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EncodingServlet</servlet-name>
+		<url-pattern>/EncodingServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadIntroduceServlet</servlet-name>
+		<url-pattern>/servlet/UploadIntroduceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownloadIntroduceServlet</servlet-name>
+		<url-pattern>/servlet/DownloadIntroduceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JsonIntroduceServlet</servlet-name>
+		<url-pattern>/servlet/JsonIntroduceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<url-pattern>/servlet/UploadFileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadMyFileServlet</servlet-name>
+		<url-pattern>/servlet/UploadMyFileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CustomerServlet</servlet-name>
+		<url-pattern>/demo/servlet/CustomerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DemoUserFilterLoginServlet</servlet-name>
+		<url-pattern>/demo/servlet/DemoUserFilterLoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DemoBookServlet</servlet-name>
+		<url-pattern>/servlet/DemoBookServlet</url-pattern>
+	</servlet-mapping>
 
 	<context-param>
 		<param-name>context-param</param-name>

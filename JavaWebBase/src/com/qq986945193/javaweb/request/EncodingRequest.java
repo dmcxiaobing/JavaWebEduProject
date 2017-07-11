@@ -1,4 +1,4 @@
-package com.qq986945193.javaweb.req;
+package com.qq986945193.javaweb.request;
 
 import java.io.UnsupportedEncodingException;
 

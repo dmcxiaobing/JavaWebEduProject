@@ -10,7 +10,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import com.qq986945193.javaweb.req.EncodingRequest;
+import com.qq986945193.javaweb.request.EncodingRequest;
 
 /**
  * 解决全站的字符编码乱码
