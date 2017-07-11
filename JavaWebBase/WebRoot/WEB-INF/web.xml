@@ -313,6 +313,21 @@
 		<servlet-name>DemoBookServlet</servlet-name>
 		<servlet-class>com.qq986945193.javaweb.servlet.demo.DemoBookServlet</servlet-class>
 	</servlet>
+  <servlet>
+    <servlet-name>AjaxIntroduceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.knowledge.AjaxIntroduceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.ValidateUsernameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxXmlServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.AjaxXmlServlet</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -542,6 +557,18 @@
 		<servlet-name>DemoBookServlet</servlet-name>
 		<url-pattern>/servlet/DemoBookServlet</url-pattern>
 	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxIntroduceServlet</servlet-name>
+    <url-pattern>/servlet/AjaxIntroduceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValidateUsernameServlet</servlet-name>
+    <url-pattern>/servlet/ValidateUsernameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxXmlServlet</servlet-name>
+    <url-pattern>/servlet/AjaxXmlServlet</url-pattern>
+  </servlet-mapping>
 
 	<context-param>
 		<param-name>context-param</param-name>
