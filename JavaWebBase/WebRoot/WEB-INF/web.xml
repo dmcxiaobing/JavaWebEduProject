@@ -325,6 +325,16 @@
     <servlet-name>AjaxXmlServlet</servlet-name>
     <servlet-class>com.qq986945193.javaweb.servlet.AjaxXmlServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AjaxProvinceServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.AjaxProvinceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AjaxCityServlet</servlet-name>
+    <servlet-class>com.qq986945193.javaweb.servlet.AjaxCityServlet</servlet-class>
+  </servlet>
+
+
 
 
 
@@ -568,6 +578,14 @@
   <servlet-mapping>
     <servlet-name>AjaxXmlServlet</servlet-name>
     <url-pattern>/servlet/AjaxXmlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxProvinceServlet</servlet-name>
+    <url-pattern>/servlet/AjaxProvinceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AjaxCityServlet</servlet-name>
+    <url-pattern>/servlet/AjaxCityServlet</url-pattern>
   </servlet-mapping>
 
 	<context-param>
