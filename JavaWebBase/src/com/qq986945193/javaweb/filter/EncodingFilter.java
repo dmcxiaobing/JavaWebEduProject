@@ -1,5 +1,9 @@
 package com.qq986945193.javaweb.filter;
-
+/**
+ * @Author ：程序员小冰
+ * @新浪微博 ：http://weibo.com/mcxiaobing
+ * @GitHub: https://github.com/QQ986945193
+ */
 import java.io.IOException;
 
 import javax.servlet.Filter;
