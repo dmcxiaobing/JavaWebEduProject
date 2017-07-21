@@ -136,6 +136,7 @@ public class CustomerServlet extends BaseServlet {
 		int pageCode = getPc(request);
 
 		String url = GetUrl(request);
+		System.out.println("geturl:"+url);
 		// 获取表单数据
 		DemoCustomerBean formCustomerBean = CommonUtils.toBean(request.getParameterMap(), DemoCustomerBean.class);
 		/**
@@ -168,7 +169,6 @@ public class CustomerServlet extends BaseServlet {
 		// http://localhost/test.do?a=b&c=d&e=f
 		// 通过request.getQueryString()得到的是
 		// a=b&c=d&e=f
-		System.out.println("geturl");
 		/**
 		 * 如果url中存在pc,则需要把pc截取下去，不要它
 		 */
