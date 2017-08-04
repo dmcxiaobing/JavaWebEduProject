@@ -29,18 +29,21 @@ public class GsonIntroduce {
 		User stu1 = new User("username", "男");
 		User stu2 = new User("李四", "男");
 		User stu3 = new User("王二", "女");
+		
 		arrayList.add(stu1);
 		arrayList.add(stu2);
 		arrayList.add(stu3);
+		
 		Gson gson = new Gson();
-
 		// 对单个实例操作
 		String jsonBean = gson.toJson(stu1);
-		System.out.println(jsonBean);
+		System.out.println("对单个实例操作:"+jsonBean);
+
 
 		// 将对象的集合转换成json字符串
 		String json = gson.toJson(arrayList);
-		System.out.println(json);
+		
+		System.out.println("对象的集合转换:"+json);
 		/**
 		 * 返回带有集合的数据 并有字符串
 		 */
@@ -53,9 +56,12 @@ public class GsonIntroduce {
 		BeanUtils.setProperty(msgBean, "versionCode", "2");
 		// 添加到集合中
 		listsMsgBeans.add(msgBean);
+		System.err.println(listsMsgBeans.size());
 		BeanUtils.setProperty(bUpdateAppBean, "msg", listsMsgBeans);
+		
+		
 		String jsonValue = gson.toJson(bUpdateAppBean);
-		System.out.println(jsonValue);
+		System.out.println("返回带有集合的数据 并有字符串:"+jsonValue);
 		/**
 		 * 返回没有集合的数据 只有字符串
 		 */
@@ -67,6 +73,6 @@ public class GsonIntroduce {
 		BeanUtils.setProperty(mMsgBean, "versionCode", "2");
 		BeanUtils.setProperty(mUpdateAppBean, "msg", mMsgBean);
 		String jsonStrValue = gson.toJson(mUpdateAppBean);
-		System.out.println(jsonStrValue);
+		System.out.println("返回没有集合的数据 只有字符串:"+jsonStrValue);
 	}
 }
