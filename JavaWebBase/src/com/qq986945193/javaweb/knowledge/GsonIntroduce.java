@@ -8,11 +8,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.io.IOUtils;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
+import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
 import com.qq986945193.javaweb.domain.UpdateAppBean;
 import com.qq986945193.javaweb.domain.UpdateAppNoListBean;
@@ -56,7 +58,6 @@ public class GsonIntroduce {
 		BeanUtils.setProperty(msgBean, "versionCode", "2");
 		// 添加到集合中
 		listsMsgBeans.add(msgBean);
-		System.err.println(listsMsgBeans.size());
 		BeanUtils.setProperty(bUpdateAppBean, "msg", listsMsgBeans);
 		
 		
@@ -74,5 +75,7 @@ public class GsonIntroduce {
 		BeanUtils.setProperty(mUpdateAppBean, "msg", mMsgBean);
 		String jsonStrValue = gson.toJson(mUpdateAppBean);
 		System.out.println("返回没有集合的数据 只有字符串:"+jsonStrValue);
+		
+
 	}
 }
