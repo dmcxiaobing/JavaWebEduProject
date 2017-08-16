@@ -1,5 +1,6 @@
 package com.qq986945193.javaweb.knowledge;
 
+import java.io.Serializable;
 /**
  * david 
  * http://weibo.com/mcxiaobing
@@ -12,10 +13,12 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.io.IOUtils;
+import org.junit.Test;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.alibaba.fastjson.JSON;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.qq986945193.javaweb.domain.UpdateAppBean;
 import com.qq986945193.javaweb.domain.UpdateAppNoListBean;
 import com.qq986945193.javaweb.domain.User;
@@ -75,7 +78,130 @@ public class GsonIntroduce {
 		BeanUtils.setProperty(mUpdateAppBean, "msg", mMsgBean);
 		String jsonStrValue = gson.toJson(mUpdateAppBean);
 		System.out.println("返回没有集合的数据 只有字符串:"+jsonStrValue);
-		
 
 	}
+	
+	/**
+	 * 测试gson解析数据
+	 */
+	@Test
+	public void TestGson(){
+		String json = "{'result':false,'message':'密码错误'}";
+		Gson gson = new Gson();
+		Entity entity = gson.fromJson(json,Entity.class );
+		System.out.println(entity.result);
+		System.out.println(entity.message);
+	}
+	@Test
+	public void TestGson2(){
+		String json = "[{'childList':[{'name':'David①','pic_id':0,'state':'open'},{'name':'David②','pic_id':0,'state':'close'},{'name':'David③','pic_id':0,'state':'close'},{'name':'David④','pic_id':0,'state':'close'},{'name':'David⑤','pic_id':0,'state':'open'},{'name':'David⑥','pic_id':0,'state':'close'},{'name':'David⑦','pic_id':0,'state':'close'},{'name':'David⑧','pic_id':0,'state':'close'}],'name':'客厅'},{'childList':[{'name':'David①','pic_id':0,'state':'close'},{'name':'David②','pic_id':0,'state':'close'},{'name':'David③','pic_id':0,'state':'close'},{'name':'David④','pic_id':0,'state':'close'},{'name':'David⑤','pic_id':0,'state':'close'},{'name':'David⑥','pic_id':0,'state':'close'},{'name':'David⑦','pic_id':0,'state':'close'},{'name':'David⑧','pic_id':0,'state':'close'}],'name':'主Java'},{'childList':[{'name':'David①','pic_id':0,'state':'close'},{'name':'David②','pic_id':0,'state':'close'},{'name':'David③','pic_id':0,'state':'close'},{'name':'David④','pic_id':0,'state':'close'},{'name':'David⑤','pic_id':0,'state':'close'},{'name':'David⑥','pic_id':0,'state':'close'},{'name':'David⑦','pic_id':0,'state':'close'},{'name':'David⑧','pic_id':0,'state':'close'}],'name':'Java一'},{'childList':[{'name':'David①','pic_id':0,'state':'close'},{'name':'David②','pic_id':0,'state':'close'},{'name':'David③','pic_id':0,'state':'close'},{'name':'David④','pic_id':0,'state':'close'},{'name':'David⑤','pic_id':0,'state':'close'},{'name':'David⑥','pic_id':0,'state':'close'},{'name':'David⑦','pic_id':0,'state':'close'},{'name':'David⑧','pic_id':0,'state':'close'}],'name':'Java二'}]";
+		System.out.println(json);
+		Gson gson = new Gson();
+		List<GroupInfoModel>listGroup = gson.fromJson(json,
+                new TypeToken<List<GroupInfoModel>>() {
+                }.getType());
+		System.out.println(listGroup.get(0).getChildList().get(0).getName());
+	
+	}
+	
+	
+	class Entity{
+		public String result;
+		public String message;
+	}
+	
+	
+	
+}
+
+class GroupInfoModel implements Serializable{
+
+    private String name;
+    private List<Child> childList;//该分组写子列表
+
+    public List<Child> getChildList() {
+        return childList;
+    }
+
+    public void setChildList(List<Child> childList) {
+        this.childList = childList;
+    }
+
+    public GroupInfoModel() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public GroupInfoModel(String name) {
+        this.name = name;
+    }
+}
+
+
+class Child{
+	  /**
+   * childList : [{"name":"David①","pic_id":0,"state":"open"},{"name":"David②","pic_id":0,"state":"close"},{"name":"David③","pic_id":0,"state":"close"},{"name":"David④","pic_id":0,"state":"close"},{"name":"David⑤","pic_id":0,"state":"open"},{"name":"David⑥","pic_id":0,"state":"close"},{"name":"David⑦","pic_id":0,"state":"close"},{"name":"David⑧","pic_id":0,"state":"close"}]
+   * name : 客厅
+   */
+
+  private String name;
+  private List<ChildListBean> childList;
+
+  public String getName() {
+      return name;
+  }
+
+  public void setName(String name) {
+      this.name = name;
+  }
+
+  public List<ChildListBean> getChildList() {
+      return childList;
+  }
+
+  public void setChildList(List<ChildListBean> childList) {
+      this.childList = childList;
+  }
+
+  public static class ChildListBean {
+      /**
+       * name : David①
+       * pic_id : 0
+       * state : open
+       */
+
+      private String name;
+      private int pic_id;
+      private String state;
+
+      public String getName() {
+          return name;
+      }
+
+      public void setName(String name) {
+          this.name = name;
+      }
+
+      public int getPic_id() {
+          return pic_id;
+      }
+
+      public void setPic_id(int pic_id) {
+          this.pic_id = pic_id;
+      }
+
+      public String getState() {
+          return state;
+      }
+
+      public void setState(String state) {
+          this.state = state;
+      }
+  }
 }
