@@ -22,6 +22,7 @@
 <!-- 引入jQuery。当然也可以下载到本地后，引入。将url改为本地文件路径即可 -->
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
 </script>
+
 <!-- 禁用右键功能 -->
  <script type="text/javascript">
 	//禁用右键菜单
