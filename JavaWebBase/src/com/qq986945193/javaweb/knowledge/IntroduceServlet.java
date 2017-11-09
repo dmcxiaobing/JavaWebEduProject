@@ -77,6 +77,8 @@ public class IntroduceServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		setCharsetEncode(request, response);
+		
+		//setClientNoCache(response);      
 
 		// openDownloadFile(req, resp);
 		// setHeadergzip(req, resp);
@@ -85,6 +87,14 @@ public class IntroduceServlet extends HttpServlet {
 		// introduceHttpSession(request, response);
 		response.setHeader("refresh", "1");
 
+	}
+	/**
+	 * 设置客户端不缓存
+	 */
+	private void setClientNoCache(HttpServletResponse response) {
+		response.setDateHeader("Expires", 0);      
+		response.setHeader("Cache-Control", "no-cache");      
+		response.setHeader("Pragma", "no-cache");
 	}
 
 	/**
